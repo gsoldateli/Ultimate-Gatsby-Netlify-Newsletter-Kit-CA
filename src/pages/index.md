@@ -1,27 +1,17 @@
 ---
 templateKey: index-page
-title: The Ultimate Gatsby Newsletter Starter Kit!
-subheading: >-
-  Launch your newsletter site today with a blazing fast Gatsby.js site - and
-  Netlify CMS to update your archive.
-paragraph: >-
-  PARAGRAPHHHH Launch your newsletter site today with a blazing fast Gatsby.js
-  site - and Netlify CMS to update your archive.
+title: New AI Humanity Site
+subheading: This is a test to evaluate if netlify attend us.
+paragraph: Really fast and secure Gatsby.js site - and Netlify CMS
 multipleItems:
-  - description: leoowkfeokfoewfokwofk
-    finalparagraph: ofkweofkwfkeweofk FINAALLL
-    title: Item  1
-  - description: leoowkfeokfoewfokwof2
-    finalparagraph: ofkweofkwfkeweofk FINAALL2
-    title: Item  2
-  - description: leoowkfeokfoewfokwof3
-    finalparagraph: ofkweofkwfkeweofk FINAALL3
-    title: Item  3
-  - description: Parapragra
-    finalparagraph: asdasdasdasd
-    title: Gui
-  - description: sdçflksdflksldfk
-    finalparagraph: sdfçlkslfkslçdfklçskdf
-    title: sdfsdfsdfl
+  - description: '| Description Item A'
+    finalparagraph: '| Final Item A'
+    title: Item A
+  - description: '| Description Item B'
+    finalparagraph: '| Final Item B'
+    title: Item B
+  - description: '| Description Item C'
+    finalparagraph: '| Final Item C'
+    title: Item C
 ---
 
