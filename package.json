@@ -33,6 +33,8 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
+    "sharp": "0.24.0",
+    "typeface-amiko": "0.0.72",
     "typeface-merriweather": "^0.0.72",
     "uuid": "^3.2.1"
   },
@@ -49,7 +51,6 @@
     "build:app": "npm run clean && gatsby build",
     "build:lambda": "netlify-lambda build src/lambda",
     "build": "run-p build:**",
-    "clean": "gatsby clean",
     "develop": "npm run clean && gatsby develop",
     "serve": "gatsby serve",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
