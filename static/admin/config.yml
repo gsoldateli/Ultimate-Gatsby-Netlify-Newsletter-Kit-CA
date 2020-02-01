@@ -21,7 +21,7 @@ collections:
       - label: "Items"
         name: "items"
         collapsed: false
-        widget: "object"
+        widget: "list"
         fields:
           - { label: "Title", name: title, widget: string }
           - {
