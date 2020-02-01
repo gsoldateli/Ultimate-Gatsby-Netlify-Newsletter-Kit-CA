@@ -6,43 +6,10 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "menus"
-    label: "Menus"
-    files:
-      - label: "Menu"
-        name: "menu"
-        file: "src/config/menus.md"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - label: "Position"
-            name: "position"
-            widget: "select"
-            options:
-              - { label: "Top", value: "top" }
-              - { label: "Footer", value: "footer" }
-
-          - label: "Items"
-            name: "items"
-            collapsed: false
-            widget: "list"
-            fields:
-              [
-                { label: Title, name: title, widget: string },
-                { label: "URL", name: "url", widget: "string" },
-                label: "Subitems",
-                name: "subitems",
-                widget: "list",
-                fields:
-                  [
-                    { label: Title, name: title, widget: string },
-                    { label: "URL", name: "url", widget: "string" },
-                  ],
-              ]
   - name: "solutions"
     label: "Solutions"
     folder: "src/pages/solutions"
     create: true
-
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Featured Image", name: "image", widget: "image" }
