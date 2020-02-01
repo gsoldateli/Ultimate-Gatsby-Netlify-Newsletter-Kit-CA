@@ -20,31 +20,7 @@ collections:
           - { label: "Footer", value: "footer" }
       - label: "Items"
         name: "items"
-        collapsed: false
-        widget: "list"
-        fields:
-          - { label: "Title", name: title, widget: string }
-          - {
-              label: "Key",
-              name: key,
-              hint: "If you se a key, the developer will be able to manipulate this link",
-              widget: string,
-            }
-          - { label: "URL", name: "url", widget: "string" }
-          - label: "Subitems"
-            name: "subitems"
-            widget: "list"
-            fields:
-              [
-                { label: Title, name: title, widget: string },
-                {
-                  label: "Key",
-                  name: key,
-                  hint: "If you se a key, the developer will be able to manipulate this link",
-                  widget: string,
-                },
-                { label: "URL", name: "url", widget: "string" },
-              ]
+        widget: "code"
 
   - name: "solutions"
     label: "Solutions"
