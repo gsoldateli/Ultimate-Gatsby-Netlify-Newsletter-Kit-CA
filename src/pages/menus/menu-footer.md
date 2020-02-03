@@ -1,15 +1,16 @@
 ---
-title: Menu A
-position: top
+templateKey: menu-navigation
+title: Menu Footer
+position: bottom
 items:
   code: |2-
      [
           { 
             "title": "Home",
-            submenus: [
+            "submenus": [
               {
-                "title": "HOME A",
-                "url": "/home-a"
+                "title": "HOME Axxx",
+                "url": "/solutions"
               },
               {
                 "title": "HOME B",
@@ -20,6 +21,7 @@ items:
                 "url": "/home-c"
               }
             ]
+          }
         ]
   lang: json
 ---

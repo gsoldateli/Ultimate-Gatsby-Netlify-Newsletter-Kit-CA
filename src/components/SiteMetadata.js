@@ -1,7 +1,10 @@
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from "gatsby";
 
 const useSiteMetadata = () => {
-  const { site } = useStaticQuery(
+  const {
+    site,
+    menus: { edges: menus }
+  } = useStaticQuery(
     graphql`
       query SITE_METADATA_QUERY {
         site {
@@ -10,10 +13,30 @@ const useSiteMetadata = () => {
             description
           }
         }
+        menus: allMarkdownRemark(
+          filter: { frontmatter: { templateKey: { eq: "menu-navigation" } } }
+        ) {
+          edges {
+            node {
+              frontmatter {
+                title
+                description
+                position
+                items {
+                  code
+                }
+              }
+            }
+          }
+        }
       }
     `
-  )
-  return site.siteMetadata
-}
+  );
 
-export default useSiteMetadata
+  return {
+    ...site.siteMetadata,
+    menus
+  };
+};
+
+export default useSiteMetadata;

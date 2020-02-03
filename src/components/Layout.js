@@ -2,13 +2,18 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import Header from "../components/Header";
 import "typeface-amiko";
 import "typeface-merriweather";
-import "./all.sass";
+// import "./all.sass";
 import useSiteMetadata from "./SiteMetadata";
 
 const TemplateWrapper = ({ children }) => {
-  const { title, description } = useSiteMetadata();
+  const { title, description, menus } = useSiteMetadata();
+  const topMenu = menus.filter(({ node: menu }) => menu.position === "top");
+  const footerMenu = menus.filter(
+    ({ node: menu }) => menu.position === "bottom"
+  );
   return (
     <div
       style={{
@@ -50,7 +55,8 @@ const TemplateWrapper = ({ children }) => {
         <meta property="og:url" content="/" />
         <meta property="og:image" content="/img/LUMESOG.png" />
       </Helmet>
-      <Navbar />
+      <Header />
+      <Navbar menu={topMenu} />
       <div>{children}</div>
       <Footer />
     </div>

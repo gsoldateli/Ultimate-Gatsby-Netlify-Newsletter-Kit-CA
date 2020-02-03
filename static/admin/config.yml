@@ -28,7 +28,7 @@ collections:
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Featured Image", name: "image", widget: image }
       - { label: "Description", name: "description", widget: "markdown" }
   - name: "blog"
     label: "Blog"

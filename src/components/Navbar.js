@@ -2,13 +2,21 @@ import React from "react";
 import { Link } from "gatsby";
 import logo from "../img/LUMES-logo.png";
 //import github from '../img/github-icon.svg'
+import styled from "styled-components";
+
+const StyledLink = styled(Link)`
+  background-color: red;
+  color: #fff;
+`;
 
 const Navbar = class extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       active: false,
-      navBarActiveClass: ""
+      navBarActiveClass: "",
+      links: props.menu
     };
   }
 
@@ -33,6 +41,9 @@ const Navbar = class extends React.Component {
   };
 
   render() {
+    console.log(this.props.menu);
+    // const topMenu = this.props.menu.filter(menu => menu.popstion === "top");
+    // console.log({ topMenu });
     return (
       <nav
         className="navbar is-transparent"
@@ -41,13 +52,13 @@ const Navbar = class extends React.Component {
       >
         <div className="container">
           <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Logo">
+            <StyledLink to="/" className="navbar-item" title="Logo">
               <img
                 src={logo}
                 alt="LUMES Eyewear logo"
                 style={{ width: "88px" }}
               />
-            </Link>
+            </StyledLink>
             {/* Hamburger menu */}
             <div
               className={`navbar-burger burger ${this.state.navBarActiveClass}`}
@@ -64,12 +75,15 @@ const Navbar = class extends React.Component {
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
             <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/archive">
+              <StyledLink className="navbar-item" to="/archive">
                 Archive
-              </Link>
-              <Link className="navbar-item" to="/about">
+              </StyledLink>
+              <StyledLink className="navbar-item" to="/about">
                 About
-              </Link>
+              </StyledLink>
+              <StyledLink className="navbar-item" to="/projects">
+                Projects
+              </StyledLink>
             </div>
             <div className="navbar-end has-text-centered"></div>
           </div>
