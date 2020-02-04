@@ -85,13 +85,14 @@ collections:
             name: "prosperitySection"
             widget: object
             fields:
+              - { label: "Section Title", name: "title", widget: "string" }
               - {
-                  label: "Section Title",
-                  name: "sectionTitle",
+                  label: "Section Subtitle",
+                  name: "subtitle",
                   widget: "string",
                 }
               - label: "Steps"
-                name: "Steps"
+                name: "steps"
                 widget: "list"
                 fields:
                   - { label: "Step Title", name: title, widget: string }
@@ -100,6 +101,55 @@ collections:
                       name: description,
                       widget: markdown,
                     }
+          - label: "Solving the Unsolvable Section"
+            name: "solvingUnsolvableSection"
+            widget: object
+            fields:
+              - { label: "Section Title", name: "title", widget: "string" }
+              - {
+                  label: "Section Subtitle",
+                  name: "subtitle",
+                  widget: "string",
+                }
+              - { label: "Body", name: "body", widget: "markdown" }
+              - label: "Before / After solutions"
+                name: "beforeAfter"
+                widget: "list"
+                fields:
+                  - { label: "Excerpt", name: excerpt, widget: markdown }
+                  - {
+                      label: "Before Image",
+                      name: "beforeImage",
+                      widget: "image",
+                    }
+                  - {
+                      label: "After Image",
+                      name: "afterImage",
+                      widget: "image",
+                    }
+              - label: "CTA Button"
+                name: "ctaButton"
+                widget: object
+                fields:
+                  - { label: "Label", name: label, widget: string }
+                  - { label: "URL", name: url, widget: string }
+          - label: "Support Us Section"
+            name: "supportUsSection"
+            widget: object
+            fields:
+              - { label: "Section Title", name: "title", widget: "string" }
+              - {
+                  label: "Section Subtitle",
+                  name: "subtitle",
+                  widget: "string",
+                }
+              - { label: "Body", name: "body", widget: "markdown" }
+              - label: "CTA Button"
+                name: "ctaButton"
+                widget: object
+                fields:
+                  - { label: "Label", name: label, widget: string }
+                  - { label: "URL", name: url, widget: string }
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"
