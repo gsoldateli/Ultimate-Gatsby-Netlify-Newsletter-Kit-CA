@@ -201,15 +201,12 @@ const NavigationLinkGroup = ({ linkGroup, setMenuMobileOpen }) => {
   const {
     location: { pathname }
   } = useLocation();
-  console.log(pathname);
+
   const [isExpanded, setIsExpanded] = React.useState();
   const [currentGroupPath, currentPath] = pathname
     .split("/")
     .filter(path => path.length > 0);
-  console.log(
-    [currentGroupPath, currentPath],
-    linkGroup.url === `/${currentGroupPath}`
-  );
+
   const isGroupActive =
     linkGroup.url === `/${currentGroupPath}` ||
     linkGroup.url === `/${currentPath}`;
@@ -244,7 +241,7 @@ const NavigationLinkGroup = ({ linkGroup, setMenuMobileOpen }) => {
           <SubmenuWrapper isExpanded={isExpanded}>
             {linkGroup.submenus.map(submenuItem => {
               const isSubmenuLinkActive = submenuItem.url === pathname;
-              console.log("url", submenuItem.url, "path", pathname);
+
               return (
                 <SubmenuNavigationItem
                   key={`${submenuItem.title}-${submenuItem.url}`}

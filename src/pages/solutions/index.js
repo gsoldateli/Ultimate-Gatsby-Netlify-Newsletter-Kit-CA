@@ -5,10 +5,8 @@ import Layout from "../../components/Layout";
 // import BlogRoll from "../../components/BlogRoll";
 
 const SolutionsList = ({ data }) => {
-  console.log(data.allMarkdownRemark);
   const { edges: solutions } = data.allMarkdownRemark;
-  console.log({ solutions });
-  //   const solutions = null;
+
   return (
     <Layout>
       <section className="section">

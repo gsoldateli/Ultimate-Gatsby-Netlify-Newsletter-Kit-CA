@@ -12,7 +12,7 @@ export const LayoutContext = React.createContext();
 
 const TemplateWrapper = ({ children }) => {
   const { title, description, menus } = useSiteMetadata();
-  console.log({ menus });
+
   const [topMenu] = menus
     .map(({ node: { frontmatter: menu } }) => menu)
     .filter(menu => menu.position === "top");
