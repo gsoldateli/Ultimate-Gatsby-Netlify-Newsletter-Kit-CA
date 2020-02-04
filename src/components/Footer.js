@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 //import { Link } from 'gatsby'
 
 /*import logo from '../img/logo.svg'
@@ -10,18 +10,20 @@ import vimeo from '../img/social/vimeo.svg'*/
 const Footer = class extends React.Component {
   render() {
     return (
-      <footer style={{
-          height: '150px',
-        }}>
+      <footer
+        style={{
+          height: "150px"
+        }}
+      >
         <div className="content has-text-centered">
-        	<a href="https://lumes.store"><b>Project sponsored by LUMES Eyewear</b></a>
-          <br />
-          <br />
-          Boilerplate adapted from Netlify <a href="https://github.com/netlify-templates/gatsby-starter-netlify-cms">official Gatsby CMS starter</a>
+          Boilerplate adapted from Netlify{" "}
+          <a href="https://github.com/netlify-templates/gatsby-starter-netlify-cms">
+            official Gatsby CMS starter
+          </a>
         </div>
       </footer>
-    )
+    );
   }
-}
+};
 
-export default Footer
+export default Footer;

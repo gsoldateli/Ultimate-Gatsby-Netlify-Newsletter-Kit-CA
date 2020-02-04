@@ -65,22 +65,6 @@ collections:
             }
           - { label: Title, name: title, widget: string }
           - { label: Subheading, name: subheading, widget: string }
-          - { label: Paragrap, name: paragraph, widget: string }
-          - {
-              label: "Multiple Items",
-              name: multipleItems,
-              widget: list,
-              fields:
-                [
-                  { label: Title, name: title, widget: string },
-                  { label: Description, name: description, widget: markdown },
-                  {
-                    label: "Final Paragraph",
-                    name: finalparagraph,
-                    widget: string,
-                  },
-                ],
-            }
           - label: "Prosperity Section"
             name: "prosperitySection"
             widget: object
@@ -101,6 +85,12 @@ collections:
                       name: description,
                       widget: markdown,
                     }
+              - label: "CTA Button"
+                name: "ctaButton"
+                widget: object
+                fields:
+                  - { label: "Label", name: label, widget: string }
+                  - { label: "URL", name: url, widget: string }
           - label: "Solving the Unsolvable Section"
             name: "solvingUnsolvableSection"
             widget: object

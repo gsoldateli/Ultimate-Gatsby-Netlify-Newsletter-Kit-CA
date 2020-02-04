@@ -4,19 +4,13 @@ import { IndexPageTemplate } from "../../templates/index-page";
 
 const IndexPagePreview = ({ entry, getAsset }) => {
   const data = entry.getIn(["data"]).toJS();
-
+  const { frontmatter: sections } = data.markdownRemark;
+  const { edges: solutions } = data.solutions;
   if (data) {
     return (
       <IndexPageTemplate
-        image={data.image}
-        title={data.title}
-        heading={data.heading}
-        subheading={data.subheading}
-        description={data.description}
-        paragraph={data.paragraph}
-        multipleItems={data.multipleItems}
-        intro={data.intro || { blurbs: [] }}
-        mainpitch={data.mainpitch || {}}
+        sections={sections}
+        solutions={solutions.map(({ node: solution }) => solution)}
       />
     );
   } else {

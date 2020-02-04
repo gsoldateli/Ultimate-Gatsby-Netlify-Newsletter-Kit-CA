@@ -16,33 +16,94 @@ const Slide = styled.div`
 export const IndexPageTemplate = data => {
   console.log(data);
   const [counter, setCounter] = useState(0);
-  const { solutions } = data;
+  const {
+    solutions,
+    sections: { prosperitySection, solvingUnsolvableSection, supportUsSection }
+  } = data;
 
   return (
-    <Container>
-      <div style={{ marginTop: "1rem" }}>
-        <Slider
-          slides={solutions.map(
-            ({
-              id,
-              frontmatter: {
-                title,
-                image: {
-                  childImageSharp: {
-                    fluid: { src: imageSrc }
+    <>
+      <Container>
+        <div style={{ marginTop: "1rem" }}>
+          <Slider
+            slides={solutions.map(
+              ({
+                id,
+                frontmatter: {
+                  title,
+                  image: {
+                    childImageSharp: {
+                      fluid: { src: imageSrc }
+                    }
                   }
+                }
+              }) => (
+                <Slide key={id}>
+                  <img src={imageSrc} alt={`${title} project`} />
+                  <h1>{title}</h1>
+                </Slide>
+              )
+            )}
+          />
+        </div>
+      </Container>
+      <Container style={{ backgroundColor: "#ccc" }}>
+        <h1>{prosperitySection.title}</h1>
+        <h2>{prosperitySection.subtitle}</h2>
+        <ul>
+          {prosperitySection.steps.map(step => (
+            <li key={step.title}>
+              <h1>{step.title}</h1>
+              <div>{step.description}</div>
+            </li>
+          ))}
+        </ul>
+        <a href={prosperitySection.ctaButton.url}>
+          {prosperitySection.ctaButton.label}
+        </a>
+      </Container>
+      <Container>
+        <h1>{solvingUnsolvableSection.title}</h1>
+        <h2>{solvingUnsolvableSection.subtitle}</h2>
+
+        <div>{solvingUnsolvableSection.body}</div>
+        <ul>
+          {solvingUnsolvableSection.beforeAfter.map(
+            ({
+              excerpt,
+              beforeImage: {
+                childImageSharp: {
+                  fluid: { src: srcImageBefore }
+                }
+              },
+              afterImage: {
+                childImageSharp: {
+                  fluid: { src: srcImageAfter }
                 }
               }
             }) => (
-              <Slide key={id}>
-                <img src={imageSrc} alt={`${title} project`} />
-                <h1>{title}</h1>
-              </Slide>
+              <li key={excerpt}>
+                <h1>{excerpt}</h1>
+                <img src={srcImageBefore} />
+                TO
+                <img src={srcImageAfter} />
+              </li>
             )
           )}
-        />
-      </div>
-    </Container>
+        </ul>
+        <a href={solvingUnsolvableSection.ctaButton.url}>
+          {solvingUnsolvableSection.ctaButton.label}
+        </a>
+      </Container>
+      <Container style={{ backgroundColor: "#ccc" }}>
+        <h1>{supportUsSection.title}</h1>
+        <h2>{supportUsSection.subtitle}</h2>
+        <div>{supportUsSection.body}</div>
+        <a href={supportUsSection.ctaButton.url}>
+          {supportUsSection.ctaButton.label}
+        </a>
+      </Container>
+    </>
   );
 };
 
@@ -52,16 +113,13 @@ IndexPageTemplate.propTypes = {
 };
 
 const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark;
+  const { frontmatter: sections } = data.markdownRemark;
   const { edges: solutions } = data.solutions;
   console.log({ solutions });
   return (
     <Layout>
       <IndexPageTemplate
-        title={frontmatter.title}
-        subheading={frontmatter.subheading}
-        paragraph={frontmatter.paragraph}
-        multipleItems={frontmatter.multipleItems}
+        sections={sections}
         solutions={solutions.map(({ node: solution }) => solution)}
       />
     </Layout>
@@ -84,11 +142,52 @@ export const pageQuery = graphql`
       frontmatter {
         title
         subheading
-        paragraph
-        multipleItems {
+        prosperitySection {
           title
-          description
-          finalparagraph
+          subtitle
+          steps {
+            title
+            description
+          }
+          ctaButton {
+            label
+            url
+          }
+        }
+        solvingUnsolvableSection {
+          title
+          subtitle
+          body
+          beforeAfter {
+            excerpt
+            beforeImage {
+              childImageSharp {
+                fluid(maxWidth: 400, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            afterImage {
+              childImageSharp {
+                fluid(maxWidth: 400, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+          ctaButton {
+            label
+            url
+          }
+        }
+        supportUsSection {
+          title
+          subtitle
+          body
+          ctaButton {
+            label
+            url
+          }
         }
       }
     }
