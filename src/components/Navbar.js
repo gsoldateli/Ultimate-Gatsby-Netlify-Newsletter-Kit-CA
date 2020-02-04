@@ -153,7 +153,7 @@ const NavigationLink = styled.span`
   }
 `;
 
-const SubmenuNavigationLink = styled.span`
+const SubmenuNavigationLink = styled(Link)`
   font-size: 0.9rem;
   transition: background-color 0.3s;
   @media (min-width: 761px) {
@@ -226,8 +226,10 @@ const NavigationLinkGroup = ({ linkGroup, setMenuMobileOpen }) => {
             {linkGroup.submenus && linkGroup.submenus.length > 0 && <Arrow />}
           </span>
         ) : (
-          <span
-            onClick={() => {
+          <Link
+            to={linkGroup.url}
+            onClick={evt => {
+              evt.preventDefault();
               setMenuMobileOpen(false);
               setTimeout(async () => await navigate(linkGroup.url), 300);
             }}
@@ -235,7 +237,7 @@ const NavigationLinkGroup = ({ linkGroup, setMenuMobileOpen }) => {
           >
             {linkGroup.title}{" "}
             {linkGroup.submenus && linkGroup.submenus.length > 0 && <Arrow />}
-          </span>
+          </Link>
         )}
 
         {linkGroup.submenus && linkGroup.submenus.length > 0 && (
@@ -249,11 +251,13 @@ const NavigationLinkGroup = ({ linkGroup, setMenuMobileOpen }) => {
                 >
                   <SubmenuNavigationLink
                     active={isSubmenuLinkActive}
-                    onClick={() => {
+                    to={submenuItem.url}
+                    onClick={evt => {
+                      evt.preventDefault();
                       setMenuMobileOpen(false);
                       setTimeout(
                         async () => await navigate(submenuItem.url),
-                        300
+                        200
                       );
                     }}
                   >
