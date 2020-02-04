@@ -3,94 +3,49 @@ import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 
 import Layout from "../components/Layout";
-import MyNewIndexComponent from "../components/MyNewIndexComponent";
-//import Features from '../components/Features'
-//import BlogRoll from '../components/BlogRoll'
+import Container from "../components/Container";
+import Slider from "../components/Slider";
+import styled from "styled-components";
 
-export const IndexPageTemplate = ({
-  title,
-  subheading,
-  paragraph,
-  multipleItems
-}) => {
+const Slide = styled.div`
+  img {
+    max-width: 100%;
+  }
+`;
+
+export const IndexPageTemplate = data => {
+  console.log(data);
   const [counter, setCounter] = useState(0);
+  const { solutions } = data;
+
   return (
-    <div>
-      <div
-        className="margin-top-0"
-        style={{
-          textAlign: "center",
-          padding: "72px"
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            height: "150px",
-            lineHeight: "1",
-            justifyContent: "space-around",
-            alignItems: "left",
-            flexDirection: "column"
-          }}
-        >
-          <h1
-            className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
-            style={{
-              color: "black",
-              lineHeight: "1",
-              padding: "0.25em"
-            }}
-          >
-            {title} [{counter}]{" "}
-            <button onClick={() => setCounter(counter + 1)}>Count UP</button>
-            <button onClick={() => setCounter(Math.max(counter - 1, 0))}>
-              Count Down
-            </button>
-          </h1>
-          <h3
-            className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
-            style={{
-              color: "#717171",
-              lineHeight: "1",
-              padding: "0.25em"
-            }}
-          >
-            {subheading}
-          </h3>
-          <p>{paragraph}</p>
-          <MyNewIndexComponent gridItems={multipleItems} />
-        </div>
-      </div>
-      <div
-        style={{
-          paddingTop: "22px",
-          paddingBottom: "52px",
-          textAlign: "center"
-        }}
-      >
-        <i>(Replace below input with your email provider form)</i>
-        <br />
-        <br />
-        <input
-          style={{
-            outline: "1px solid black",
-            fontSize: "20px",
-            placeholder: "Your email",
-            padding: "6px",
-            marginRight: "12px"
-          }}
+    <Container>
+      <div style={{ marginTop: "1rem" }}>
+        <Slider
+          slides={solutions.map(
+            ({
+              id,
+              frontmatter: {
+                title,
+                image: {
+                  childImageSharp: {
+                    fluid: { src: imageSrc }
+                  }
+                }
+              }
+            }) => (
+              <Slide key={id}>
+                <img src={imageSrc} alt={`${title} project`} />
+                <h1>{title}</h1>
+              </Slide>
+            )
+          )}
         />
-
-        <button className="btn">Subscribe now!</button>
-
-        <br />
-        <br />
-
-        <Link to="/archive">
-          <button className="button">See past issues</button>
-        </Link>
       </div>
-    </div>
+    </Container>
+    <Container>
+      
+    </Container>
   );
 };
 
@@ -101,7 +56,8 @@ IndexPageTemplate.propTypes = {
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
-
+  const { edges: solutions } = data.solutions;
+  console.log({ solutions });
   return (
     <Layout>
       <IndexPageTemplate
@@ -109,6 +65,7 @@ const IndexPage = ({ data }) => {
         subheading={frontmatter.subheading}
         paragraph={frontmatter.paragraph}
         multipleItems={frontmatter.multipleItems}
+        solutions={solutions.map(({ node: solution }) => solution)}
       />
     </Layout>
   );
@@ -138,28 +95,27 @@ export const pageQuery = graphql`
         }
       }
     }
-  }
-`;
 
-/*
-
-image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
+    solutions: allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "solution-page" } } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            description
+            date
+            image {
+              childImageSharp {
+                fluid(maxWidth: 400, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
             }
           }
+          html
         }
-
-*/
-
-/*
-
-
-        mainpitch {
-          title
-          description
-        }
-
-
-*/
+      }
+    }
+  }
+`;

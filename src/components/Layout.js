@@ -36,6 +36,14 @@ const TemplateWrapper = ({ children }) => {
           href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
           type="text/css"
         ></link>
+        <link
+          rel="stylesheet"
+          href="/node_modules/@glidejs/glide/dist/css/glide.core.min.css"
+        ></link>
+        <link
+          rel="stylesheet"
+          href="/node_modules/@glidejs/glide/dist/css/glide.theme.min.css"
+        ></link>
         <meta name="description" content={description} />
 
         <link
