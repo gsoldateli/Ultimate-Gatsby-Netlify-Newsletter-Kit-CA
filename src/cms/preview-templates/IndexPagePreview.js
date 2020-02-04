@@ -4,7 +4,13 @@ import { IndexPageTemplate } from "../../templates/index-page";
 
 const IndexPagePreview = ({ entry, getAsset }) => {
   const data = entry.getIn(["data"]).toJS();
-  const { frontmatter: sections } = data.markdownRemark;
+  console.log("xxx", { data });
+  const sections = {
+    prosperitySection: data.prosperitySection,
+    solvingUnsolvableSection: data.solvingUnsolvableSection,
+    supportUsSectio: data.supportUsSection
+  };
+  // const { frontmatter: sections } = data.markdownRemark;
   const { edges: solutions } = data.solutions;
   if (data) {
     return (
