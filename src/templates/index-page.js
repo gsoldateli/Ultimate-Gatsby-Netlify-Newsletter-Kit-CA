@@ -70,28 +70,26 @@ export const IndexPageTemplate = data => {
 
         <div>{solvingUnsolvableSection.body}</div>
         <ul>
-          {solvingUnsolvableSection.beforeAfter.map(
-            ({
-              excerpt,
-              beforeImage: {
-                childImageSharp: {
-                  fluid: { src: srcImageBefore }
-                }
-              },
-              afterImage: {
-                childImageSharp: {
-                  fluid: { src: srcImageAfter }
-                }
-              }
-            }) => (
+          {solvingUnsolvableSection.beforeAfter.map(beforeAfter => {
+            let { excerpt, beforeImage, afterImage } = beforeAfter;
+
+            if (beforeImage.childImageSharp) {
+              beforeImage = beforeImage.childImageSharp.fluid.src;
+            }
+
+            if (afterImage.childImageSharp) {
+              afterImage = afterImage.childImageSharp.fluid.src;
+            }
+
+            return (
               <li key={excerpt}>
                 <h1>{excerpt}</h1>
-                <img src={srcImageBefore} />
+                <img src={beforeImage} />
                 TO
-                <img src={srcImageAfter} />
+                <img src={afterImage} />
               </li>
-            )
-          )}
+            );
+          })}
         </ul>
         <a href={solvingUnsolvableSection.ctaButton.url}>
           {solvingUnsolvableSection.ctaButton.label}
@@ -117,6 +115,7 @@ IndexPageTemplate.propTypes = {
 const IndexPage = ({ data }) => {
   const { frontmatter: sections } = data.markdownRemark;
   const { edges: solutions } = data.solutions;
+
   console.log({ solutions });
   return (
     <Layout>
