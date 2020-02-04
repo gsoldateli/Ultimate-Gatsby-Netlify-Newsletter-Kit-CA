@@ -43,9 +43,6 @@ export const IndexPageTemplate = data => {
         />
       </div>
     </Container>
-    <Container>
-      
-    </Container>
   );
 };
 
