@@ -8,7 +8,7 @@ const IndexPagePreview = ({ entry, getAsset }) => {
   const sections = {
     prosperitySection: data.prosperitySection,
     solvingUnsolvableSection: data.solvingUnsolvableSection,
-    supportUsSectio: data.supportUsSection
+    supportUsSection: data.supportUsSection
   };
   // const { frontmatter: sections } = data.markdownRemark;
   // const { edges: solutions } = data.solutions;
