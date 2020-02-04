@@ -6,23 +6,37 @@ items:
   code: |2-
      [
           { 
-            "title": "Home",
+            "title": "Prosperity for the unprosperous",
+            "url": "/solutions",
+            "submenus": [
+              {
+                "title": "HOME Axxx",
+                "url": "/solutions/solution-x/"
+              }              
+            ]
+          },
+          { 
+            "title": "About Us",
             "submenus": [
               {
                 "title": "HOME Axxx",
                 "url": "/solutions"
-              },
-              {
-                "title": "HOME B",
-                "url": "/home-b"
-              },
-              {
-                "title": "HOME C",
-                "url": "/home-c"
-              }
+              }              
             ]
+          },
+          { 
+            "title": "Rising to a culmination tour",
+            "submenus": [
+              {
+                "title": "HOME Axxx",
+                "url": "/solutions"
+              }              
+            ]
+          },
+          { 
+            "title": "Support Us",
+            "url": "/about"
           }
         ]
   lang: json
 ---
-

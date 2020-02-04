@@ -1,8 +1,8 @@
 import React from "react";
-import logo from "../img/AIH_logo_dark_large.png";
+import logo from "../../img/AIH_logo_dark_large.png";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import Container from "./Container";
+import Container from "../Container";
 
 const Logo = styled.img`
   display: block;

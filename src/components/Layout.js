@@ -1,28 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
-import Header from "../components/Header";
-import "typeface-amiko";
-import "typeface-merriweather";
-// import "./all.sass";
+import Navbar, { NavbarContext } from "../components/Navbar";
+import Header, { Mobile } from "../components/Header";
+import { Reset } from "../components/Reset";
+import "typeface-roboto";
+
 import useSiteMetadata from "./SiteMetadata";
+
+export const LayoutContext = React.createContext();
 
 const TemplateWrapper = ({ children }) => {
   const { title, description, menus } = useSiteMetadata();
-  const topMenu = menus.filter(({ node: menu }) => menu.position === "top");
+  console.log({ menus });
+  const [topMenu] = menus
+    .map(({ node: { frontmatter: menu } }) => menu)
+    .filter(menu => menu.position === "top");
   const footerMenu = menus.filter(
     ({ node: menu }) => menu.position === "bottom"
   );
+
+  const [mobileMenuIsOpen, setMenuMobileOpen] = useState(false);
   return (
     <div
       style={{
-        fontFamily: "amiko"
+        fontFamily: "roboto"
       }}
     >
+      <Reset />
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
+        <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          type="text/css"
+        ></link>
         <meta name="description" content={description} />
 
         <link
@@ -55,10 +68,20 @@ const TemplateWrapper = ({ children }) => {
         <meta property="og:url" content="/" />
         <meta property="og:image" content="/img/LUMESOG.png" />
       </Helmet>
-      <Header />
-      <Navbar menu={topMenu} />
-      <div>{children}</div>
-      <Footer />
+      <LayoutContext.Provider
+        value={{
+          menu: {
+            isOpen: mobileMenuIsOpen,
+            setMenuMobileOpen
+          }
+        }}
+      >
+        <Header />
+        <Mobile />
+        <Navbar menu={topMenu} />
+        <div>{children}</div>
+        <Footer />
+      </LayoutContext.Provider>
     </div>
   );
 };
