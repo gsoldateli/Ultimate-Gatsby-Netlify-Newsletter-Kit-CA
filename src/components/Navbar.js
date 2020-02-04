@@ -3,6 +3,7 @@ import { Link, navigate } from "gatsby";
 import styled from "styled-components";
 
 import Container from "./Container";
+import useLocation from "../hooks/useLocation";
 
 import { LayoutContext } from "./Layout";
 
@@ -138,9 +139,9 @@ const NavigationLink = styled.span`
       height: 90px;
       margin-top: -10px;
     }
-  }
 
-  /* background-color: ${props => (props.active ? "#c21f3c" : "")}; */
+    background-color: ${props => (props.active ? "#c21f3c" : "")};
+  }
 
   ${SubmenuWrapper} & {
     font-weight: 500;
@@ -154,7 +155,7 @@ const NavigationLink = styled.span`
 
 const SubmenuNavigationLink = styled.span`
   font-size: 0.9rem;
-
+  transition: background-color 0.3s;
   @media (min-width: 761px) {
     font-weight: 500;
     font-size: 14px;
@@ -164,9 +165,10 @@ const SubmenuNavigationLink = styled.span`
     padding: 14px 42px;
 
     :hover {
-      transition: background-color 0.3s;
       background: #ac1b35;
     }
+
+    background: ${({ active }) => active && "#ac1b35"};
   }
 
   cursor: pointer;
@@ -196,27 +198,28 @@ const BackdropLayer = styled.div`
 const Arrow = () => <i className="arrow fa fa-angle-down"></i>;
 
 const NavigationLinkGroup = ({ linkGroup, setMenuMobileOpen }) => {
+  const {
+    location: { pathname }
+  } = useLocation();
+  console.log(pathname);
   const [isExpanded, setIsExpanded] = React.useState();
-  const [currentGroupPath, currentPath] = window.location.pathname
+  const [currentGroupPath, currentPath] = pathname
     .split("/")
     .filter(path => path.length > 0);
+  console.log(
+    [currentGroupPath, currentPath],
+    linkGroup.url === `/${currentGroupPath}`
+  );
+  const isGroupActive =
+    linkGroup.url === `/${currentGroupPath}` ||
+    linkGroup.url === `/${currentPath}`;
 
-  const isActive =
-    linkGroup.url &&
-    linkGroup.url.length > 0 &&
-    (linkGroup.url === `/${currentGroupPath}` ||
-      linkGroup.url === `/${currentPath}`);
   return (
     <NavigationItem
       isExpanded={isExpanded}
       onClick={() => setIsExpanded(!isExpanded)}
     >
-      <NavigationLink
-        active={
-          linkGroup.url === `/${currentGroupPath}` ||
-          linkGroup.url === `/${currentPath}`
-        }
-      >
+      <NavigationLink active={isGroupActive}>
         {linkGroup.submenus && linkGroup.submenus.length > 0 ? (
           <span style={{ cursor: "default" }}>
             {linkGroup.title}{" "}
@@ -237,24 +240,28 @@ const NavigationLinkGroup = ({ linkGroup, setMenuMobileOpen }) => {
 
         {linkGroup.submenus && linkGroup.submenus.length > 0 && (
           <SubmenuWrapper isExpanded={isExpanded}>
-            {linkGroup.submenus.map(submenuItem => (
-              <SubmenuNavigationItem
-                key={`${submenuItem.title}-${submenuItem.url}`}
-              >
-                <SubmenuNavigationLink
-                  // to={submenuItem.url}
-                  onClick={() => {
-                    setMenuMobileOpen(false);
-                    setTimeout(
-                      async () => await navigate(submenuItem.url),
-                      300
-                    );
-                  }}
+            {linkGroup.submenus.map(submenuItem => {
+              const isSubmenuLinkActive = submenuItem.url === pathname;
+              console.log("url", submenuItem.url, "path", pathname);
+              return (
+                <SubmenuNavigationItem
+                  key={`${submenuItem.title}-${submenuItem.url}`}
                 >
-                  {submenuItem.title}
-                </SubmenuNavigationLink>
-              </SubmenuNavigationItem>
-            ))}
+                  <SubmenuNavigationLink
+                    active={isSubmenuLinkActive}
+                    onClick={() => {
+                      setMenuMobileOpen(false);
+                      setTimeout(
+                        async () => await navigate(submenuItem.url),
+                        300
+                      );
+                    }}
+                  >
+                    {submenuItem.title}
+                  </SubmenuNavigationLink>
+                </SubmenuNavigationItem>
+              );
+            })}
           </SubmenuWrapper>
         )}
       </NavigationLink>
@@ -264,9 +271,9 @@ const NavigationLinkGroup = ({ linkGroup, setMenuMobileOpen }) => {
 
 const Navbar = ({ menu }) => {
   const { menu: menuContext } = useContext(LayoutContext);
-  console.log({ menuContext });
+
   const links = JSON.parse(menu.items.code);
-  console.log({ links });
+
   return (
     <>
       <NavbarWrapper isOpen={menuContext.isOpen}>

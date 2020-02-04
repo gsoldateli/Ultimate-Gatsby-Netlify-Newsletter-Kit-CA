@@ -8,12 +8,19 @@ import { LayoutContext } from "../Layout";
 const Logo = styled.img`
   display: block;
   max-width: 240px;
+
+  @media (max-width: 500px) {
+    max-width: 150px;
+  }
 `;
 
 const Slogan = styled.h2`
   font-size: 14px;
   font-weight: 300;
   margin-top: 6px;
+  @media (max-width: 520px) {
+    font-size: 10px;
+  }
 `;
 
 const HeaderWrapper = styled.div`
