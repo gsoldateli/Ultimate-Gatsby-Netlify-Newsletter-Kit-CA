@@ -11,12 +11,12 @@ const IndexPagePreview = ({ entry, getAsset }) => {
     supportUsSectio: data.supportUsSection
   };
   // const { frontmatter: sections } = data.markdownRemark;
-  const { edges: solutions } = data.solutions;
+  // const { edges: solutions } = data.solutions;
   if (data) {
     return (
       <IndexPageTemplate
         sections={sections}
-        solutions={solutions.map(({ node: solution }) => solution)}
+        // solutions={solutions.map(({ node: solution }) => solution)}
       />
     );
   } else {

@@ -17,7 +17,7 @@ export const IndexPageTemplate = data => {
   console.log(data);
   const [counter, setCounter] = useState(0);
   const {
-    solutions,
+    solutions = null,
     sections: { prosperitySection, solvingUnsolvableSection, supportUsSection }
   } = data;
 
@@ -25,26 +25,28 @@ export const IndexPageTemplate = data => {
     <>
       <Container>
         <div style={{ marginTop: "1rem" }}>
-          <Slider
-            slides={solutions.map(
-              ({
-                id,
-                frontmatter: {
-                  title,
-                  image: {
-                    childImageSharp: {
-                      fluid: { src: imageSrc }
+          {solutions && solutions.length > 0 && (
+            <Slider
+              slides={solutions.map(
+                ({
+                  id,
+                  frontmatter: {
+                    title,
+                    image: {
+                      childImageSharp: {
+                        fluid: { src: imageSrc }
+                      }
                     }
                   }
-                }
-              }) => (
-                <Slide key={id}>
-                  <img src={imageSrc} alt={`${title} project`} />
-                  <h1>{title}</h1>
-                </Slide>
-              )
-            )}
-          />
+                }) => (
+                  <Slide key={id}>
+                    <img src={imageSrc} alt={`${title} project`} />
+                    <h1>{title}</h1>
+                  </Slide>
+                )
+              )}
+            />
+          )}
         </div>
       </Container>
       <Container style={{ backgroundColor: "#ccc" }}>
