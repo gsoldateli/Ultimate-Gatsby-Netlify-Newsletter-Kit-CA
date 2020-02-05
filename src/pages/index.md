@@ -12,7 +12,7 @@ prosperitySection:
     - description: '# This is the step B Hey!'
       title: Step B
   subtitle: Subtitle Just in Case
-  title: Get on the path to prosperity
+  title: Get on the path to prosperity222
 solvingUnsolvableSection:
   beforeAfter:
     - afterImage: /img/chemex.jpg
