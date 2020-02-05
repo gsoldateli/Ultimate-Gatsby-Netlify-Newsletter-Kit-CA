@@ -1,18 +1,18 @@
 ---
 templateKey: index-page
-title: New AI Humanity Site
+title: New AI Humanity Sitexxx
 subheading: This is a test to evaluate if netlify attend us.
 prosperitySection:
+  ctaButton:
+    label: Get Started
+    url: 'https://google.com'
   steps:
-    - description: "# This is the step A Hey!"
+    - description: '# This is the step A Hey!'
       title: Step A
-    - description: "# This is the step B Hey!"
+    - description: '# This is the step B Hey!'
       title: Step B
   subtitle: Subtitle Just in Case
   title: Get on the path to prosperity
-  ctaButton:
-    label: Get Started
-    url: "https://google.com"
 solvingUnsolvableSection:
   beforeAfter:
     - afterImage: /img/chemex.jpg
@@ -20,7 +20,7 @@ solvingUnsolvableSection:
       excerpt: Transform youngsters
     - afterImage: /img/jumbotron.jpg
       beforeImage: /img/flavor_wheel.jpg
-      excerpt: "> Transform Bad neighborhoods and be XYZ"
+      excerpt: '> Transform Bad neighborhoods and be XYZ'
   body: |-
 
     - List
@@ -35,7 +35,7 @@ solvingUnsolvableSection:
     Information-Knowledge Theory Enables us to
   ctaButton:
     label: Learn About Information-Knowledge Theory
-    url: "https://google.com"
+    url: 'https://google.com'
   subtitle: With Information-Knowledge Theory
   title: Solving the Unsolvable
 supportUsSection:
@@ -76,7 +76,8 @@ supportUsSection:
     accompanied by English versions from the 1914 translation by H. Rackham.
   ctaButton:
     label: Contribute to Our Crowdfunding Campaing
-    url: "https://google.com"
-  subtitle: "- Help To Fund AI Humanity"
+    url: 'https://google.com'
+  subtitle: '- Help To Fund AI Humanity'
   title: Support Us
 ---
+
