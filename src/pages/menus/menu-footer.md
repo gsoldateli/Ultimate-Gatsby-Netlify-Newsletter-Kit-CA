@@ -1,5 +1,6 @@
 ---
-title: Menu Footer
+templateKey: menu-navigation
+title: Menu Footer22
 position: footer
 items:
   code: |2-
