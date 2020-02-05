@@ -1,8 +1,8 @@
 ---
 templateKey: blog-post
-title: Want a faster website?
+title: Want a faster website?11
 date: 2019-07-13T19:02:17.839Z
-description: Well, Gatsby REALLY is fast.
+description: 'Well, Gatsby REALLY is fast.'
 featuredpost: true
 featuredimage: /img/flavor_wheel.jpg
 tags:
