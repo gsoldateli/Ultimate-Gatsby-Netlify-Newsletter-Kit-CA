@@ -1,4 +1,5 @@
 ---
+templateKey: prosperity-score-page
 title: Your prosperity Score
 introSection:
   body: >-
@@ -44,7 +45,7 @@ introSection:
     it
   title: We have created the most accurate and comprehensive measure of prosperity
 registerSection:
-  subtitle: '- And begin your path to prosperity'
+  subtitle: "- And begin your path to prosperity"
   title: Register with our Prosperity Score
 faqSection:
   questions:
@@ -55,7 +56,7 @@ faqSection:
         ullamcorper, blandit justo eget, interdum orci. Nulla in vestibulum
         nisl, quis molestie arcu. Integer sit amet urna viverra, efficitur urna
         non, maximus purus.
-      question: 'What happens next, after I register for the prosperity score?'
+      question: "What happens next, after I register for the prosperity score?"
     - answer: >-
         Quisque non odio egestas, sodales elit eu, pellentesque velit. Donec sit
         amet semper nunc, ac pulvinar nisl. Mauris tempus rutrum erat. Interdum
@@ -63,8 +64,8 @@ faqSection:
         ullamcorper, blandit justo eget, interdum orci. Nulla in vestibulum
         nisl, quis molestie arcu. Integer sit amet urna viverra, efficitur urna
         non, maximus purus.
-      question: 'What happens next, after I register for the prosperity score? AA'
-  subtitle: '- Get all of your questions answered'
+      question: "What happens next, after I register for the prosperity score? AA"
+  subtitle: "- Get all of your questions answered"
   title: FAQ
 contactSection:
   body: >-
@@ -72,7 +73,7 @@ contactSection:
     style="color: red;"
     href="mailto:prosperityscore@aihumanity.com">prosperityscore@aihumanity.com</a>,
     and we will get back to you within 24 - 48 hours.
-  subtitle: '- Do you have additional questions?'
+  subtitle: "- Do you have additional questions?"
   title: Contact US
 learnMoreSection:
   informations:
@@ -106,7 +107,6 @@ learnMoreSection:
         massa ut, maximus tortor. Proin fermentum bibendum auctor. Proin id elit
         mauris.
       title: Capturing the Crucial Factors of Human Well-Being
-  subtitle: '- More details about the prosperity score follow'
+  subtitle: "- More details about the prosperity score follow"
   title: Learn More
 ---
-

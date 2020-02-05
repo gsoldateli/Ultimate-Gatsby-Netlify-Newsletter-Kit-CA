@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
+import Markdown from "markdown-to-jsx";
 
 import Layout from "../components/Layout";
 import Container from "../components/Container";
@@ -14,8 +15,6 @@ const Slide = styled.div`
 `;
 
 export const IndexPageTemplate = data => {
-  console.log(data);
-  const [counter, setCounter] = useState(0);
   const {
     solutions = null,
     sections: { prosperitySection, solvingUnsolvableSection, supportUsSection }
@@ -56,7 +55,7 @@ export const IndexPageTemplate = data => {
           {prosperitySection.steps.map(step => (
             <li key={step.title}>
               <h1>{step.title}</h1>
-              <div>{step.description}</div>
+              <Markdown>{step.description}</Markdown>
             </li>
           ))}
         </ul>
@@ -98,7 +97,7 @@ export const IndexPageTemplate = data => {
       <Container style={{ backgroundColor: "#ccc" }}>
         <h1>{supportUsSection.title}</h1>
         <h2>{supportUsSection.subtitle}</h2>
-        <div>{supportUsSection.body}</div>
+        <Markdown>{supportUsSection.body}</Markdown>
         <a href={supportUsSection.ctaButton.url}>
           {supportUsSection.ctaButton.label}
         </a>

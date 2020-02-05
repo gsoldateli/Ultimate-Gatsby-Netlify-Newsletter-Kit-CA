@@ -27,6 +27,12 @@ time, mark, audio, video {
   vertical-align: baseline;
   
 }
+em {
+  font-style: italic;
+}
+strong {
+  font-weight:bold;
+}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, main, menu, nav, section {
