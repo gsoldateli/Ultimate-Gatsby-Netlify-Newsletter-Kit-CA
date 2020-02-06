@@ -29,6 +29,10 @@ const FooterLogo = styled.img`
 
 const Slogan = styled.h3`
   margin: 0 auto;
+  text-align: center;
+  @media (max-width: 520px) {
+    font-size: 10px;
+  }
 `;
 
 const Copyright = styled.span`
