@@ -27,6 +27,9 @@ time, mark, audio, video {
   vertical-align: baseline;
   
 }
+img {
+  max-width: 100%;
+}
 em {
   font-style: italic;
 }
