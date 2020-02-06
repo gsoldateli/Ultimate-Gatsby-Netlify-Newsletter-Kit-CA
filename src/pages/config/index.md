@@ -16,11 +16,10 @@ menus:
       [
                 { 
                   "title": "Prosperity for the unprosperous",
-                  "url": "/solutions",
                   "submenus": [
                     {
-                      "title": "HOME Axxx",
-                      "url": "/solutions/solution-x/"
+                      "title": "The Unprosperous",
+                      "url": "/"
                     }              
                   ]
                 },
@@ -28,17 +27,17 @@ menus:
                   "title": "About Us",
                   "submenus": [
                     {
-                      "title": "HOME Axxx",
-                      "url": "/solutions"
+                      "title": "The Unprosperous",
+                      "url": "/"
                     }              
                   ]
                 },
                 { 
-                  "title": "Rising to a culmination tour",
+                  "title": "We Need You",
                   "submenus": [
                     {
-                      "title": "HOME Axxx",
-                      "url": "/solutions"
+                      "title": "The Unprosperous",
+                      "url": "/"
                     }              
                   ]
                 },
