@@ -1,5 +1,4 @@
 import React, { useReducer, useState, useRef, useEffect } from "react";
-import Markdown from "markdown-to-jsx";
 import styled from "styled-components";
 
 const AccordionWrapper = styled.div``;
@@ -20,14 +19,14 @@ const AccordionItem = ({ id, head, body, isOpen, toggle }) => {
   const contentRef = useRef();
 
   useEffect(() => {
-    if (contentRef) {
-      setOpenedHeight(contentRef.current.clientHeight);
+    if (contentRef && openedHeight === null) {
+      setOpenedHeight(contentRef.current.getBoundingClientRect().height);
     }
   }, [contentRef]);
   const height =
     openedHeight === null ? "auto" : isOpen ? `${openedHeight}px` : 0;
   const opacity = isOpen ? "1" : "0";
-  //   const display = isOpen ? "block" : "none";
+  console.log();
   return (
     <AccordionItemWrapper key={id}>
       <div>
@@ -114,13 +113,16 @@ const Accordion = () => {
     <AccordionWrapper>
       {items &&
         items.length > 0 &&
-        items.map((item, index) => (
-          <AccordionItem
-            {...item}
-            key={index}
-            toggle={() => dispatch({ type: "toggle", id: index })}
-          />
-        ))}
+        items.map((item, index) => {
+          console.log("Accordion", index);
+          return (
+            <AccordionItem
+              {...item}
+              key={index}
+              toggle={() => dispatch({ type: "toggle", key: index })}
+            />
+          );
+        })}
     </AccordionWrapper>
   );
 };

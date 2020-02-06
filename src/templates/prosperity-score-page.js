@@ -7,6 +7,7 @@ import styled from "styled-components";
 import Layout from "../components/Layout";
 import Container from "../components/Container";
 import Accordion from "../components/Accordion";
+import Section from "../components/Section";
 
 const Slide = styled.div`
   img {
@@ -25,21 +26,23 @@ export const ProsperityScorePageTemplate = ({
   return (
     <>
       <h1>{title}</h1>
-
-      <Container>
+      <Section title={introSection.title} subtitle={introSection.subtitle}>
         <Accordion />
-        <h2>{introSection.title}</h2>
-        <h3>{introSection.subtitle}</h3>
         <Markdown>{introSection.body}</Markdown>
-      </Container>
-      <Container>
-        <h2>{registerSection.title}</h2>
-        <h3>{registerSection.subtitle}</h3>
+      </Section>
+
+      <Section
+        title={registerSection.title}
+        subtitle={registerSection.subtitle}
+        theme="dark"
+      >
         <img style={{ width: "100%" }} src="http://i.imgur.com/YFtE0Nm.png" />
-      </Container>
-      <Container>
-        <h2>{faqSection.title}</h2>
-        <h3>{faqSection.subtitle}</h3>
+      </Section>
+      <Section
+        title={faqSection.title}
+        subtitle={faqSection.subtitle}
+        theme="dark"
+      >
         <ul>
           {faqSection.questions.map(({ question, answer }) => (
             <li>
@@ -50,15 +53,18 @@ export const ProsperityScorePageTemplate = ({
             </li>
           ))}
         </ul>
-      </Container>
-      <Container>
-        <h2>{contactSection.title}</h2>
-        <h3>{contactSection.subtitle}</h3>
+      </Section>
+      <Section
+        theme="dark"
+        title={contactSection.title}
+        subtitle={contactSection.subtitle}
+      >
         <Markdown>{contactSection.body}</Markdown>
-      </Container>
-      <Container>
-        <h2>{learnMoreSection.title}</h2>
-        <h3>{learnMoreSection.subtitle}</h3>
+      </Section>
+      <Section
+        title={learnMoreSection.title}
+        subtitle={learnMoreSection.subtitle}
+      >
         <ul>
           {learnMoreSection.informations.map(({ title, content }) => (
             <li>
@@ -69,7 +75,7 @@ export const ProsperityScorePageTemplate = ({
             </li>
           ))}
         </ul>
-      </Container>
+      </Section>
     </>
   );
 };
