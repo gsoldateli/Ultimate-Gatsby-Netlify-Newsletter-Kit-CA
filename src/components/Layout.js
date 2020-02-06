@@ -17,7 +17,6 @@ const TemplateWrapper = ({ children }) => {
     menus,
     config: { frontmatter: config }
   } = useSiteMetadata();
-  console.log({ config });
 
   const headerMenu = JSON.parse(config.menus.header.code);
   const footerMenu = JSON.parse(config.menus.footer.code);

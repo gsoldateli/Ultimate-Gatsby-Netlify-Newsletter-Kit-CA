@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Markdown from "markdown-to-jsx";
+import styled from "styled-components";
 
 import Layout from "../components/Layout";
 import Container from "../components/Container";
-import Slider from "../components/Slider";
-import styled from "styled-components";
+import Accordion from "../components/Accordion";
 
 const Slide = styled.div`
   img {
@@ -27,6 +27,7 @@ export const ProsperityScorePageTemplate = ({
       <h1>{title}</h1>
 
       <Container>
+        <Accordion />
         <h2>{introSection.title}</h2>
         <h3>{introSection.subtitle}</h3>
         <Markdown>{introSection.body}</Markdown>
@@ -79,7 +80,6 @@ ProsperityScorePageTemplate.propTypes = {
 };
 
 const ProsperityScorePage = ({ data }) => {
-  console.log({ data });
   const {
     pageData: { frontmatter: pageData }
   } = data;

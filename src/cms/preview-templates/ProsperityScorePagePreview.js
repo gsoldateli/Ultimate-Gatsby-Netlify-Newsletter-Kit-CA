@@ -4,7 +4,6 @@ import { ProsperityScorePageTemplate } from "../../templates/prosperity-score-pa
 
 const ProsperityScorePagePreview = ({ entry, getAsset }) => {
   const data = entry.getIn(["data"]).toJS();
-  console.log({ data });
 
   if (data) {
     return <ProsperityScorePageTemplate {...data} />;
