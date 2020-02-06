@@ -3,15 +3,15 @@ templateKey: site-config
 slogan: >-
   Democratizing Prosperity: Through Innovation, Omniscience, and Collective
   Intelligence
-social-media:
-  - title: Linkedin
-    undefined: fa fa-linkedin-square
+socialMedia:
+  - icon: fa fa-linkedin-square
+    title: Linkedin
     url: 'https://linkedin.com'
-  - title: Instagram
-    undefined: fa fa-linkedin-square
+  - icon: fa fa-linkedin-square
+    title: Instagram
     url: 'https://instagram.com'
 menus:
-  footer-navigation:
+  footer:
     code: |-
       [
                 { 
@@ -40,13 +40,9 @@ menus:
                       "url": "/"
                     }              
                   ]
-                },
-                { 
-                  "title": "Support Us",
-                  "url": "/about"
-                }
+                }         
               ]
-  header-navigation:
+  header:
     code: |-
       [
                 { 
