@@ -97,63 +97,43 @@ const NavigationColumn = styled.ul`
     margin-bottom: 2rem;
   }
 `;
-const Footer = () => {
+const Footer = ({ socialMedia, menu, slogan }) => {
+  console.log({ menu });
   return (
     <FooterWrapper>
       <Container>
         <NavigationWrapper>
-          <NavigationColumn>
-            <li>
-              <h2>Prosperity for the Unprosperous</h2>
-            </li>
-            <li>
-              <Link to="/">The Unprosperous</Link>
-            </li>
-            <li>
-              <Link to="/">
-                Measuring Prosperity (Not Poverty): A New Path Forward
-              </Link>
-            </li>
-          </NavigationColumn>
-          <NavigationColumn>
-            <li>
-              <h2>About Us</h2>
-            </li>
-            <li>
-              <Link to="/">The Unprosperous</Link>
-            </li>
-            <li>
-              <Link to="/">
-                Measuring Prosperity (Not Poverty): A New Path Forward
-              </Link>
-            </li>
-          </NavigationColumn>
-          <NavigationColumn>
-            <li>
-              <h2>We Need You</h2>
-            </li>
-            <li>
-              <Link to="/">The Unprosperous</Link>
-            </li>
-            <li>
-              <Link to="/">
-                Measuring Prosperity (Not Poverty): A New Path Forward
-              </Link>
-            </li>
-          </NavigationColumn>
+          {menu.map(menuColumn => {
+            return (
+              <NavigationColumn key={menuColumn.title}>
+                <li>
+                  <h2>{menuColumn.title}</h2>
+                </li>
+                {menuColumn.submenus &&
+                  menuColumn.submenus.length > 0 &&
+                  menuColumn.submenus.map(link => {
+                    return (
+                      <li key={link.title}>
+                        <Link to={link.url}>{link.title}</Link>
+                      </li>
+                    );
+                  })}
+              </NavigationColumn>
+            );
+          })}
         </NavigationWrapper>
         <SocialWrapper>
-          <SocialIcon href="#" className="fa fa-linkedin-square" />
-          <SocialIcon href="#" className="fa fa-linkedin-square" />
+          {socialMedia &&
+            socialMedia.length > 0 &&
+            socialMedia.map(({ url, icon }) => (
+              <SocialIcon href={url} className={icon} />
+            ))}
         </SocialWrapper>
         <FooterLogoWrapper>
           <Link to="/">
             <FooterLogo src={Logo} />
           </Link>
-          <Slogan>
-            Democratizing Prosperity: Through Innovation, Collaboration, and
-            Technology
-          </Slogan>
+          <Slogan>{slogan}</Slogan>
           <Copyright>© {new Date().getFullYear()} AI Humanity Inc.</Copyright>
         </FooterLogoWrapper>
       </Container>

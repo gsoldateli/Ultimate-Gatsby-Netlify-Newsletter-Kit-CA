@@ -25,16 +25,13 @@ const HeaderWrapper = styled(Container)`
   }
 `;
 
-const Header = () => {
+const Header = ({ slogan }) => {
   return (
     <HeaderWrapper>
       <Link to="/">
         <Logo src={logo} />
       </Link>
-      <Slogan>
-        Democratizing Prosperity: Through Innovation, Cultural Transformation,
-        and Technology
-      </Slogan>
+      <Slogan>{slogan}</Slogan>
     </HeaderWrapper>
   );
 };

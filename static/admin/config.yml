@@ -67,6 +67,44 @@ collections:
       - { label: "Featured Image", name: "featuredimage", widget: image }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list" }
+  - name: "configurations"
+    label: "Site configurations"
+    files:
+      - file: "src/pages/config/index.md"
+        label: "Site Configurations"
+        name: "site-config"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "string",
+              default: "site-config",
+            }
+          - { label: "Slogan", name: "slogan", widget: "string" }
+          - label: "Social Media"
+            name: "socialMedia"
+            widget: "list"
+            fields:
+              - label: "Title"
+                name: "title"
+                widget: "string"
+              - label: "URL"
+                name: "url"
+                widget: "string"
+              - label: "Icon"
+                name: "icon"
+                hint: "Use font awesome icons eg:. fa fa-linkedin-square"
+                default: "fa fa-linkedin-square"
+          - label: "Menus"
+            name: "menus"
+            widget: "object"
+            fields:
+              - label: "Header Navigation"
+                name: "header"
+                widget: "code"
+              - label: "Footer Navigation"
+                name: "footer"
+                widget: "code"
 
   - name: "pages"
     label: "Pages"

@@ -273,15 +273,13 @@ const NavigationLinkGroup = ({ linkGroup, setMenuMobileOpen }) => {
 const Navbar = ({ menu }) => {
   const { menu: menuContext } = useContext(LayoutContext);
 
-  const links = JSON.parse(menu.items.code);
-
   return (
     <>
       <NavbarWrapper isOpen={menuContext.isOpen}>
         <Container>
           <NavigationLinks>
-            {links &&
-              links.map(link => {
+            {menu &&
+              menu.map(link => {
                 return (
                   <NavigationLinkGroup
                     key={link.title}

@@ -11,14 +11,16 @@ import useSiteMetadata from "./SiteMetadata";
 export const LayoutContext = React.createContext();
 
 const TemplateWrapper = ({ children }) => {
-  const { title, description, menus } = useSiteMetadata();
+  const {
+    title,
+    description,
+    menus,
+    config: { frontmatter: config }
+  } = useSiteMetadata();
+  console.log({ config });
 
-  const [topMenu] = menus
-    .map(({ node: { frontmatter: menu } }) => menu)
-    .filter(menu => menu.position === "top");
-  const footerMenu = menus.filter(
-    ({ node: menu }) => menu.position === "bottom"
-  );
+  const headerMenu = JSON.parse(config.menus.header.code);
+  const footerMenu = JSON.parse(config.menus.footer.code);
 
   const [mobileMenuIsOpen, setMenuMobileOpen] = useState(false);
   return (
@@ -84,11 +86,15 @@ const TemplateWrapper = ({ children }) => {
           }
         }}
       >
-        <Header />
-        <Mobile />
-        <Navbar menu={topMenu} />
+        <Header slogan={config.slogan} />
+        <Mobile slogan={config.slogan} />
+        <Navbar menu={headerMenu} />
         <div>{children}</div>
-        <Footer />
+        <Footer
+          slogan={config.slogan}
+          menu={footerMenu}
+          socialMedia={config.socialMedia}
+        />
       </LayoutContext.Provider>
     </div>
   );

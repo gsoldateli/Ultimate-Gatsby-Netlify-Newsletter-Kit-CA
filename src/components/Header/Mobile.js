@@ -139,7 +139,7 @@ const Hamburger = styled.div`
   }
 `;
 
-const Header = () => {
+const Header = ({ slogan }) => {
   const {
     menu: { isOpen, setMenuMobileOpen }
   } = useContext(LayoutContext);
@@ -149,10 +149,7 @@ const Header = () => {
         <Link to="/">
           <Logo src={logo} />
         </Link>
-        <Slogan>
-          Democratizing Prosperity: Through Innovation, Cultural Transformation,
-          and Technology
-        </Slogan>
+        <Slogan>{slogan}</Slogan>
       </LogoWrapper>
       <Hamburger onClick={() => setMenuMobileOpen(!isOpen)}>
         <button className={`hamburger ${isOpen && "is-active"}`} type="button">
