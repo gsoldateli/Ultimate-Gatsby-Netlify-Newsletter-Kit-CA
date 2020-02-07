@@ -11,7 +11,7 @@ prosperitySection:
       title: Step A
     - description: '# This is the step B Hey!'
       title: Step B
-  subtitle: ''
+  subtitle: SECTION SUBTITLE
   title: Get on the path to prosperity
 solvingUnsolvableSection:
   beforeAfter:
@@ -21,15 +21,35 @@ solvingUnsolvableSection:
     - afterImage: /img/jumbotron.jpg
       beforeImage: /img/flavor_wheel.jpg
       excerpt: '> Transform Bad neighborhoods and be XYZ'
-  body: |-
+  body: >-
+    Morbi cursus diam at magna efficitur laoreet. In tempus efficitur dolor, in
+    imperdiet metus. Sed ut augue maximus, aliquam nisi at, porttitor ligula.
+    Quisque ultrices auctor ligula at fringilla. Fusce gravida commodo
+    consectetur. Vivamus luctus fermentum nulla, non consequat leo egestas
+    vitae. Ut ut lacinia nisl. Cras dapibus arcu sed porta consectetur. Sed at
+    tempor enim.
 
-    - List
-    - List Item
+
+    * ABC
+
+    * ABC !#
+
+    * CDUMFG
 
 
-    ## Information-Knowledge
 
 
+    > Morbi cursus diam at magna efficitur laoreet. In tempus efficitur dolor,
+    in imperdiet metus. Sed ut augue maximus, aliquam nisi at, porttitor ligula.
+    Quisque ultrices auctor ligula at fringilla. Fusce gravida commodo
+    consectetur. Vivamus luctus fermentum nulla, non consequat leo egestas
+    vitae. Ut ut lacinia nisl. Cras dapibus arcu sed porta consectetur. Sed at
+    tempor enim.
+
+
+
+
+    #### Information-Knowledge
 
 
     Information-Knowledge Theory Enables us to
