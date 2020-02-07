@@ -74,7 +74,7 @@ const SectionWrapper = styled.section`
     font-size: 90%;
   }
 
-  small {
+  big {
     font-size: 110%;
   }
 `;

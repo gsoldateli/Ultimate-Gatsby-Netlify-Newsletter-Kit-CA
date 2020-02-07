@@ -14,7 +14,6 @@ const TemplateWrapper = ({ children }) => {
   const {
     title,
     description,
-    menus,
     config: { frontmatter: config }
   } = useSiteMetadata();
 

@@ -121,7 +121,6 @@ const IndexPage = ({ data }) => {
   const { frontmatter: sections } = data.markdownRemark;
   const { edges: solutions } = data.solutions;
 
-  console.log({ solutions });
   return (
     <Layout>
       <IndexPageTemplate

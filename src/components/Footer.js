@@ -98,7 +98,6 @@ const NavigationColumn = styled.ul`
   }
 `;
 const Footer = ({ socialMedia, menu, slogan }) => {
-  console.log({ menu });
   return (
     <FooterWrapper>
       <Container>
