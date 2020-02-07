@@ -55,7 +55,11 @@ solvingUnsolvableSection:
     #### Information-Knowledge
 
 
-    Information-Knowledge Theory Enables us to
+    <div style="color:blue;">
+
+    ##### Information-Knowledge Theory Enables us to
+
+    </div>
   ctaButton:
     label: Learn About Information-Knowledge Theory
     url: 'https://google.com'
