@@ -22,7 +22,7 @@ solvingUnsolvableSection:
       beforeImage: /img/flavor_wheel.jpg
       excerpt: '> Transform Bad neighborhoods and be XYZ'
   body: >-
-    ##### WHAT IS PROSPERITY SCORE
+    ##### What is the prosperity score
 
 
 
