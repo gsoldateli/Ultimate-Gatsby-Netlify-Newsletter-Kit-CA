@@ -49,7 +49,7 @@ solvingUnsolvableSection:
     Quisque ultrices auctor ligula at fringilla. Fusce gravida commodo
     consectetur. Vivamus luctus fermentum nulla, non consequat leo egestas
     vitae. Ut ut lacinia nisl. Cras dapibus arcu sed porta consectetur. Sed at
-    tempor enim.
+    tempor enim. [Learn More about the Supercomputer](https://google.com)
 
 
     #### Information-Knowledge
