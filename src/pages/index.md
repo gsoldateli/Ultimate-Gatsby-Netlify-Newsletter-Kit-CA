@@ -36,10 +36,7 @@ solvingUnsolvableSection:
 
     <br/>
 
-    <br/>
-     
 
-     
 
     * ABC
 
