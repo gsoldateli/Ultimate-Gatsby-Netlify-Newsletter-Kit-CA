@@ -22,6 +22,16 @@ solvingUnsolvableSection:
       beforeImage: /img/flavor_wheel.jpg
       excerpt: '> Transform Bad neighborhoods and be XYZ'
   body: >-
+    <style>
+
+    .abc {
+
+    color: cyan;
+
+    }
+
+    </style>
+
     ##### What is the prosperity score
 
 
@@ -51,7 +61,7 @@ solvingUnsolvableSection:
     #### Information-Knowledge
 
 
-    <div style={{color:"blue"}}>
+    <div class="ABC">
 
     ##### Information-Knowledge Theory Enables us to
 
