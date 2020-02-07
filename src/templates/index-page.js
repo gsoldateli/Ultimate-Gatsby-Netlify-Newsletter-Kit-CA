@@ -53,7 +53,7 @@ export const IndexPageTemplate = data => {
       <Section
         title={prosperitySection.title}
         subtitle={prosperitySection.subtitle}
-        theme="dark"
+        theme="blueDark"
       >
         <ul>
           {prosperitySection.steps.map(step => (
@@ -101,7 +101,7 @@ export const IndexPageTemplate = data => {
       <Section
         title={supportUsSection.title}
         subtitle={supportUsSection.subtitle}
-        theme="dark"
+        theme="blue"
       >
         <Markdown>{supportUsSection.body}</Markdown>
         <a href={supportUsSection.ctaButton.url}>

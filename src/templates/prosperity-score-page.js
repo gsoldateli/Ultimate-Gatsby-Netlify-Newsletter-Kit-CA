@@ -33,14 +33,14 @@ export const ProsperityScorePageTemplate = ({
       <Section
         title={registerSection.title}
         subtitle={registerSection.subtitle}
-        theme="dark"
+        theme="blueDark"
       >
         <img style={{ width: "100%" }} src="http://i.imgur.com/YFtE0Nm.png" />
       </Section>
       <Section
         title={faqSection.title}
         subtitle={faqSection.subtitle}
-        theme="dark"
+        theme="blueDark"
       >
         <Accordion
           items={faqSection.questions.map(({ question, answer }, index) => ({
@@ -56,7 +56,7 @@ export const ProsperityScorePageTemplate = ({
         />
       </Section>
       <Section
-        theme="dark"
+        theme="blueDark"
         title={contactSection.title}
         subtitle={contactSection.subtitle}
       >

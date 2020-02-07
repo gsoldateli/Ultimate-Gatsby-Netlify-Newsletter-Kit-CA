@@ -23,7 +23,10 @@ const AccordionItemHead = styled.div`
   justify-content: space-between;
   font-weight: 500;
   cursor: pointer;
-  color: ${({ theme: { accordion } }) => accordion.fontColor};
+  transition: color 0.25s;
+  color: ${({ isOpen, theme: { accordion } }) =>
+    isOpen ? accordion.activeHeaderColor : accordion.fontColor};
+
   .content {
     max-width: calc(100% - 3rem);
   }
@@ -32,7 +35,8 @@ const AccordionItemHead = styled.div`
 const AccordionItemBody = styled.div`
   padding-top: 28px;
   padding-bottom: 56px;
-  color: ${({ theme: { accordion } }) => accordion.fontColor};
+  color: ${({ isOpen, theme: { accordion } }) =>
+    isOpen ? accordion.activeHeaderColor : accordion.fontColor};
   transition: height 0.5s, padding 0.4s, opacity 0.3s;
 `;
 
@@ -41,7 +45,7 @@ const AccordionItem = ({ id, head, body, isOpen, toggle }) => {
   const itemRef = useRef();
   return (
     <AccordionItemWrapper key={id} ref={itemRef}>
-      <AccordionItemHead onClick={toggle}>
+      <AccordionItemHead isOpen={isOpen} onClick={toggle}>
         <div className="content">{head}</div>
         <Arrow isOpen={isOpen} className="fa fa-chevron-down" />
         {/* <button>{isOpen ? "close" : "open"}</button> */}
