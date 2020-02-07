@@ -6,6 +6,8 @@ import Markdown from "markdown-to-jsx";
 import Layout from "../components/Layout";
 import Container from "../components/Container";
 import Slider from "../components/Slider";
+
+import Section from "../components/Section";
 import styled from "styled-components";
 
 const Slide = styled.div`
@@ -38,7 +40,7 @@ export const IndexPageTemplate = data => {
                     }
                   }
                 }) => (
-                  <Slide key={id}>
+                  <Slide key={title}>
                     <img src={imageSrc} alt={`${title} project`} />
                     <h1>{title}</h1>
                   </Slide>
@@ -48,9 +50,11 @@ export const IndexPageTemplate = data => {
           )}
         </div>
       </Container>
-      <Container style={{ backgroundColor: "#ccc" }}>
-        <h1>{prosperitySection.title}</h1>
-        <h2>{prosperitySection.subtitle}</h2>
+      <Section
+        title={prosperitySection.title}
+        subtitle={prosperitySection.subtitle}
+        theme="dark"
+      >
         <ul>
           {prosperitySection.steps.map(step => (
             <li key={step.title}>
@@ -62,12 +66,12 @@ export const IndexPageTemplate = data => {
         <a href={prosperitySection.ctaButton.url}>
           {prosperitySection.ctaButton.label}
         </a>
-      </Container>
-      <Container>
-        <h1>{solvingUnsolvableSection.title}</h1>
-        <h2>{solvingUnsolvableSection.subtitle}</h2>
-
-        <div>{solvingUnsolvableSection.body}</div>
+      </Section>
+      <Section
+        title={solvingUnsolvableSection.title}
+        subtitle={solvingUnsolvableSection.subtitle}
+      >
+        <Markdown>{solvingUnsolvableSection.body}</Markdown>
         <ul>
           {solvingUnsolvableSection.beforeAfter.map(beforeAfter => {
             let { excerpt, beforeImage, afterImage } = beforeAfter;
@@ -93,15 +97,17 @@ export const IndexPageTemplate = data => {
         <a href={solvingUnsolvableSection.ctaButton.url}>
           {solvingUnsolvableSection.ctaButton.label}
         </a>
-      </Container>
-      <Container style={{ backgroundColor: "#ccc" }}>
-        <h1>{supportUsSection.title}</h1>
-        <h2>{supportUsSection.subtitle}</h2>
+      </Section>
+      <Section
+        title={supportUsSection.title}
+        subtitle={supportUsSection.subtitle}
+        theme="dark"
+      >
         <Markdown>{supportUsSection.body}</Markdown>
         <a href={supportUsSection.ctaButton.url}>
           {supportUsSection.ctaButton.label}
         </a>
-      </Container>
+      </Section>
     </>
   );
 };

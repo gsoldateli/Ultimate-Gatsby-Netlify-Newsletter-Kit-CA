@@ -180,20 +180,30 @@ const Slider = ({ slides }) => {
   }, [sliderRef]);
   return (
     <GlideStyles>
-      <div ref={sliderRef} class="glide">
-        <div class="glide__track" data-glide-el="track">
-          <ul class="glide__slides">
+      <div ref={sliderRef} className="glide">
+        <div className="glide__track" data-glide-el="track">
+          <ul className="glide__slides">
             {slides &&
               slides.length > 0 &&
-              slides.map(slide => <li className="glide__slide">{slide}</li>)}
+              slides.map((slide, index) => (
+                <li key={index} className="glide__slide">
+                  {slide}
+                </li>
+              ))}
           </ul>
         </div>
-        <div class="glide__arrows" data-glide-el="controls">
-          <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
-            <i class="fa fa-chevron-left"></i>
+        <div className="glide__arrows" data-glide-el="controls">
+          <button
+            className="glide__arrow glide__arrow--left"
+            data-glide-dir="<"
+          >
+            <i className="fa fa-chevron-left"></i>
           </button>
-          <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
-            <i class="fa fa-chevron-right"></i>
+          <button
+            className="glide__arrow glide__arrow--right"
+            data-glide-dir=">"
+          >
+            <i className="fa fa-chevron-right"></i>
           </button>
         </div>
       </div>

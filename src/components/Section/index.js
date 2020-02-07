@@ -5,22 +5,30 @@ import Container from "../Container";
 const themes = {
   default: {
     backgroundColor: "#fff",
-    fontColor: "#484848"
+    fontColor: "#484848",
+    accordion: {
+      borderColor: "#dbdbdb",
+      fontColor: "#5b5b5b"
+    }
   },
   dark: {
     backgroundColor: "#141f3b",
-    fontColor: "#fff"
+    fontColor: "#fff",
+    accordion: {
+      borderColor: "#677288",
+      fontColor: "#d6dcdc"
+    }
   }
 };
 
 const SectionWrapper = styled.section`
   background-color: ${({ theme }) => theme.backgroundColor};
-  padding-top: 3rem;
+  padding-top: 4.2rem;
   padding-bottom: 4.5rem;
 `;
 const Body = styled.div`
   color: ${({ theme }) => theme.fontColor}; /* VARIABLE fontColor */
-  padding: 0 1rem;
+  padding: 0 2rem;
 `;
 
 const Header = styled.div`
@@ -32,7 +40,7 @@ const Header = styled.div`
     font-size: 3rem;
     font-weight: 600;
     line-height: 3.5rem;
-    margin-bottom: 1.6rem;
+    margin-bottom: 6px;
   }
   h3 {
     font-size: 1.8rem;
@@ -49,7 +57,7 @@ const Section = ({ children, title, subtitle, theme = "default" }) => {
         <Container>
           <Header>
             <h2>{title}</h2>
-            <h3>{subtitle}</h3>
+            <h3>{subtitle && subtitle.length > 0 && subtitle}</h3>
           </Header>
           <Body>{children}</Body>
         </Container>

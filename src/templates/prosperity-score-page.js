@@ -27,7 +27,6 @@ export const ProsperityScorePageTemplate = ({
     <>
       <h1>{title}</h1>
       <Section title={introSection.title} subtitle={introSection.subtitle}>
-        <Accordion />
         <Markdown>{introSection.body}</Markdown>
       </Section>
 
@@ -43,16 +42,18 @@ export const ProsperityScorePageTemplate = ({
         subtitle={faqSection.subtitle}
         theme="dark"
       >
-        <ul>
-          {faqSection.questions.map(({ question, answer }) => (
-            <li>
-              <strong>{question}</strong> <br />{" "}
-              <div>
-                <Markdown>{answer}</Markdown>
-              </div>
-            </li>
-          ))}
-        </ul>
+        <Accordion
+          items={faqSection.questions.map(({ question, answer }, index) => ({
+            head: (
+              <strong>
+                <big style={{ fontSize: "110%" }}>
+                  {index + 1}. {question}
+                </big>
+              </strong>
+            ),
+            body: <Markdown>{answer}</Markdown>
+          }))}
+        />
       </Section>
       <Section
         theme="dark"
@@ -65,16 +66,12 @@ export const ProsperityScorePageTemplate = ({
         title={learnMoreSection.title}
         subtitle={learnMoreSection.subtitle}
       >
-        <ul>
-          {learnMoreSection.informations.map(({ title, content }) => (
-            <li>
-              <strong>{title}</strong> <br />{" "}
-              <div>
-                <Markdown>{content}</Markdown>
-              </div>
-            </li>
-          ))}
-        </ul>
+        <Accordion
+          items={learnMoreSection.informations.map(({ title, content }) => ({
+            head: <strong>{title}</strong>,
+            body: <Markdown>{content}</Markdown>
+          }))}
+        />
       </Section>
     </>
   );

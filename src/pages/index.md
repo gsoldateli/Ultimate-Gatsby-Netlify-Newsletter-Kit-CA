@@ -11,7 +11,7 @@ prosperitySection:
       title: Step A
     - description: '# This is the step B Hey!'
       title: Step B
-  subtitle: Subtitle Just in Case
+  subtitle: ''
   title: Get on the path to prosperity
 solvingUnsolvableSection:
   beforeAfter:

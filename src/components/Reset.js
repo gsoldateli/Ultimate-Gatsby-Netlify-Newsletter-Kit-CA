@@ -68,11 +68,13 @@ table {
 }
 
 body,html {
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: 20px;
+    line-height: 1.6;
+    font-weight: 400;
     color: #414143;
     box-sizing: border-box;
 }
+
 a {
   color: inherit;
   text-decoration: inherit;
