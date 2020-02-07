@@ -12,28 +12,6 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "menus"
-    label: "Menus"
-    folder: "src/pages/menus"
-    create: true
-    fields:
-      - {
-          label: "Template Key",
-          name: "templateKey",
-          widget: "hidden",
-          default: "menu-navigation",
-        }
-      - { label: "Title", name: "title", widget: "string" }
-      - label: "Position"
-        name: "position"
-        widget: "select"
-        options:
-          - { label: "Top", value: "top" }
-          - { label: "Footer", value: "footer" }
-      - label: "Items"
-        name: "items"
-        widget: "code"
-
   - name: "solutions"
     label: "Solutions"
     folder: "src/pages/solutions"
@@ -77,7 +55,7 @@ collections:
           - {
               label: "Template Key",
               name: "templateKey",
-              widget: "string",
+              widget: "hidden",
               default: "site-config",
             }
           - { label: "Slogan", name: "slogan", widget: "string" }

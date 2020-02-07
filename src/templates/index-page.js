@@ -8,13 +8,8 @@ import Container from "../components/Container";
 import Slider from "../components/Slider";
 
 import Section from "../components/Section";
+import ServiceCard from "../components/ServiceCard";
 import styled from "styled-components";
-
-const Slide = styled.div`
-  img {
-    max-width: 100%;
-  }
-`;
 
 export const IndexPageTemplate = data => {
   const {
@@ -33,6 +28,7 @@ export const IndexPageTemplate = data => {
                   id,
                   frontmatter: {
                     title,
+                    description,
                     image: {
                       childImageSharp: {
                         fluid: { src: imageSrc }
@@ -40,10 +36,11 @@ export const IndexPageTemplate = data => {
                     }
                   }
                 }) => (
-                  <Slide key={title}>
-                    <img src={imageSrc} alt={`${title} project`} />
-                    <h1>{title}</h1>
-                  </Slide>
+                  <ServiceCard
+                    src={imageSrc}
+                    title={title}
+                    description={description}
+                  />
                 )
               )}
             />

@@ -157,7 +157,7 @@ const Slider = ({ slides }) => {
         new Glide(sliderRef.current, {
           type: "carousel",
           focusAt: "center",
-          perView: 3,
+          perView: 4,
           breakpoints: {
             1024: {
               perView: 3
