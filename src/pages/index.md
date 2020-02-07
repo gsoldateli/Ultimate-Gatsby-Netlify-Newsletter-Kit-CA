@@ -61,7 +61,7 @@ solvingUnsolvableSection:
     #### Information-Knowledge
 
 
-    <div class="ABC">
+    <div class="abc">
 
     ##### Information-Knowledge Theory Enables us to
 
