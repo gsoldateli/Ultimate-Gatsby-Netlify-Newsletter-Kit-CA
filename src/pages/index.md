@@ -22,6 +22,11 @@ solvingUnsolvableSection:
       beforeImage: /img/flavor_wheel.jpg
       excerpt: '> Transform Bad neighborhoods and be XYZ'
   body: >-
+    ##### WHAT IS PROSPERITY SCORE
+
+
+
+
     Morbi cursus diam at magna efficitur laoreet. In tempus efficitur dolor, in
     imperdiet metus. Sed ut augue maximus, aliquam nisi at, porttitor ligula.
     Quisque ultrices auctor ligula at fringilla. Fusce gravida commodo
@@ -29,12 +34,6 @@ solvingUnsolvableSection:
     vitae. Ut ut lacinia nisl. Cras dapibus arcu sed porta consectetur. Sed at
     tempor enim.
 
-
-    <br/>
-
-    <br/>
-
-    <br/>
 
 
 
