@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
 import { ThemeProvider } from "@zendeskgarden/react-theming";
-import AlertIcon from "./alert.svg";
+
 import {
   Field,
   Label,
