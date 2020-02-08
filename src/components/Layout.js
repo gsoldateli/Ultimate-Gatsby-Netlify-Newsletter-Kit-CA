@@ -5,6 +5,7 @@ import Navbar, { NavbarContext } from "../components/Navbar";
 import Header, { Mobile } from "../components/Header";
 import { Reset } from "../components/Reset";
 import "typeface-roboto";
+import "@zendeskgarden/react-forms/dist/styles.css";
 
 import useSiteMetadata from "./SiteMetadata";
 
@@ -44,6 +45,7 @@ const TemplateWrapper = ({ children }) => {
           rel="stylesheet"
           href="/node_modules/@glidejs/glide/dist/css/glide.theme.min.css"
         ></link>
+
         <meta name="description" content={description} />
 
         <link

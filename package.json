@@ -5,6 +5,8 @@
   "author": "Austin Green",
   "dependencies": {
     "@glidejs/glide": "3.4.1",
+    "@zendeskgarden/react-forms": "7.1.5",
+    "@zendeskgarden/react-theming": "7.1.4",
     "babel-plugin-styled-components": "1.10.7",
     "gatsby": "^2.1.34",
     "gatsby-image": "^2.0.23",
@@ -34,6 +36,7 @@
     "react-collapse": "5.0.1",
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
+    "react-hook-form": "4.8.2",
     "sharp": "0.24.0",
     "styled-components": "5.0.0",
     "typeface-amiko": "0.0.72",
