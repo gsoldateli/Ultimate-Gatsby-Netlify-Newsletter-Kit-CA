@@ -195,7 +195,7 @@ export const pageQuery = graphql`
     }
 
     solutions: allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "solution-page" } } }
+      filter: { frontmatter: { templateKey: { eq: "program-page" } } }
     ) {
       edges {
         node {

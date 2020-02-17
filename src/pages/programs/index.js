@@ -37,7 +37,7 @@ export default () => (
       query SolutionsQuery {
         allMarkdownRemark(
           sort: { order: DESC, fields: [frontmatter___date] }
-          filter: { frontmatter: { templateKey: { eq: "solution-page" } } }
+          filter: { frontmatter: { templateKey: { eq: "program-page" } } }
         ) {
           edges {
             node {
