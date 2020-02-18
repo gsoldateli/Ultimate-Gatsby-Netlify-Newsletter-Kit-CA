@@ -11,14 +11,16 @@ import ButtonCTA from "../components/Section/ButtonCTA";
 import BeforeAfterSlider from "../components/BeforeAfterSlider";
 
 const SliderWrapper = styled.div`
-  margin-left: -70px;
-  margin-right: -2em;
+  @media (min-width: 700px) {
+    margin-left: -70px;
+    margin-right: -2em;
+  }
 
   .glide__bullets {
     display: none;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 1020px) {
     .glide__arrows {
       display: none;
     }
@@ -52,6 +54,17 @@ const SlideLabelWrapper = styled.div`
     font-weight: 600;
     line-height: 1.7rem;
     color: ${({ theme }) => theme.fontColor || "#333"};
+  }
+
+  @media (max-width: 500px) {
+    .content {
+      font-size: 1rem;
+      line-height: 1.3rem;
+    }
+
+    .circle {
+      font-size: 1rem;
+    }
   }
 `;
 
