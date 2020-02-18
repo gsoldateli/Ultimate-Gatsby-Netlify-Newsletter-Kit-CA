@@ -39,6 +39,10 @@ whyCareSection:
        font-weight: 300;
     }
 
+    hr {
+
+    }
+
     </style>
 
     <div className="why-care-content-center">
@@ -86,6 +90,9 @@ whyYouCrucialSection:
     Suspendisse tristique.
   title: Why are you crucial to the success of the unprosperous?
 solutionsSection:
+  body: >-
+    For detailed information on each of these programs, see the
+    [Programs](https://google.com) menu
   ctaButton:
     label: Get Involved Now
     sublabel: via our Collective Intelligence program
@@ -127,7 +134,7 @@ solutionsSection:
         libero molestie posuere. Mauris quis lorem dictum justo tincidunt
         sagittis.
       name: Personal Cultivation and Advancement
-  subtitle: '- Information-Knowledge Theory comprises the following programs'
+  subtitle: — Information-Knowledge Theory comprises the following programs
   title: How our solution works
 ---
 

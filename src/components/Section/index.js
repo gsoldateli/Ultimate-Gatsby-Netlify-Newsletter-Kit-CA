@@ -36,9 +36,10 @@ const SectionWrapper = styled.section`
   padding-bottom: 4.5rem;
 
   h4 {
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1.9rem;
-    margin-bottom: 1rem;
+    line-height: 2.3rem;
+    margin-bottom: 1.6rem;
   }
 
   h5 {

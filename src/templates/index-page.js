@@ -31,6 +31,28 @@ const SliderWrapper = styled.div`
   }
 `;
 
+const CircleIcon = styled.span`
+  display: block;
+  margin-top: 4px;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #51366d;
+  border-radius: 50%;
+  color: #987ebd;
+  line-height: 50px;
+  text-align: center;
+  font-size: 1.4rem;
+`;
+
+const CircleIconSolution = styled(CircleIcon)`
+  width: 65px;
+  height: 65px;
+  font-size: 1.8rem;
+  line-height: 65px;
+  font-weight: 700;
+  margin-top: -2px;
+`;
+
 const SlideLabelWrapper = styled.div`
   display: flex;
   flex-flow: row wrap;
@@ -38,17 +60,6 @@ const SlideLabelWrapper = styled.div`
   justify-content: space-between;
   margin-bottom: 2rem;
 
-  .circle {
-    margin-top: 4px;
-    width: 50px;
-    height: 50px;
-    border: 2px solid #51366d;
-    border-radius: 50%;
-    color: #987ebd;
-    line-height: 50px;
-    text-align: center;
-    font-size: 1.4rem;
-  }
   .content {
     width: calc(100% - 70px);
     font-size: 1.3rem;
@@ -66,6 +77,28 @@ const SlideLabelWrapper = styled.div`
     .circle {
       font-size: 1rem;
     }
+  }
+`;
+
+const SolutionItem = styled.article`
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 3rem;
+  justify-content: space-between;
+
+  .content {
+    max-width: calc(100% - 100px);
+  }
+
+  .title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+
+  .description {
+    /* font-size: 1.1rem; */
+    font-weight: 400;
   }
 `;
 
@@ -102,7 +135,8 @@ export const IndexPageTemplate = data => {
                 return (
                   <div key={transform.body}>
                     <SlideLabelWrapper>
-                      <div className="circle">{index + 1}</div>
+                      <CircleIcon>{index + 1}</CircleIcon>
+                      {/* <div className="circle">{index + 1}</div> */}
                       <div className="content">
                         {<Markdown>{transform.body}</Markdown>}
                       </div>
@@ -236,6 +270,30 @@ export const IndexPageTemplate = data => {
           />
         </div>
       </Section>
+      <Section
+        title={whyYouCrucialSection.title}
+        subtitle={whyYouCrucialSection.subtitle}
+      >
+        {<Markdown>{whyYouCrucialSection.body}</Markdown>}
+      </Section>
+      <Section
+        theme="dark"
+        title={solutionsSection.title}
+        subtitle={solutionsSection.subtitle}
+      >
+        {solutionsSection.programs.map((program, index) => {
+          return (
+            <SolutionItem key={index}>
+              <CircleIconSolution>{index + 1}</CircleIconSolution>
+              <div className="content">
+                <h4 className="title">{program.name}</h4>
+                <div className="description">{program.description}</div>
+              </div>
+            </SolutionItem>
+          );
+        })}
+        {<Markdown>{solutionsSection.body}</Markdown>}
+      </Section>
     </>
   );
 };
@@ -314,6 +372,7 @@ export const pageQuery = graphql`
         solutionsSection {
           title
           subtitle
+          body
           programs {
             name
             description
