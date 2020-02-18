@@ -60,7 +60,7 @@ export const ProsperityScorePageTemplate = ({
       <Section
         title={registerSection.title}
         subtitle={registerSection.subtitle}
-        theme="blueDark"
+        // theme="blueDark"
       >
         <Form onSubmit={onSubmit}>
           <Input
@@ -112,7 +112,7 @@ export const ProsperityScorePageTemplate = ({
       <Section
         title={faqSection.title}
         subtitle={faqSection.subtitle}
-        theme="blueDark"
+        // theme="blueDark"
       >
         <Accordion
           items={faqSection.questions.map(({ question, answer }, index) => ({
@@ -128,7 +128,7 @@ export const ProsperityScorePageTemplate = ({
         />
       </Section>
       <Section
-        theme="blueDark"
+        // theme="blueDark"
         title={contactSection.title}
         subtitle={contactSection.subtitle}
       >
