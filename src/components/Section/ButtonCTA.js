@@ -35,7 +35,7 @@ const ButtonCTAStyled = styled.a`
   }
 
   @media (max-width: 440px) {
-    padding: 0.3rem 1.3rem;
+    padding: 0.6rem 1.3rem;
     font-size: 20px;
     span {
       font-size: 16px;

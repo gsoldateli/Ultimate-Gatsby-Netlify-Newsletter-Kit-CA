@@ -7,7 +7,7 @@ const themes = {
   default: {
     backgroundColor: "#fff",
     fontColor: "#484848",
-    linkColor: "#a40d2c",
+    linkColor: "#5FC6E7",
     titleColor: "#680BE6",
     subtitleColor: "#9013FE",
     accordion: {
@@ -17,11 +17,11 @@ const themes = {
     }
   },
   dark: {
-    backgroundColor: "#1f3870",
-    fontColor: "#fff6fb",
-    linkColor: "#fff6fb",
-    titleColor: "#680BE6",
-    subtitleColor: "#9013FE",
+    backgroundColor: "#13012d",
+    fontColor: "#dfd7eb",
+    fontColor: "#dfd7eb",
+    titleColor: "#af81f7;",
+    subtitleColor: "#a270f1",
     accordion: {
       borderColor: "#d6dcdc",
       fontColor: "#fff6fb",
@@ -85,18 +85,20 @@ const Body = styled.div`
 const Header = styled.div`
   h2 {
     color: ${({ theme }) => theme.titleColor || "#333"};
-    font-size: 48px;
+    font-size: 56px;
     font-weight: 500;
-    line-height: 56px;
+    line-height: 76px;
     margin-bottom: 6px;
     @media (max-width: 759px) {
       text-align: center;
       font-size: 5vw;
+      line-height: 40px;
     }
     @media (max-width: 600px) {
       text-align: center;
-      font-size: 6vw;
-      line-height: 30px;
+      font-size: 12vw;
+      line-height: 12vw;
+      margin-bottom: 2rem;
     }
     strong {
       font-weight: 700;
@@ -108,7 +110,7 @@ const Header = styled.div`
   h3 {
     color: ${({ theme }) => theme.subtitleColor || "#333"};
     font-size: 32px;
-    font-weight: 300;
+    font-weight: 400;
     margin-bottom: 3.2rem;
     @media (max-width: 759px) {
       font-size: 24px;

@@ -25,10 +25,31 @@ presentationSection:
         222Nunc vitae nulla vitae urna blandit mattis quis id velit. Vestibulum
         non massa at leo dictum gravida.
 whyCareSection:
-  body: |-
+  body: >-
+    <style>
+
+    .why-care-content-center {
+
+    text-align:center;
+       margin-bottom: 2rem;
+    }
+
+    .why-care-content-subtitle {
+       font-size: 1.6rem;
+       font-weight: 300;
+    }
+
+    </style>
+
+    <div className="why-care-content-center">
+
     #### The Status Quo Has Not Helped
 
-    After 70 years and over $5 Trillion, the main problems remain:
+
+    <span className="why-care-content-subtitle">After 70 years and over $5
+    Trillion, the main problems remain:</span>
+
+    </div>
   ctaButton:
     label: Make the Difference Now
     sublabel: via our Collective Intelligence program

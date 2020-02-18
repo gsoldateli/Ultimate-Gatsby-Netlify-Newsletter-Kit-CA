@@ -7,6 +7,7 @@ import styled from "styled-components";
 import Layout from "../components/Layout";
 import Slider from "../components/Slider";
 import Section from "../components/Section";
+import HomeStatisticItem from "../components/HomeStatisticItem";
 import ButtonCTA from "../components/Section/ButtonCTA";
 import BeforeAfterSlider from "../components/BeforeAfterSlider";
 
@@ -77,7 +78,7 @@ export const IndexPageTemplate = data => {
       solutionsSection
     }
   } = data;
-
+  console.log(data);
   return (
     <>
       <Section
@@ -106,10 +107,10 @@ export const IndexPageTemplate = data => {
                         {<Markdown>{transform.body}</Markdown>}
                       </div>
                     </SlideLabelWrapper>
-                    <BeforeAfterSlider
+                    {/* <BeforeAfterSlider
                       beforeImageSrc={beforeImage}
                       afterImageSrc={afterImage}
-                    />
+                    /> */}
                   </div>
                 );
               }
@@ -131,6 +132,107 @@ export const IndexPageTemplate = data => {
             href={presentationSection.ctaButton.url}
             mainText={presentationSection.ctaButton.label}
             secondaryText={presentationSection.ctaButton.sublabel}
+          />
+        </div>
+      </Section>
+      <Section
+        theme="dark"
+        title={whyCareSection.title}
+        subtitle={whyCareSection.subtitle}
+      >
+        <Markdown>{whyCareSection.body}</Markdown>
+        <HomeStatisticItem
+          title="The percentage of Americans living on poverty wage-that is, under self-sufficiency"
+          src="https://new-site.gsoldateli.now.sh/src/imgs/55%25.png"
+        />
+        <HomeStatisticItem
+          title="The percentage of Appalachians and African Americans who are poor-dependent on the government or under self-sufficient"
+          src="https://new-site.gsoldateli.now.sh/src/imgs/75%25.png"
+        />
+        <HomeStatisticItem
+          title="The media household wealth of Black Americans projected for 2053 (20 yrs later for Latino), if current trends hold "
+          content="(If is projected to be $137,000 for White Americans)"
+          src="https://new-site.gsoldateli.now.sh/src/imgs/zero.png"
+        />
+        <HomeStatisticItem
+          title="The percentage of African American communities with high poverty, high crime, and inadequate K-12 schools"
+          src="https://new-site.gsoldateli.now.sh/src/imgs/99%25.png"
+        />
+
+        <HomeStatisticItem
+          fluid
+          title="The massive, enduring Black-White achievement gap in education"
+          src="https://new-site.gsoldateli.now.sh/src/imgs/achievement_gap_image.png"
+          content={
+            <span>
+              (Graph shows the reading scores; the gap is worse for math.
+              Source: NAEP Report Card{" "}
+              <a href="https://www.nationsreportcard.gov/reading/nation/groups/?grade=8">
+                https://www.nationsreportcard.gov/reading/nation/groups/?grade=8)
+              </a>
+            </span>
+          }
+        />
+        <HomeStatisticItem
+          fluid
+          title="The median household income by race in the United States"
+          src="https://new-site.gsoldateli.now.sh/src/imgs/median_household_income.png"
+          content={
+            <span>
+              ( Source:{" "}
+              <a href="https://www.pgpf.org/blog/2019/10/income-and-wealth -in-the-united-states-an-overview-of-data">
+                https://www.pgpf.org/blog/2019/10/income-and-wealth
+                -in-the-united-states-an-overview-of-data)
+              </a>
+            </span>
+          }
+        />
+        <HomeStatisticItem
+          fluid
+          title="The median wealth disparity between White and Black Americans"
+          src="https://new-site.gsoldateli.now.sh/src/imgs/median_wealth_gap.png"
+          content={
+            <span>
+              ( Source:{" "}
+              <a href="https://inequality.org/facts/racial-inequality">
+                https://inequality.org/facts/racial-inequality
+              </a>
+              )
+            </span>
+          }
+        />
+        <HomeStatisticItem.Divider />
+        <div className="why-care-content-center">
+          <br />
+          <br />
+
+          <h4>
+            <big>
+              <big>
+                <big>
+                  <big>Globally</big>
+                </big>
+              </big>
+            </big>
+          </h4>
+          <br />
+        </div>
+        <HomeStatisticItem
+          title="The percentage of poor countries that are still poor after 50 years of invtervention by the West"
+          src="http://i.imgur.com/JHBxrt1.png"
+          content="(Over 90 countries still poor - from Haiti and Bangladesh, to Honduras and Congo)"
+        />
+        <HomeStatisticItem
+          title="The percentage of college educated and high-skilled workforce who leave their poor countries to live and work in rich (or richer) countries - a crucial reason economic development in poor countries elusive"
+          src="http://i.imgur.com/YLgTtBR.png"
+          content="(For example, 83% Guyanaese, 60% Jamaicans)"
+        />
+        <HomeStatisticItem.Divider />
+        <div>
+          <ButtonCTA
+            href={whyCareSection.ctaButton.url}
+            mainText={whyCareSection.ctaButton.label}
+            secondaryText={whyCareSection.ctaButton.sublabel}
           />
         </div>
       </Section>
@@ -197,6 +299,7 @@ export const pageQuery = graphql`
         whyCareSection {
           title
           subtitle
+          body
           ctaButton {
             label
             sublabel
