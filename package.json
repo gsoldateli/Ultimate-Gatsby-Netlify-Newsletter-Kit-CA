@@ -8,7 +8,6 @@
     "@zendeskgarden/react-forms": "7.1.5",
     "@zendeskgarden/react-theming": "7.1.4",
     "babel-plugin-styled-components": "1.10.7",
-    "before-after": "2.0.4",
     "gatsby": "^2.1.34",
     "gatsby-image": "^2.0.23",
     "gatsby-plugin-netlify": "^2.0.6",

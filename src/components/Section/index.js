@@ -76,11 +76,9 @@ const SectionWrapper = styled.section`
 `;
 const Body = styled.div`
   color: ${({ theme }) => theme.fontColor}; /* VARIABLE fontColor */
-  padding: 0 2rem;
 
-  @media (max-width: 700px) {
-    padding: 0;
-  }
+  max-width: 860px;
+  margin: 0 auto;
 `;
 
 const Header = styled.div`

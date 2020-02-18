@@ -9,7 +9,7 @@ import Slider from "../components/Slider";
 import Section from "../components/Section";
 import HomeStatisticItem from "../components/HomeStatisticItem";
 import ButtonCTA from "../components/Section/ButtonCTA";
-import BeforeAfterSlider from "../components/BeforeAfterSlider";
+import BeforeAfterSlide from "../components/BeforeAfterSlide";
 
 const SliderWrapper = styled.div`
   @media (min-width: 700px) {
@@ -133,18 +133,17 @@ export const IndexPageTemplate = data => {
                 }
 
                 return (
-                  <div key={transform.body}>
+                  <div key={index}>
                     <SlideLabelWrapper>
                       <CircleIcon>{index + 1}</CircleIcon>
-                      {/* <div className="circle">{index + 1}</div> */}
                       <div className="content">
                         {<Markdown>{transform.body}</Markdown>}
                       </div>
                     </SlideLabelWrapper>
-                    {/* <BeforeAfterSlider
+                    <BeforeAfterSlide
                       beforeImageSrc={beforeImage}
                       afterImageSrc={afterImage}
-                    /> */}
+                    />
                   </div>
                 );
               }
@@ -155,7 +154,7 @@ export const IndexPageTemplate = data => {
               swipeThreshold: false,
               breakpoints: {
                 700: {
-                  gap: 40
+                  gap: 30
                 }
               }
             }}
