@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { darken } from "polished";
 
 const CTAWrapper = styled.div`
   text-align: center;
@@ -19,7 +20,10 @@ const ButtonCTAStyled = styled.a`
   margin: 0 auto;
   padding: 1.2rem 2.3rem;
   line-height: 1.7rem;
-
+  transition: background-color 0.3s;
+  &:hover {
+    background-color: ${darken(0.1, "#e5174c")};
+  }
   span {
     display: block;
     font-size: 22px;
@@ -28,6 +32,15 @@ const ButtonCTAStyled = styled.a`
 
   @media (max-width: 759px) {
     font-size: 24px;
+  }
+
+  @media (max-width: 440px) {
+    padding: 0.3rem 1.3rem;
+    font-size: 20px;
+    span {
+      font-size: 16px;
+      line-height: 24px;
+    }
   }
 `;
 
