@@ -2,108 +2,124 @@ import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Markdown from "markdown-to-jsx";
+import styled from "styled-components";
 
 import Layout from "../components/Layout";
-import Container from "../components/Container";
 import Slider from "../components/Slider";
-
 import Section from "../components/Section";
-import ServiceCard from "../components/ServiceCard";
-import styled from "styled-components";
+import ButtonCTA from "../components/Section/ButtonCTA";
+import BeforeAfterSlider from "../components/BeforeAfterSlider";
+
+const SliderWrapper = styled.div`
+  margin-left: -70px;
+  margin-right: -2em;
+
+  .glide__bullets {
+    display: none;
+  }
+
+  @media (max-width: 700px) {
+    .glide__arrows {
+      display: none;
+    }
+    .glide__bullets {
+      display: flex;
+    }
+  }
+`;
+
+const SlideLabelWrapper = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+
+  .circle {
+    margin-top: 4px;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #51366d;
+    border-radius: 50%;
+    color: #987ebd;
+    line-height: 50px;
+    text-align: center;
+    font-size: 1.4rem;
+  }
+  .content {
+    width: calc(100% - 70px);
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.7rem;
+    color: ${({ theme }) => theme.fontColor || "#333"};
+  }
+`;
 
 export const IndexPageTemplate = data => {
   const {
-    solutions = null,
-    sections: { prosperitySection, solvingUnsolvableSection, supportUsSection }
+    sections: {
+      presentationSection,
+      whyCareSection,
+      whyYouCrucialSection,
+      solutionsSection
+    }
   } = data;
 
   return (
     <>
-      <Container>
-        <div style={{ marginTop: "1rem" }}>
-          {solutions && solutions.length > 0 && (
-            <Slider
-              slides={solutions.map(
-                ({
-                  id,
-                  frontmatter: {
-                    title,
-                    description,
-                    image: {
-                      childImageSharp: {
-                        fluid: { src: imageSrc }
-                      }
-                    }
-                  }
-                }) => (
-                  <ServiceCard
-                    src={imageSrc}
-                    title={title}
-                    description={description}
-                  />
-                )
-              )}
-            />
-          )}
+      <Section
+        title={presentationSection.title}
+        subtitle={presentationSection.subtitle}
+        // theme="blueDark"
+      >
+        <SliderWrapper>
+          <Slider
+            slides={presentationSection.transformation.map(
+              (transform, index) => {
+                let { beforeImage, afterImage } = transform;
+                if (beforeImage.childImageSharp) {
+                  beforeImage = beforeImage.childImageSharp.fluid.src;
+                }
+
+                if (afterImage.childImageSharp) {
+                  afterImage = afterImage.childImageSharp.fluid.src;
+                }
+
+                return (
+                  <div key={transform.body}>
+                    <SlideLabelWrapper>
+                      <div className="circle">{index + 1}</div>
+                      <div className="content">
+                        {<Markdown>{transform.body}</Markdown>}
+                      </div>
+                    </SlideLabelWrapper>
+                    <BeforeAfterSlider
+                      beforeImageSrc={beforeImage}
+                      afterImageSrc={afterImage}
+                    />
+                  </div>
+                );
+              }
+            )}
+            options={{
+              perView: 1,
+              gap: 29,
+              swipeThreshold: false,
+              breakpoints: {
+                700: {
+                  gap: 40
+                }
+              }
+            }}
+          />
+        </SliderWrapper>
+        <div>
+          <ButtonCTA
+            href={presentationSection.ctaButton.url}
+            mainText={presentationSection.ctaButton.label}
+            secondaryText={presentationSection.ctaButton.sublabel}
+          />
         </div>
-      </Container>
-      <Section
-        title={prosperitySection.title}
-        subtitle={prosperitySection.subtitle}
-        theme="blueDark"
-      >
-        <ul>
-          {prosperitySection.steps.map(step => (
-            <li key={step.title}>
-              <h1>{step.title}</h1>
-              <Markdown>{step.description}</Markdown>
-            </li>
-          ))}
-        </ul>
-        <a href={prosperitySection.ctaButton.url}>
-          {prosperitySection.ctaButton.label}
-        </a>
-      </Section>
-      <Section
-        title={solvingUnsolvableSection.title}
-        subtitle={solvingUnsolvableSection.subtitle}
-      >
-        <Markdown>{solvingUnsolvableSection.body}</Markdown>
-        <ul>
-          {solvingUnsolvableSection.beforeAfter.map(beforeAfter => {
-            let { excerpt, beforeImage, afterImage } = beforeAfter;
-
-            if (beforeImage.childImageSharp) {
-              beforeImage = beforeImage.childImageSharp.fluid.src;
-            }
-
-            if (afterImage.childImageSharp) {
-              afterImage = afterImage.childImageSharp.fluid.src;
-            }
-
-            return (
-              <li key={excerpt}>
-                <h1>{excerpt}</h1>
-                <img src={beforeImage} />
-                TO
-                <img src={afterImage} />
-              </li>
-            );
-          })}
-        </ul>
-        <a href={solvingUnsolvableSection.ctaButton.url}>
-          {solvingUnsolvableSection.ctaButton.label}
-        </a>
-      </Section>
-      <Section
-        title={supportUsSection.title}
-        subtitle={supportUsSection.subtitle}
-        theme="blue"
-      >
-        <Markdown>{supportUsSection.body}</Markdown>
-        <a href={supportUsSection.ctaButton.url}>
-          {supportUsSection.ctaButton.label}
-        </a>
       </Section>
     </>
   );
@@ -116,14 +132,10 @@ IndexPageTemplate.propTypes = {
 
 const IndexPage = ({ data }) => {
   const { frontmatter: sections } = data.markdownRemark;
-  const { edges: solutions } = data.solutions;
 
   return (
     <Layout>
-      <IndexPageTemplate
-        sections={sections}
-        solutions={solutions.map(({ node: solution }) => solution)}
-      />
+      <IndexPageTemplate sections={sections} />
     </Layout>
   );
 };
@@ -142,26 +154,12 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        title
-        subheading
-        prosperitySection {
+        presentationSection {
           title
           subtitle
-          steps {
-            title
-            description
-          }
-          ctaButton {
-            label
-            url
-          }
-        }
-        solvingUnsolvableSection {
-          title
-          subtitle
-          body
-          beforeAfter {
-            excerpt
+          transformation {
+            body
+
             beforeImage {
               childImageSharp {
                 fluid(maxWidth: 400, quality: 100) {
@@ -179,39 +177,31 @@ export const pageQuery = graphql`
           }
           ctaButton {
             label
+            sublabel
             url
           }
         }
-        supportUsSection {
+        whyCareSection {
+          title
+          subtitle
+          ctaButton {
+            label
+            sublabel
+            url
+          }
+        }
+        whyYouCrucialSection {
           title
           subtitle
           body
-          ctaButton {
-            label
-            url
-          }
         }
-      }
-    }
-
-    solutions: allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "program-page" } } }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            title
+        solutionsSection {
+          title
+          subtitle
+          programs {
+            name
             description
-            date
-            image {
-              childImageSharp {
-                fluid(maxWidth: 400, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
           }
-          html
         }
       }
     }

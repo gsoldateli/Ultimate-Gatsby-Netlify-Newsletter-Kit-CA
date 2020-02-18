@@ -1,125 +1,112 @@
 ---
 templateKey: index-page
-title: New AI Humanity Site
+title: Home
 subheading: This is a test to evaluate if netlify attend us.
-prosperitySection:
+presentationSection:
   ctaButton:
-    label: Get Started
+    label: Be the Difference Now
+    sublabel: via our Collective Intelligence program
     url: 'https://google.com'
-  steps:
-    - description: '# This is the step A Hey!'
-      title: Step A
-    - description: '# This is the step B Hey!'
-      title: Step B
-  subtitle: SECTION SUBTITLE
-  title: Get on the path to prosperity
-solvingUnsolvableSection:
-  beforeAfter:
+  subtitle: >-
+    With just a bit of effor (less than beefing with someone on Twitter) you
+    will help to:
+  title: >-
+    Join our movement to democratize prosperity - <strong>only you can make this
+    a reality</strong> <hr/>
+  transformation:
     - afterImage: /img/chemex.jpg
       beforeImage: /img/blog-index.jpg
-      excerpt: Transform youngsters
-    - afterImage: /img/jumbotron.jpg
-      beforeImage: /img/flavor_wheel.jpg
-      excerpt: '> Transform Bad neighborhoods and be XYZ'
-  body: >-
-    <style>
+      body: >-
+        Nunc vitae nulla vitae urna blandit mattis quis id velit. Vestibulum non
+        massa at leo dictum gravida.
+    - afterImage: /img/flavor_wheel.jpg
+      beforeImage: /img/blog-index.jpg
+      body: >-
+        222Nunc vitae nulla vitae urna blandit mattis quis id velit. Vestibulum
+        non massa at leo dictum gravida.
+whyCareSection:
+  body: |-
+    #### The Status Quo Has Not Helped
 
-    .abc {
-
-    color: cyan;
-
-    }
-
-    </style>
-
-    ##### What is the prosperity score
-
-
-    Morbi cursus diam at magna efficitur laoreet. In tempus efficitur dolor, in
-    imperdiet metus. Sed ut augue maximus, aliquam nisi at, porttitor ligula.
-    Quisque ultrices auctor ligula at fringilla. Fusce gravida commodo
-    consectetur. Vivamus luctus fermentum nulla, non consequat leo egestas
-    vitae. Ut ut lacinia nisl. Cras dapibus arcu sed porta consectetur. Sed at
-    tempor enim.
-
-
-    * ABC
-
-    * ABC !#
-
-    * CDUMFG
-
-
-    > Morbi cursus diam at magna efficitur laoreet. In tempus efficitur dolor,
-    in imperdiet metus. Sed ut augue maximus, aliquam nisi at, porttitor ligula.
-    Quisque ultrices auctor ligula at fringilla. Fusce gravida commodo
-    consectetur. Vivamus luctus fermentum nulla, non consequat leo egestas
-    vitae. Ut ut lacinia nisl. Cras dapibus arcu sed porta consectetur. Sed at
-    tempor enim. [Learn More about the Supercomputer](https://google.com)
-
-
-    #### Information-Knowledge
-
-
-    <div class="abc">
-
-    ##### Information-Knowledge Theory Enables us to
-
-    </div>
+    After 70 years and over $5 Trillion, the main problems remain:
   ctaButton:
-    label: Learn About Information-Knowledge Theory
-    url: 'https://google.com'
-  subtitle: With Information-Knowledge Theory
-  title: Solving the Unsolvable
-supportUsSection:
+    label: Make the Difference Now
+    sublabel: via our Collective Intelligence program
+    url: 'https://dontknow.com'
+  subtitle: >-
+    Nunc vitae nulla vitae urna blandit mattis quis id velit. Vestibulum non
+    massa at leo dictum gravida. Suspendisse faucibus justo at placerat
+    pulvinar.
+  title: Why should you care?
+whyYouCrucialSection:
   body: >-
-    # Why do we use it?
+    #### Nunc vitae nulla vitae urna blandit mattis quis id velit. Vestibulum
+    non massa at leo dictum gravida. 
 
 
-    It is a ***long established fact that a reader will be distracted by the
-    readable content of a page when looking at its layout. The point of using
-    Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
-    opposed to using 'Content here, content here', making it look like readable
-    English. Many desktop publishing packages and web page*** editors now use
-    Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will
-    uncover many web sites still in their infancy. Various versions have evolved
-    over the years, sometimes by accident, sometimes o*n purpose (injected
-    humour and the like).
 
 
-    ## <a href="#">Where does it come from?</a>
-
-
-    > Contrary to popular belief, Lorem Ipsum is not simply random text. It has
-    roots in a piece of classical Latin literature from 45 BC, making it over
-    2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney
-    College in Virginia, looked up one of the more obscure Latin words,
-    consectetur, from a Lorem Ipsum passage, and going through the cites of the
-    word in classical literature, discovered the undoubtable source. Lorem Ipsum
-    comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
-    (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a
-    treatise on the theory of ethics, very popular during the Renaissance. The
-    first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line
-    in section 1.10.32.
-
-
-    The standard chunk of Lorem Ipsum used since the 1500s is reproduced below
-    for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum
-    et Malorum" by Cicero are also reproduced in their exact original form,
-    accompanied by English versions from the 1914 translation by H. Rackham.
-
-
-    * ASAD
-
-    * LSDASDASD
-
-    * asasas
-
-    * LOASODASDO
+    Nunc vitae nulla vitae urna blandit mattis quis id velit. Vestibulum non
+    massa at leo dictum gravida. Suspendisse faucibus justo at placerat
+    pulvinar. Proin aliquet eros maximus, tempor ipsum at, cursus ipsum.
+    Suspendisse tristique, nisl sit amet egestas maximus, eros risus volutpat
+    lectus, sit amet ultricies tellus purus non arcu. Pellentesque sed turpis eu
+    velit rutrum pulvinar sit amet vel justo. Donec imperdiet ultricies finibus.
+    Donec in urna augue. Phasellus commodo libero ligula, [learn more about
+    information theory.](https://google.com)
   ctaButton:
-    label: Contribute to Our Crowdfunding Campaing
-    url: 'https://google.com'
-  subtitle: '- Help To Fund AI Humanity'
-  title: Support Us
+    label: this wont be shown
+    sublabel: not shown
+    url: notshown.com
+  subtitle: >-
+    Nunc vitae nulla vitae urna blandit mattis quis id velit. Vestibulum non
+    massa at leo dictum gravida. Suspendisse faucibus justo at placerat
+    pulvinar. Proin aliquet eros maximus, tempor ipsum at, cursus ipsum.
+    Suspendisse tristique.
+  title: Why are you crucial to the success of the unprosperous?
+solutionsSection:
+  ctaButton:
+    label: Get Involved Now
+    sublabel: via our Collective Intelligence program
+    url: 'https://tobedefined.com'
+  programs:
+    - description: >-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim
+        lectus eu eros tincidunt, a consequat dolor mattis. Sed lobortis et
+        libero molestie posuere. Mauris quis lorem dictum justo tincidunt
+        sagittis.
+      name: Prosperity Score
+    - description: >-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim
+        lectus eu eros tincidunt, a consequat dolor mattis. Sed lobortis et
+        libero molestie posuere. Mauris quis lorem dictum justo tincidunt
+        sagittis.
+      name: All Aid
+    - description: >-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim
+        lectus eu eros tincidunt, a consequat dolor mattis. Sed lobortis et
+        libero molestie posuere. Mauris quis lorem dictum justo tincidunt
+        sagittis.
+
+
+        Lorem ipsum dolr sit amet, consectetur adipiscing elit. In dignissim
+        lectus eu eros tincidunt, a consequat dolor mattis. Sed lobortis et
+        libero molestie posuere. Mauris quis lorem dictum justo tincidunt
+        sagittis.
+      name: Rewarding Careers
+    - description: >-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim
+        lectus eu eros tincidunt, a consequat dolor mattis. Sed lobortis et
+        libero molestie posuere. Mauris quis lorem dictum justo tincidunt
+        sagittis.
+
+
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim
+        lectus eu eros tincidunt, a consequat dolor mattis. Sed lobortis et
+        libero molestie posuere. Mauris quis lorem dictum justo tincidunt
+        sagittis.
+      name: Personal Cultivation and Advancement
+  subtitle: '- Information-Knowledge Theory comprises the following programs'
+  title: How our solution works
 ---
 

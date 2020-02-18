@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
+import Markdown from "markdown-to-jsx";
 import Container from "../Container";
 
 const themes = {
@@ -7,30 +8,24 @@ const themes = {
     backgroundColor: "#fff",
     fontColor: "#484848",
     linkColor: "#a40d2c",
+    titleColor: "#680BE6",
+    subtitleColor: "#9013FE",
     accordion: {
       borderColor: "#dbdbdb",
       fontColor: "#5b5b5b",
       activeHeaderColor: "#12abd4"
     }
   },
-  blue: {
+  dark: {
     backgroundColor: "#1f3870",
     fontColor: "#fff6fb",
     linkColor: "#fff6fb",
+    titleColor: "#680BE6",
+    subtitleColor: "#9013FE",
     accordion: {
       borderColor: "#d6dcdc",
       fontColor: "#fff6fb",
       activeHeaderColor: "#fff6fb"
-    }
-  },
-  blueDark: {
-    backgroundColor: "#141f3b",
-    fontColor: "#d8dde1",
-    linkColor: "#d8dde1",
-    accordion: {
-      borderColor: "#677288",
-      fontColor: "#d8dde1",
-      activeHeaderColor: "#d8dde1"
     }
   }
 };
@@ -81,23 +76,44 @@ const SectionWrapper = styled.section`
 const Body = styled.div`
   color: ${({ theme }) => theme.fontColor}; /* VARIABLE fontColor */
   padding: 0 2rem;
+
+  @media (max-width: 700px) {
+    padding: 0;
+  }
 `;
 
 const Header = styled.div`
-  h2,
-  h3 {
-    color: #02c3fa;
-  }
   h2 {
-    font-size: 3rem;
-    font-weight: 600;
-    line-height: 3.5rem;
+    color: ${({ theme }) => theme.titleColor || "#333"};
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 56px;
     margin-bottom: 6px;
+    @media (max-width: 759px) {
+      text-align: center;
+      font-size: 5vw;
+    }
+    @media (max-width: 600px) {
+      text-align: center;
+      font-size: 6vw;
+      line-height: 30px;
+    }
+    strong {
+      font-weight: 700;
+    }
+    hr {
+      margin-top: 3rem;
+    }
   }
   h3 {
-    font-size: 1.8rem;
+    color: ${({ theme }) => theme.subtitleColor || "#333"};
+    font-size: 32px;
     font-weight: 300;
     margin-bottom: 3.2rem;
+    @media (max-width: 759px) {
+      font-size: 24px;
+      line-height: 1.8rem;
+    }
   }
 `;
 
@@ -108,8 +124,14 @@ const Section = ({ children, title, subtitle, theme = "default" }) => {
       <SectionWrapper>
         <Container>
           <Header>
-            <h2>{title}</h2>
-            <h3>{subtitle && subtitle.length > 0 && subtitle}</h3>
+            <h2>
+              <Markdown>{title}</Markdown>
+            </h2>
+            <h3>
+              {subtitle && subtitle.length > 0 && (
+                <Markdown>{subtitle}</Markdown>
+              )}
+            </h3>
           </Header>
           <Body>{children}</Body>
         </Container>

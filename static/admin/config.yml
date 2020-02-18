@@ -99,8 +99,8 @@ collections:
             }
           - { label: Title, name: title, widget: string }
           - { label: Subheading, name: subheading, widget: string }
-          - label: "Prosperity Section"
-            name: "prosperitySection"
+          - label: "Presentation Section"
+            name: "presentationSection"
             widget: object
             fields:
               - { label: "Section Title", name: "title", widget: "string" }
@@ -108,39 +108,12 @@ collections:
                   label: "Section Subtitle",
                   name: "subtitle",
                   widget: "string",
+                  required: false,
                 }
-              - label: "Steps"
-                name: "steps"
+              - label: "Transformations"
+                name: "transformation"
                 widget: "list"
                 fields:
-                  - { label: "Step Title", name: title, widget: string }
-                  - {
-                      label: "Step Description",
-                      name: description,
-                      widget: markdown,
-                    }
-              - label: "CTA Button"
-                name: "ctaButton"
-                widget: object
-                fields:
-                  - { label: "Label", name: label, widget: string }
-                  - { label: "URL", name: url, widget: string }
-          - label: "Solving the Unsolvable Section"
-            name: "solvingUnsolvableSection"
-            widget: object
-            fields:
-              - { label: "Section Title", name: "title", widget: "string" }
-              - {
-                  label: "Section Subtitle",
-                  name: "subtitle",
-                  widget: "string",
-                }
-              - { label: "Body", name: "body", widget: "markdown" }
-              - label: "Before / After solutions"
-                name: "beforeAfter"
-                widget: "list"
-                fields:
-                  - { label: "Excerpt", name: excerpt, widget: markdown }
                   - {
                       label: "Before Image",
                       name: "beforeImage",
@@ -151,14 +124,21 @@ collections:
                       name: "afterImage",
                       widget: "image",
                     }
+                  - { label: "Body", name: body, widget: markdown }
               - label: "CTA Button"
                 name: "ctaButton"
                 widget: object
                 fields:
                   - { label: "Label", name: label, widget: string }
+                  - {
+                      label: "Sublabel",
+                      name: sublabel,
+                      widget: string,
+                      required: false,
+                    }
                   - { label: "URL", name: url, widget: string }
-          - label: "Support Us Section"
-            name: "supportUsSection"
+          - label: "Why Care Section"
+            name: "whyCareSection"
             widget: object
             fields:
               - { label: "Section Title", name: "title", widget: "string" }
@@ -166,13 +146,80 @@ collections:
                   label: "Section Subtitle",
                   name: "subtitle",
                   widget: "string",
+                  required: false,
                 }
-              - { label: "Body", name: "body", widget: "markdown" }
+              - { label: "Body", name: body, widget: markdown, required: false }
               - label: "CTA Button"
                 name: "ctaButton"
                 widget: object
                 fields:
                   - { label: "Label", name: label, widget: string }
+                  - {
+                      label: "Sublabel",
+                      name: sublabel,
+                      widget: string,
+                      required: false,
+                    }
+                  - { label: "URL", name: url, widget: string }
+          - label: "Why You Crucial Section"
+            name: "whyYouCrucialSection"
+            widget: object
+            fields:
+              - { label: "Section Title", name: "title", widget: "string" }
+              - {
+                  label: "Section Subtitle",
+                  name: "subtitle",
+                  widget: "string",
+                  required: false,
+                }
+              - { label: "Body", name: body, widget: markdown, required: false }
+              - label: "CTA Button"
+                name: "ctaButton"
+                required: false
+                widget: object
+                fields:
+                  - { label: "Label", name: label, widget: string }
+                  - {
+                      label: "Sublabel",
+                      name: sublabel,
+                      widget: string,
+                      required: false,
+                    }
+                  - { label: "URL", name: url, widget: string }
+          - label: "Solutions"
+            name: "solutionsSection"
+            widget: object
+            fields:
+              - { label: "Section Title", name: "title", widget: "string" }
+              - {
+                  label: "Section Subtitle",
+                  name: "subtitle",
+                  widget: "string",
+                  required: false,
+                }
+              - { label: "Body", name: body, widget: markdown, required: false }
+              - label: "Programs"
+                name: programs
+                widget: list
+                fields:
+                  - label: "Name"
+                    name: name
+                    widget: string
+                  - label: "Description"
+                    name: description
+                    widget: markdown
+
+              - label: "CTA Button"
+                name: "ctaButton"
+                widget: object
+                fields:
+                  - { label: "Label", name: label, widget: string }
+                  - {
+                      label: "Sublabel",
+                      name: sublabel,
+                      widget: string,
+                      required: false,
+                    }
                   - { label: "URL", name: url, widget: string }
       - file: "src/pages/prosperity-score/index.md"
         label: "Prosperity Score Page"
@@ -194,8 +241,14 @@ collections:
                   label: "Section Subtitle",
                   name: "subtitle",
                   widget: "string",
+                  required: false,
                 }
-              - { label: "Body", name: "body", widget: "markdown" }
+              - {
+                  label: "Body",
+                  name: "body",
+                  widget: "markdown",
+                  required: false,
+                }
           - label: "Register Section"
             name: "registerSection"
             widget: object

@@ -91,10 +91,10 @@ const GlideStyles = styled.div`
     border-color: white;
   }
   .glide__arrow--left {
-    left: -2em;
+    left: -1em;
   }
   .glide__arrow--right {
-    right: -2em;
+    right: -1.5em;
   }
   .glide__arrow--disabled {
     opacity: 0.33;
@@ -112,8 +112,10 @@ const GlideStyles = styled.div`
 
   .glide__bullet {
     background-color: rgba(255, 255, 255, 0.5);
-    width: 9px;
-    height: 9px;
+    /* width: 9px;
+    height: 9px; */
+    width: 18px;
+    height: 18px;
     padding: 0;
     border-radius: 50%;
     border: 2px solid transparent;
@@ -148,7 +150,7 @@ const GlideStyles = styled.div`
   }
 `;
 
-const Slider = ({ slides }) => {
+const Slider = ({ slides, options = {} }) => {
   const sliderRef = useRef();
   const [slider, setSlider] = useState(null);
   useEffect(() => {
@@ -169,7 +171,8 @@ const Slider = ({ slides }) => {
               perView: 1
             }
           },
-          gap: 20
+          gap: 20,
+          ...options
         }).mount()
       );
     }
@@ -192,6 +195,17 @@ const Slider = ({ slides }) => {
               ))}
           </ul>
         </div>
+        {slides && (
+          <div class="glide__bullets" data-glide-el="controls[nav]">
+            {slides.map((slide, index) => (
+              <button
+                key={index}
+                class="glide__bullet"
+                data-glide-dir={`=${index}`}
+              ></button>
+            ))}
+          </div>
+        )}
         <div className="glide__arrows" data-glide-el="controls">
           <button
             className="glide__arrow glide__arrow--left"
