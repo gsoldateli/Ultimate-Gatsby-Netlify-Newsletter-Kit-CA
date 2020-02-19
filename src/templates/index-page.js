@@ -10,6 +10,7 @@ import Section from "../components/Section";
 import HomeStatisticItem from "../components/HomeStatisticItem";
 import ButtonCTA from "../components/Section/ButtonCTA";
 import BeforeAfterSlide from "../components/BeforeAfterSlide";
+import GetStartedSection from "../components/GetStartedSection";
 
 const SliderWrapper = styled.div`
   @media (min-width: 700px) {
@@ -160,13 +161,14 @@ export const IndexPageTemplate = data => {
             }}
           />
         </SliderWrapper>
-        <div>
+
+        <ButtonCTA.Wrapper>
           <ButtonCTA
             href={presentationSection.ctaButton.url}
             mainText={presentationSection.ctaButton.label}
             secondaryText={presentationSection.ctaButton.sublabel}
           />
-        </div>
+        </ButtonCTA.Wrapper>
       </Section>
       <Section
         theme="dark"
@@ -261,13 +263,14 @@ export const IndexPageTemplate = data => {
           content="(For example, 83% Guyanaese, 60% Jamaicans)"
         />
         <HomeStatisticItem.Divider />
-        <div>
+
+        <ButtonCTA.Wrapper>
           <ButtonCTA
             href={whyCareSection.ctaButton.url}
             mainText={whyCareSection.ctaButton.label}
             secondaryText={whyCareSection.ctaButton.sublabel}
           />
-        </div>
+        </ButtonCTA.Wrapper>
       </Section>
       <Section
         title={whyYouCrucialSection.title}
@@ -292,7 +295,17 @@ export const IndexPageTemplate = data => {
           );
         })}
         {<Markdown>{solutionsSection.body}</Markdown>}
+        <HomeStatisticItem.Divider
+          style={{
+            position: "absolute",
+            bottom: 0,
+            maxWidth: "1062px",
+            left: "50%",
+            transform: "translate3d(-50%,-50%,0)"
+          }}
+        />
       </Section>
+      <GetStartedSection />
     </>
   );
 };

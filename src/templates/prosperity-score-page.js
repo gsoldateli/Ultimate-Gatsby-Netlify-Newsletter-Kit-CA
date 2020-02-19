@@ -10,7 +10,7 @@ import Layout from "../components/Layout";
 
 import Accordion from "../components/Accordion";
 import Section from "../components/Section";
-import Form, { Input } from "../components/Form";
+// import Form, { Input } from "../components/Form";
 
 const Slide = styled.div`
   img {
@@ -62,13 +62,6 @@ export const ProsperityScorePageTemplate = ({
         subtitle={registerSection.subtitle}
         // theme="blueDark"
       >
-        <Form onSubmit={onSubmit}>
-          <Input
-            name="firstName"
-            registerProps={{ required: "FIELD REQUIRED" }}
-          />
-          <button type="submit">SEND</button>
-        </Form>
         {/* <ThemeProvider>
           <form onSubmit={handleSubmit(onSubmit)}>
             <Field>

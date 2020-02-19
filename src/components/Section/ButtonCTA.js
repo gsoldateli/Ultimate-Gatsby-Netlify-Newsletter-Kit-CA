@@ -8,6 +8,7 @@ const CTAWrapper = styled.div`
   margin-bottom: 30px;
 `;
 const ButtonCTAStyled = styled.a`
+  cursor: pointer;
   display: inline-flex;
   flex-flow: column wrap;
   background-color: #e5174c;
@@ -46,13 +47,13 @@ const ButtonCTAStyled = styled.a`
 
 const ButtonCTA = ({ mainText, secondaryText = "", ...rest }) => {
   return (
-    <CTAWrapper>
-      <ButtonCTAStyled {...rest}>
-        <strong>{mainText}</strong>
-        {secondaryText && <span>{secondaryText}</span>}
-      </ButtonCTAStyled>
-    </CTAWrapper>
+    <ButtonCTAStyled {...rest}>
+      <strong>{mainText}</strong>
+      {secondaryText && <span>{secondaryText}</span>}
+    </ButtonCTAStyled>
   );
 };
+
+ButtonCTA.Wrapper = CTAWrapper;
 
 export default ButtonCTA;

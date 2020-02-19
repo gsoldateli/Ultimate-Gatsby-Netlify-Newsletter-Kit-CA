@@ -34,6 +34,7 @@ const SectionWrapper = styled.section`
   background-color: ${({ theme }) => theme.backgroundColor};
   padding-top: 4.2rem;
   padding-bottom: 4.5rem;
+  position: relative;
 
   h4 {
     font-weight: 600;
@@ -85,7 +86,7 @@ const Header = styled.div`
   h2 {
     color: ${({ theme }) => theme.titleColor || "#333"};
     font-size: 56px;
-    font-weight: 500;
+    font-weight: 700;
     line-height: 76px;
     margin-bottom: 6px;
     @media (max-width: 759px) {
@@ -108,8 +109,8 @@ const Header = styled.div`
   }
   h3 {
     color: ${({ theme }) => theme.subtitleColor || "#333"};
-    font-size: 32px;
-    font-weight: 400;
+    font-size: 36px;
+    font-weight: 300;
     margin-bottom: 3.2rem;
     @media (max-width: 759px) {
       font-size: 24px;
