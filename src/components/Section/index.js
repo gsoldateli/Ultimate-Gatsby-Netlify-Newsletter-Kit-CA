@@ -37,7 +37,7 @@ const SectionWrapper = styled.section`
   position: relative;
 
   h4 {
-    font-weight: 600;
+    font-weight: 800;
     font-size: 1.9rem;
     line-height: 2.3rem;
     margin-bottom: 1.6rem;
@@ -46,7 +46,7 @@ const SectionWrapper = styled.section`
   h5 {
     font-weight: 600;
     font-size: 1.4rem;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
   }
 
   a {

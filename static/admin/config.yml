@@ -340,15 +340,63 @@ collections:
                     }
                   - { label: "URL", name: url, widget: string }
 
-      - file: "src/pages/about/index.md"
-        label: "About"
-        name: "about"
+      - file: "src/pages/about-us/index.md"
+        label: "About Us"
+        name: "about-us"
         fields:
           - {
               label: "Template Key",
               name: "templateKey",
               widget: "hidden",
-              default: "about-page",
+              default: "about-us-page",
             }
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
+          - {
+              label: "Background Image",
+              name: "backgroundImage",
+              widget: "image",
+            }
+          - { label: "Description", name: "description", widget: "markdown" }
+          - label: "Overview Section"
+            name: overviewSection
+            widget: object
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - { label: "Body", name: "body", widget: "markdown" }
+              - label: "Things we are doing"
+                name: things
+                widget: "list"
+                fields:
+                  - label: "Title"
+                    name: title
+                    widget: string
+                  - label: "Description"
+                    name: description
+                    widget: markdown
+          - label: "Contact Us Section"
+            name: contactUsSection
+            widget: object
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - { label: "Body", name: "body", widget: "markdown" }
+          - label: "Support Us Section"
+            name: supportUsSection
+            widget: object
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - { label: "Body", name: "body", widget: "markdown" }
+              - label: "CTA Button"
+                name: "ctaButton"
+                widget: object
+                fields:
+                  - { label: "Label", name: label, widget: string }
+                  - {
+                      label: "Sublabel",
+                      name: sublabel,
+                      widget: string,
+                      required: false,
+                    }
+                  - { label: "URL", name: url, widget: string }

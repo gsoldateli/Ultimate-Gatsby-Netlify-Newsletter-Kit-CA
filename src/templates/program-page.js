@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
+
 import Markdown from "markdown-to-jsx";
 import Helmet from "react-helmet";
 import { graphql, Link } from "gatsby";
@@ -8,50 +8,7 @@ import Layout from "../components/Layout";
 import Section from "../components/Section";
 import Accordion from "../components/Accordion";
 import GetStartedSection from "../components/GetStartedSection";
-
-const HeroWrapper = styled.section`
-  width: 100%;
-  padding-top: 37.5%;
-  position: relative;
-  background-position: center;
-  background-attachment: fixed;
-  background-size: cover;
-  background-image: url('${({ backgroundImage }) =>
-    backgroundImage
-      ? backgroundImage
-      : "https://via.placeholder.com/1200x600"}');
-`;
-
-const HeroContent = styled.section`
-  position: absolute;
-  left: 50%;
-
-  top: 0;
-  padding: 4rem 0;
-  max-width: 1200px;
-  transform: translate3d(-50%, 0, 0);
-  width: 100%;
-  height: 100%;
-
-  @media (max-width: 1062px) {
-    padding: 1rem;
-  }
-`;
-
-const ProgramTitle = styled.h1`
-  background-color: #32558f;
-  color: #fff;
-  padding: 1rem 2rem;
-  display: inline-flex;
-  text-transform: uppercase;
-  font-size: 1.5rem;
-  font-weight: 500;
-
-  @media (max-width: 760px) {
-    font-size: 4vw;
-    padding: 0.5rem 1rem;
-  }
-`;
+import HeroSection from "../components/HeroSection";
 
 export const ProgramTemplate = ({
   name,
@@ -68,11 +25,12 @@ export const ProgramTemplate = ({
     <>
       {helmet || ""}
       {customStyle && <Markdown>{customStyle}</Markdown>}
-      <HeroWrapper backgroundImage={backgroundImage}>
+      <HeroSection backgroundImage={backgroundImage} title={name} />
+      {/* <HeroWrapper backgroundImage={backgroundImage}>
         <HeroContent>
           <ProgramTitle className="program-title-inner">{name}</ProgramTitle>
         </HeroContent>
-      </HeroWrapper>
+      </HeroWrapper> */}
       <Section>
         <>
           {importantFaqSection.description && (
