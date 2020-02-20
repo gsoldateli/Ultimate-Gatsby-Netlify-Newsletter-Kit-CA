@@ -25,13 +25,19 @@ export const RadioBall = styled.div`
   }
 `;
 
+export const OptionLabel = styled.label`
+  cursor: pointer;
+  width: calc(100% - 40px);
+  line-height: 28px;
+`;
+
 export const RadioItemWrapper = styled.div`
   cursor: pointer;
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
   align-items: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 15px;
   width: 100%;
 
   ${({ inline }) =>

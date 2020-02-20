@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { RadioItemWrapper, RadioBall } from "./styles";
+import { RadioItemWrapper, RadioBall, OptionLabel } from "./styles";
 
 const RadioButton = ({ name, options, value = null, inline = false }) => {
   const [currentValue, setCurrentValue] = useState(value);
@@ -17,12 +17,7 @@ const RadioButton = ({ name, options, value = null, inline = false }) => {
           style={{ display: "none" }}
           value={value}
         />
-        <label
-          style={{ cursor: "pointer", width: "calc(100% - 40px)" }}
-          for={idOption}
-        >
-          {label}
-        </label>
+        <OptionLabel for={idOption}>{label}</OptionLabel>
       </RadioItemWrapper>
     );
   });
