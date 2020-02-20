@@ -18,7 +18,7 @@ const Wrapper = styled.div`
   margin: 0 auto 3rem;
   max-width: ${({ fluid }) => (fluid ? "100%" : "730px")};
 
-  @media (max-width: 950px) {
+  @media (max-width: 760px) {
     flex-flow: column wrap;
     align-items: center;
   }
@@ -28,8 +28,8 @@ const GraphImage = styled.img`
   object-fit: contain;
   object-position: center;
   flex-basis: 0;
-  min-width: ${({ fluid }) => (fluid ? "calc(60% - 8rem)" : "170px")};
-  @media (max-width: 950px) {
+  min-width: ${({ fluid }) => (fluid ? "calc(66% - 9rem)" : "170px")};
+  @media (max-width: 760px) {
     min-width: auto;
   }
 `;
@@ -40,7 +40,7 @@ const Divider = styled.span`
   width: 1px;
   margin: 0 2rem;
 
-  @media (max-width: 950px) {
+  @media (max-width: 760px) {
     display: none;
   }
 `;
@@ -53,7 +53,7 @@ const ContentWrapper = styled.div`
 
   word-break: break-word;
   .title {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 600;
   }
 
@@ -67,8 +67,10 @@ const ContentWrapper = styled.div`
       text-decoration: none;
     }
   }
-
-  @media (max-width: 950px) {
+  @media (max-width: 860px) {
+    max-width: ${({ fluid }) => (fluid ? "calc(50% - 5rem)" : "360px")};
+  }
+  @media (max-width: 760px) {
     margin-top: 2rem;
     max-width: 100%;
 
