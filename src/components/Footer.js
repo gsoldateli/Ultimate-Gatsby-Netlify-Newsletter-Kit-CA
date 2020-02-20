@@ -11,8 +11,8 @@ import twitter from '../img/social/twitter.svg'
 import vimeo from '../img/social/vimeo.svg'*/
 
 const FooterWrapper = styled.footer`
-  background-color: #414143;
-  color: #979799;
+  background-color: #2e2140;
+  color: #b5a8c5;
   padding: 2.5rem;
   position: relative;
 `;
@@ -36,7 +36,7 @@ const Slogan = styled.h3`
 `;
 
 const Copyright = styled.span`
-  margin-top: 0;
+  margin-top: 1rem;
   color: #db4127;
 `;
 

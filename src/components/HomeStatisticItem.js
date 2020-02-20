@@ -36,7 +36,7 @@ const GraphImage = styled.img`
 
 const Divider = styled.span`
   display: block;
-  background-color: #a270f1;
+  background-color: #4c4754;
   width: 1px;
   margin: 0 2rem;
 

@@ -8,8 +8,8 @@ presentationSection:
     sublabel: via our Collective Intelligence program
     url: 'https://google.com'
   subtitle: >-
-    With just a bit of effor (less than beefing with someone on Twitter) you
-    will help to:
+    <span className="homepage-intro-subtitle">With just a bit of effor (less
+    than beefing with someone on Twitter) you will help to:</span>
   title: >-
     <span className="homepage-intro-title" ><strong>Join our movement to
     democratize prosperity</strong>— only you can make this a reality</span> <hr
@@ -32,8 +32,15 @@ whyCareSection:
     .why-care-content-center {
 
     text-align:center;
-       margin-bottom: 2rem;
+       margin-bottom: 3rem;
+
     }
+
+    .why-care-content-center > h4 {
+       font-size: 44px;
+       margin-bottom: 0.6rem;
+    }
+
 
     .why-care-content-subtitle {
        font-size: 1.6rem;
@@ -42,6 +49,7 @@ whyCareSection:
 
 
     .homepage-intro-title {
+       font-size: 56px;
        font-weight: 400;
     }
 
@@ -54,6 +62,11 @@ whyCareSection:
 
     .homepage-intro-title > strong {
       font-weight: 900;
+    }
+
+
+    .homepage-intro-subtitle {
+      font-size: 44px;
     }
 
 

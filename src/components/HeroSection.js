@@ -31,10 +31,10 @@ const HeroContent = styled.section`
 const HeroTitle = styled.h1`
   background-color: #32558f;
   color: #fff;
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem;
   display: inline-flex;
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: 26px;
   font-weight: 500;
 
   @media (max-width: 760px) {
