@@ -91,7 +91,7 @@ whyCareSection:
 
     </div>
   ctaButton:
-    label: Make the Difference Now
+    label: Start the transformation
     sublabel: via our Collective Intelligence program
     url: 'https://dontknow.com'
   subtitle: >-
