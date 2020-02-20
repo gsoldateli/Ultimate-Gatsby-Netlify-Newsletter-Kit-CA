@@ -1,102 +1,257 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { kebabCase } from "lodash";
+import styled from "styled-components";
+import Markdown from "markdown-to-jsx";
 import Helmet from "react-helmet";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
-import Content, { HTMLContent } from "../components/Content";
+import Section from "../components/Section";
+import Accordion from "../components/Accordion";
+import GetStartedSection from "../components/GetStartedSection";
 
-export const BlogPostTemplate = ({
-  content,
-  contentComponent,
-  description,
-  tags,
-  title,
-  helmet
+const HeroWrapper = styled.section`
+  width: 100%;
+  padding-top: 37.5%;
+  position: relative;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-image: url('${({ backgroundImage }) =>
+    backgroundImage
+      ? backgroundImage
+      : "https://via.placeholder.com/1200x600"}');
+`;
+
+const HeroContent = styled.section`
+  position: absolute;
+  left: 50%;
+
+  top: 0;
+  padding: 4rem 0;
+  max-width: 1200px;
+  transform: translate3d(-50%, 0, 0);
+  width: 100%;
+  height: 100%;
+
+  @media (max-width: 1062px) {
+    padding: 1rem;
+  }
+`;
+
+const ProgramTitle = styled.h1`
+  background-color: #32558f;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: inline-flex;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 500;
+
+  @media (max-width: 760px) {
+    font-size: 4vw;
+    padding: 0.5rem 1rem;
+  }
+`;
+
+export const ProgramTemplate = ({
+  name,
+  backgroundImage,
+  importantFaqSection,
+  faqSection,
+  learnMoreSection,
+  contactUsSection,
+  customStyle
 }) => {
-  const PostContent = contentComponent || Content;
-
+  console.log({ importantFaqSection });
   return (
-    <section className="section">
-      {helmet || ""}
-      <div className="container content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
-            <p>{description}</p>
-            <PostContent content={content} />
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map(tag => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
-          </div>
-        </div>
-      </div>
-    </section>
+    <>
+      {customStyle && <Markdown>{customStyle}</Markdown>}
+      <HeroWrapper backgroundImage={backgroundImage}>
+        <HeroContent>
+          <ProgramTitle className="program-title-inner">{name}</ProgramTitle>
+        </HeroContent>
+      </HeroWrapper>
+      <Section>
+        <>
+          {importantFaqSection.description && (
+            <>
+              <Markdown>{importantFaqSection.description}</Markdown>
+              <br />
+              <br />
+            </>
+          )}
+          {importantFaqSection.questions && (
+            <Accordion
+              items={importantFaqSection.questions.map(
+                ({ question, answer }, index) => ({
+                  head: (
+                    <strong>
+                      <big style={{ fontSize: "110%" }}>{question}</big>
+                    </strong>
+                  ),
+                  body: <Markdown>{answer}</Markdown>
+                })
+              )}
+            />
+          )}
+        </>
+      </Section>
+
+      <GetStartedSection />
+      <Section
+        title={faqSection.title}
+        subtitle={faqSection.subtitle || "— Get all of your questions answered"}
+        style={{ wrapper: { paddingBottom: "0" } }}
+      >
+        <>
+          {faqSection.body && (
+            <>
+              <Markdown>{faqSection.body}</Markdown>
+              <br />
+              <br />
+            </>
+          )}
+          {faqSection.questions && (
+            <Accordion
+              items={faqSection.questions.map(
+                ({ question, answer }, index) => ({
+                  head: (
+                    <strong>
+                      <big style={{ fontSize: "110%" }}>{question}</big>
+                    </strong>
+                  ),
+                  body: <Markdown>{answer}</Markdown>
+                })
+              )}
+            />
+          )}
+        </>
+      </Section>
+      <Section
+        title={learnMoreSection.title}
+        subtitle={
+          learnMoreSection.subtitle || "— Get all of your questions answered"
+        }
+      >
+        <>
+          {learnMoreSection.body && (
+            <>
+              <Markdown>{learnMoreSection.body}</Markdown>
+              <br />
+              <br />
+            </>
+          )}
+          {learnMoreSection.questions && (
+            <Accordion
+              items={learnMoreSection.questions.map(
+                ({ question, answer }, index) => ({
+                  head: (
+                    <strong>
+                      <big style={{ fontSize: "110%" }}>{question}</big>
+                    </strong>
+                  ),
+                  body: <Markdown>{answer}</Markdown>
+                })
+              )}
+            />
+          )}
+        </>
+      </Section>
+      <Section
+        theme="dark"
+        title={contactUsSection.title || "Contact Us"}
+        subtitle={
+          contactUsSection.subtitle || "— Do you have additional questions?"
+        }
+      >
+        {contactUsSection.body && <Markdown>{contactUsSection.body}</Markdown>}
+      </Section>
+    </>
   );
 };
 
-BlogPostTemplate.propTypes = {
-  content: PropTypes.node.isRequired,
-  contentComponent: PropTypes.func,
-  description: PropTypes.string,
-  title: PropTypes.string,
-  helmet: PropTypes.object
-};
-
-const BlogPost = ({ data }) => {
-  const { markdownRemark: post } = data;
-
+const Program = ({ data }) => {
+  const {
+    page: { frontmatter: program }
+  } = data;
+  const backgroundImage = program.backgroundImage.childImageSharp.fluid.src;
   return (
     <Layout>
-      <BlogPostTemplate
-        content={post.html}
-        contentComponent={HTMLContent}
-        description={post.frontmatter.description}
+      <ProgramTemplate
+        name={program.name}
+        customStyle={program.customStyle}
+        description={program.description}
+        backgroundImage={backgroundImage}
+        importantFaqSection={program.importantFaqSection}
+        faqSection={program.faqSection}
+        learnMoreSection={program.learnMoreSection}
+        contactUsSection={program.contactUsSection}
+        customStyle={program.customStyle}
         helmet={
           <Helmet titleTemplate="%s | Blog">
-            <title>{`${post.frontmatter.title}`}</title>
-            <meta
-              name="description"
-              content={`${post.frontmatter.description}`}
-            />
+            <title>{`${program.title}`}</title>
+            <meta name="description" content={`${program.description}`} />
           </Helmet>
         }
-        tags={post.frontmatter.tags}
-        title={post.frontmatter.title}
       />
     </Layout>
   );
 };
 
-BlogPost.propTypes = {
+Program.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object
   })
 };
 
-export default BlogPost;
+export default Program;
 
 export const pageQuery = graphql`
-  query SolutionPageById($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+  query ProgramPageById($id: String!) {
+    page: markdownRemark(id: { eq: $id }) {
       id
-      html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        title
-        description
-        tags
+        name
+        backgroundImage {
+          childImageSharp {
+            fluid(maxWidth: 1200, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        importantFaqSection {
+          description
+          questions {
+            question
+            answer
+          }
+        }
+        faqSection {
+          title
+          subtitle
+          body
+          questions {
+            answer
+            question
+          }
+        }
+
+        learnMoreSection {
+          title
+          subtitle
+          body
+          questions {
+            question
+            answer
+          }
+        }
+
+        contactUsSection {
+          title
+          subtitle
+          body
+        }
+        customStyle
       }
     }
   }

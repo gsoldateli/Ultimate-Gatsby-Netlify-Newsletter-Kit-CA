@@ -85,3 +85,27 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     });
   }
 };
+
+// exports.createSchemaCustomization = ({ actions }) => {
+//   const { createTypes } = actions;
+//   const typeDefs = `
+//     type MarkdownRemark implements Node {
+//       frontmatter: Frontmatter!
+//     }
+//     type Faq implements Node {
+//       answer: String!
+//       question: String!
+//     }
+
+//     type Frontmatter {
+//       program: Program
+//     }
+
+//     type Program implements Node {
+//       backgroundImage: File
+//       importantFaqSection:
+//     }
+
+//   `;
+//   createTypes(typeDefs);
+// };

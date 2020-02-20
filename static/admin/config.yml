@@ -15,6 +15,7 @@ collections:
   - name: "programs"
     label: "Programs"
     folder: "src/pages/programs"
+    identifier_field: name
     create: true
     fields:
       - {
@@ -23,9 +24,130 @@ collections:
           widget: "hidden",
           default: "program-page",
         }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Featured Image", name: "image", widget: image }
-      - { label: "Description", name: "description", widget: "markdown" }
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Background Image", name: "backgroundImage", widget: "image" }
+      - label: "Important Faq Section"
+        name: "importantFaqSection"
+        widget: object
+        # default: ""
+        required: false
+        fields:
+          - {
+              label: "Description",
+              name: "description",
+              widget: "markdown",
+              # default: "",
+              required: false,
+            }
+          - label: "Questions"
+            name: questions
+            widget: list
+            # default: ""
+            required: false
+            fields:
+              - label: "Question"
+                name: question
+                widget: string
+                # default: ""
+                required: false
+              - label: "Answer"
+                name: answer
+                widget: markdown
+                # default: ""
+                required: false
+      - label: "Regular FAQ"
+        name: faqSection
+        widget: object
+        # default: ""
+        required: false
+        fields:
+          - label: "Title"
+            name: title
+            widget: string
+            # default: ""
+            required: false
+          - label: "Subtitle"
+            name: subtitle
+            widget: string
+            # default: ""
+            required: false
+          - label: "Body"
+            name: body
+            widget: markdown
+            # default: ""
+            required: false
+          - label: "Questions"
+            name: questions
+            widget: list
+            fields:
+              - label: "Question"
+                name: question
+                widget: string
+                # default: ""
+                required: false
+              - label: "Answer"
+                name: answer
+                widget: markdown
+                # default: ""
+                required: false
+      - label: "Learn more"
+        name: learnMoreSection
+        widget: object
+        fields:
+          - label: "Title"
+            name: title
+            widget: string
+            # default: ""
+            required: false
+          - label: "Subtitle"
+            name: subtitle
+            widget: string
+            # default: ""
+            required: false
+          - label: "Body"
+            name: body
+            widget: markdown
+            # default: ""
+            required: false
+          - label: "Questions"
+            name: questions
+            widget: list
+            fields:
+              - label: "Question"
+                name: question
+                widget: string
+                # default: ""
+                required: false
+              - label: "Answer"
+                name: answer
+                widget: string
+                # default: ""
+                required: false
+      - label: "Contact Us Section"
+        name: contactUsSection
+        widget: object
+        fields:
+          - label: "Title"
+            name: title
+            widget: string
+            # default: ""
+            required: false
+          - label: "Subtitle"
+            name: subtitle
+            widget: string
+            # default: ""
+            required: false
+          - label: "Body"
+            name: body
+            widget: markdown
+            # default: ""
+            required: false
+      - label: "Custom CSS"
+        name: customStyle
+        widget: markdown
+        # default: ""
+        required: false
+
   - name: "blog"
     label: "Blog"
     folder: "src/pages/archive"
@@ -108,8 +230,8 @@ collections:
                   label: "Section Subtitle",
                   name: "subtitle",
                   widget: "string",
-                  required: false,
                 }
+              # default: "",
               - label: "Transformations"
                 name: "transformation"
                 widget: "list"
@@ -130,12 +252,8 @@ collections:
                 widget: object
                 fields:
                   - { label: "Label", name: label, widget: string }
-                  - {
-                      label: "Sublabel",
-                      name: sublabel,
-                      widget: string,
-                      required: false,
-                    }
+                  - { label: "Sublabel", name: sublabel, widget: string }
+                  # default: "",
                   - { label: "URL", name: url, widget: string }
           - label: "Why Care Section"
             name: "whyCareSection"
@@ -221,95 +339,6 @@ collections:
                       required: false,
                     }
                   - { label: "URL", name: url, widget: string }
-      - file: "src/pages/prosperity-score/index.md"
-        label: "Prosperity Score Page"
-        name: "prosperity-score"
-        fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "prosperity-score-page",
-            }
-          - { label: "Title", name: "title", widget: "string" }
-          - label: "Intro Section"
-            name: "introSection"
-            widget: object
-            fields:
-              - { label: "Section Title", name: "title", widget: "string" }
-              - {
-                  label: "Section Subtitle",
-                  name: "subtitle",
-                  widget: "string",
-                  required: false,
-                }
-              - {
-                  label: "Body",
-                  name: "body",
-                  widget: "markdown",
-                  required: false,
-                }
-          - label: "Register Section"
-            name: "registerSection"
-            widget: object
-            fields:
-              - { label: "Section Title", name: "title", widget: "string" }
-              - {
-                  label: "Section Subtitle",
-                  name: "subtitle",
-                  widget: "string",
-                }
-          - label: "Faq Section"
-            name: "faqSection"
-            widget: object
-            fields:
-              - { label: "Section Title", name: "title", widget: "string" }
-              - {
-                  label: "Section Subtitle",
-                  name: "subtitle",
-                  widget: "string",
-                }
-              - label: "Questions"
-                name: "questions"
-                widget: "list"
-                fields:
-                  - label: "Question"
-                    name: "question"
-                    widget: "string"
-                  - label: "Answer"
-                    name: "answer"
-                    widget: "markdown"
-          - label: "Contact Section"
-            name: "contactSection"
-            widget: object
-            fields:
-              - { label: "Section Title", name: "title", widget: "string" }
-              - {
-                  label: "Section Subtitle",
-                  name: "subtitle",
-                  widget: "string",
-                }
-              - { label: "Body", name: "body", widget: "markdown" }
-          - label: "Learn More Section"
-            name: "learnMoreSection"
-            widget: object
-            fields:
-              - { label: "Section Title", name: "title", widget: "string" }
-              - {
-                  label: "Section Subtitle",
-                  name: "subtitle",
-                  widget: "string",
-                }
-              - label: "Informations List"
-                name: "informations"
-                widget: "list"
-                fields:
-                  - label: "Title"
-                    name: "title"
-                    widget: "string"
-                  - label: "Content"
-                    name: "content"
-                    widget: "markdown"
 
       - file: "src/pages/about/index.md"
         label: "About"

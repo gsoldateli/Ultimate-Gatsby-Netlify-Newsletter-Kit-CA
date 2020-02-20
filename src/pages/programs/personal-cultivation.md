@@ -1,7 +1,7 @@
 ---
 templateKey: program-page
-name: Rewarding Careers
-backgroundImage: /img/RewardingCareers_big_img.jpg
+name: Personal Cultivation
+backgroundImage: /img/PersonalCultivation_big_img.jpg
 importantFaqSection:
   description: >-
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dictum
@@ -44,7 +44,7 @@ faqSection:
     - answer: Qestidflsdkjflskdf
       question: Question X
   subtitle: ''
-  title: Rewarding Careers FAQ
+  title: Personal Cultivation FAQ
 learnMoreSection:
   body: >-
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam semper
@@ -66,7 +66,7 @@ learnMoreSection:
   questions:
     - answer: sdfsdfsdf
       question: One question
-  subtitle: — More details about Rewarding Careers follows
+  subtitle: — More details about Personal Cultivation follows
   title: Learn More
 contactUsSection:
   body: >-
@@ -78,7 +78,7 @@ contactUsSection:
 customStyle: |-
   <style>
   .program-title-inner {
-      background-color: #9d7ad8;
+      background-color: #2f9ac4;
   }
   </style>
 ---

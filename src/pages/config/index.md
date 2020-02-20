@@ -46,32 +46,42 @@ menus:
     code: |-
       [
                 { 
-                  "title": "Prosperity for the unprosperous",
-                  "url": "/solutions",
+                  "title": "Programs",
+                  "url": "/programs",
                   "submenus": [
                     {
-                      "title": "HOME Axxx",
-                      "url": "/solutions/solution-x/"
-                    }              
+                      "title": "Collective Intelligence",
+                      "url": "/programs/collective-intelligence/"
+                    },
+                    {
+                      "title": "Prosperity Score",
+                      "url": "/programs/prosperity-score/"
+                    },
+                    {
+                      "title": "All Aid",
+                      "url": "/programs/all-aid/"
+                    },
+                    {
+                      "title": "Rewarding Careers",
+                      "url": "/programs/rewarding-careers/"
+                    },
+                    {
+                      "title": "Cultural Ascent",
+                      "url": "/programs/cultural-ascent/"
+                    },
+                    {
+                      "title": "Personal Cultivation",
+                      "url": "/programs/personal-cultivation/"
+                    }
                   ]
                 },
                 { 
                   "title": "About Us",
-                  "submenus": [
-                    {
-                      "title": "HOME Axxx",
-                      "url": "/solutions"
-                    }              
-                  ]
+                  "url": "/about-us"
                 },
                 { 
                   "title": "Rising to a culmination tour",
-                  "submenus": [
-                    {
-                      "title": "HOME Axxx",
-                      "url": "/solutions"
-                    }              
-                  ]
+                  "url": "/rising-to-a-culmination-tour"
                 },
                 { 
                   "title": "Support Us",

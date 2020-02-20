@@ -37,6 +37,7 @@ export const RadioItemWrapper = styled.div`
   ${({ inline }) =>
     `${css`
       display: inline-flex;
-      margin-right: 3rem;
+      margin-right: 2rem;
+      width: auto;
     `}`};
 `;

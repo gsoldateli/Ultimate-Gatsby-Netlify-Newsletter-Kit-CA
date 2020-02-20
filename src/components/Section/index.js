@@ -76,7 +76,7 @@ const SectionWrapper = styled.section`
   }
 `;
 const Body = styled.div`
-  color: ${({ theme }) => theme.fontColor}; /* VARIABLE fontColor */
+  color: ${({ theme }) => theme.fontColor};
 
   max-width: 860px;
   margin: 0 auto;
@@ -86,7 +86,7 @@ const Header = styled.div`
   h2 {
     color: ${({ theme }) => theme.titleColor || "#333"};
     font-size: 56px;
-    font-weight: 700;
+    font-weight: 900;
     line-height: 76px;
     margin-bottom: 6px;
     @media (max-width: 759px) {
@@ -119,22 +119,33 @@ const Header = styled.div`
   }
 `;
 
-const Section = ({ children, title, subtitle, theme = "default" }) => {
+const Section = ({
+  children,
+  title,
+  subtitle,
+  theme = "default",
+  style = {}
+}) => {
   const currentTheme = themes[theme];
+  const showHeader = !!title || !!subtitle;
   return (
     <ThemeProvider theme={currentTheme}>
-      <SectionWrapper>
+      <SectionWrapper style={style.wrapper}>
         <Container>
-          <Header>
-            <h2>
-              <Markdown>{title}</Markdown>
-            </h2>
-            <h3>
-              {subtitle && subtitle.length > 0 && (
-                <Markdown>{subtitle}</Markdown>
+          {showHeader && (
+            <Header>
+              {title && (
+                <h2>
+                  <Markdown>{title}</Markdown>
+                </h2>
               )}
-            </h3>
-          </Header>
+              <h3>
+                {subtitle && subtitle.length > 0 && (
+                  <Markdown>{subtitle}</Markdown>
+                )}
+              </h3>
+            </Header>
+          )}
           <Body>{children}</Body>
         </Container>
       </SectionWrapper>

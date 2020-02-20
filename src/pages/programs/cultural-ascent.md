@@ -1,7 +1,7 @@
 ---
 templateKey: program-page
-name: Rewarding Careers
-backgroundImage: /img/RewardingCareers_big_img.jpg
+name: Cultural Ascent
+backgroundImage: /img/CulturalAscent_big_img.jpg
 importantFaqSection:
   description: >-
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dictum
@@ -44,7 +44,7 @@ faqSection:
     - answer: Qestidflsdkjflskdf
       question: Question X
   subtitle: ''
-  title: Rewarding Careers FAQ
+  title: Cultural Ascent FAQ
 learnMoreSection:
   body: >-
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam semper
@@ -66,20 +66,20 @@ learnMoreSection:
   questions:
     - answer: sdfsdfsdf
       question: One question
-  subtitle: — More details about Rewarding Careers follows
+  subtitle: — More details about Cultural Ascent follows
   title: Learn More
 contactUsSection:
   body: >-
-    If you have more questions or want to contact us, email us at
-    [prosperityscore@aihumanity.com](mailto://prosperityscore@aihumanity.com),
+    If you have more questions or want to contact us, email us
+    at[prosperityscore@aihumanity.com](mailto://prosperityscore@aihumanity.com),
     and we will get back to you within 24-48 hours
   subtitle: — Do you have additional questions?
   title: Contact Us
 customStyle: |-
   <style>
-  .program-title-inner {
-      background-color: #9d7ad8;
-  }
+
+  .program-title-inner { background-color: #8ab716; }
+
   </style>
 ---
 
