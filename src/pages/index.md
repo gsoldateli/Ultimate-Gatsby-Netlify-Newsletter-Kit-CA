@@ -67,6 +67,7 @@ whyCareSection:
 
     .homepage-intro-subtitle {
       font-size: 44px;
+      line-height: 60px;
     }
 
 
