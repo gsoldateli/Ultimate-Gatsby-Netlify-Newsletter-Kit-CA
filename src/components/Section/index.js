@@ -117,7 +117,8 @@ const Header = styled.div`
   }
   h3 {
     color: ${({ theme }) => theme.subtitleColor || "#333"};
-    font-size: 36px;
+    font-size: 34px;
+    line-height: 44px;
     font-weight: 300;
     margin-bottom: 3.2rem;
     @media (max-width: 759px) {
