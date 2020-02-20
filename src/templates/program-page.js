@@ -60,11 +60,13 @@ export const ProgramTemplate = ({
   faqSection,
   learnMoreSection,
   contactUsSection,
-  customStyle
+  customStyle,
+  helmet
 }) => {
   console.log({ importantFaqSection });
   return (
     <>
+      {helmet || ""}
       {customStyle && <Markdown>{customStyle}</Markdown>}
       <HeroWrapper backgroundImage={backgroundImage}>
         <HeroContent>
@@ -180,7 +182,6 @@ const Program = ({ data }) => {
       <ProgramTemplate
         name={program.name}
         customStyle={program.customStyle}
-        description={program.description}
         backgroundImage={backgroundImage}
         importantFaqSection={program.importantFaqSection}
         faqSection={program.faqSection}
@@ -188,9 +189,12 @@ const Program = ({ data }) => {
         contactUsSection={program.contactUsSection}
         customStyle={program.customStyle}
         helmet={
-          <Helmet titleTemplate="%s | Blog">
-            <title>{`${program.title}`}</title>
-            <meta name="description" content={`${program.description}`} />
+          <Helmet titleTemplate="%s | Program">
+            <title>{`${program.name}`}</title>
+            <meta
+              name="description"
+              content={`${program.importantFaqSection.description}`}
+            />
           </Helmet>
         }
       />

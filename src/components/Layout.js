@@ -30,7 +30,7 @@ const TemplateWrapper = ({ children }) => {
       <Reset />
       <Helmet>
         <html lang="en" />
-        <title>{title}</title>
+        <title>AI Humanity</title>
         <link
           rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
