@@ -92,7 +92,8 @@ const Body = styled.div`
 const Header = styled.div`
   h2 {
     color: ${({ theme }) => theme.titleColor || "#333"};
-    font-size: 56px;
+    font-family: cabin, sans-serif;
+    font-size: 52px;
     font-weight: 900;
     line-height: 76px;
     margin-bottom: 6px;
