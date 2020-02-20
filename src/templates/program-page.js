@@ -133,7 +133,8 @@ const Program = ({ data }) => {
   const {
     page: { frontmatter: program }
   } = data;
-  const backgroundImage = program.backgroundImage.childImageSharp.fluid.src;
+  // const backgroundImage = program.backgroundImage.childImageSharp.fluid.src;
+  const backgroundImage = program.backgroundImage.publicURL;
   return (
     <Layout>
       <ProgramTemplate
@@ -174,11 +175,12 @@ export const pageQuery = graphql`
       frontmatter {
         name
         backgroundImage {
-          childImageSharp {
-            fluid(maxWidth: 1200, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
+          publicURL
+          # childImageSharp {
+          #   fluid(maxWidth: 1200, quality: 100) {
+          #     ...GatsbyImageSharpFluid
+          #   }
+          # }
         }
         importantFaqSection {
           description

@@ -1,22 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-const HeroWrapper = styled.section`
-width: 100%;
-padding-top: 28.65%;
-position: relative;
-background-position: center;
-/* background-attachment: fixed; */
-background-size: cover;
-@media(max-width: 760px) {
-    padding-top: 33%;
-  }
-background-image: url('${({ backgroundImage }) =>
-  backgroundImage ? backgroundImage : "https://via.placeholder.com/1200x600"}');
-
-
-`;
-
 const HeroContent = styled.section`
   position: absolute;
   left: 50%;
@@ -48,15 +32,25 @@ const HeroTitle = styled.h1`
   }
 `;
 
+const BackgroundImage = styled.img`
+  object-fit: contain;
+  width: 100%;
+`;
+
+const Wrapper = styled.section`
+  position: relative;
+`;
+
 const HeroSection = ({ backgroundImage, title }) => {
   return (
-    <HeroWrapper backgroundImage={backgroundImage}>
+    <Wrapper>
+      <BackgroundImage src={backgroundImage} />
       <HeroContent>
         <HeroTitle className="program-title-inner hero-title">
           {title}
         </HeroTitle>
       </HeroContent>
-    </HeroWrapper>
+    </Wrapper>
   );
 };
 
