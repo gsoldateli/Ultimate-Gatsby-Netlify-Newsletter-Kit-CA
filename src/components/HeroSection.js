@@ -3,13 +3,18 @@ import styled from "styled-components";
 
 const HeroWrapper = styled.section`
 width: 100%;
-padding-top: 37.5%;
+padding-top: 28.65%;
 position: relative;
 background-position: center;
 /* background-attachment: fixed; */
 background-size: cover;
+@media(max-width: 760px) {
+    padding-top: 33%;
+  }
 background-image: url('${({ backgroundImage }) =>
   backgroundImage ? backgroundImage : "https://via.placeholder.com/1200x600"}');
+
+
 `;
 
 const HeroContent = styled.section`
