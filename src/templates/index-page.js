@@ -11,6 +11,7 @@ import HomeStatisticItem from "../components/HomeStatisticItem";
 import ButtonCTA from "../components/Section/ButtonCTA";
 import BeforeAfterSlide from "../components/BeforeAfterSlide";
 import GetStartedSection from "../components/GetStartedSection";
+import Container from "../components/Container";
 
 const SliderWrapper = styled.div`
   @media (min-width: 700px) {
@@ -112,7 +113,6 @@ export const IndexPageTemplate = data => {
       solutionsSection
     }
   } = data;
-  console.log(data);
   return (
     <>
       <Section
@@ -120,48 +120,50 @@ export const IndexPageTemplate = data => {
         subtitle={presentationSection.subtitle}
         // theme="blueDark"
       >
-        <SliderWrapper>
-          <Slider
-            slides={presentationSection.transformation.map(
-              (transform, index) => {
-                let { beforeImage, afterImage } = transform;
-                if (beforeImage.childImageSharp) {
-                  beforeImage = beforeImage.childImageSharp.fluid.src;
-                }
+        <Section.Body>
+          <SliderWrapper>
+            <Slider
+              slides={presentationSection.transformation.map(
+                (transform, index) => {
+                  let { beforeImage, afterImage } = transform;
+                  if (beforeImage.childImageSharp) {
+                    beforeImage = beforeImage.childImageSharp.fluid.src;
+                  }
 
-                if (afterImage.childImageSharp) {
-                  afterImage = afterImage.childImageSharp.fluid.src;
-                }
+                  if (afterImage.childImageSharp) {
+                    afterImage = afterImage.childImageSharp.fluid.src;
+                  }
 
-                return (
-                  <div key={index}>
-                    <SlideLabelWrapper>
-                      <CircleIcon>{index + 1}</CircleIcon>
-                      <div className="content">
-                        {<Markdown>{transform.body}</Markdown>}
-                      </div>
-                    </SlideLabelWrapper>
-                    <BeforeAfterSlide
-                      beforeImageSrc={beforeImage}
-                      afterImageSrc={afterImage}
-                    />
-                  </div>
-                );
-              }
-            )}
-            options={{
-              perView: 1,
-              gap: 29,
-              swipeThreshold: false,
-              breakpoints: {
-                700: {
-                  gap: 30
+                  return (
+                    <div key={index}>
+                      <SlideLabelWrapper>
+                        <CircleIcon>{index + 1}</CircleIcon>
+                        <div className="content">
+                          {<Markdown>{transform.body}</Markdown>}
+                        </div>
+                      </SlideLabelWrapper>
+                      <BeforeAfterSlide
+                        beforeImageSrc={beforeImage}
+                        afterImageSrc={afterImage}
+                      />
+                    </div>
+                  );
                 }
-              }
-            }}
-          />
-        </SliderWrapper>
-
+              )}
+              options={{
+                perView: 1,
+                gap: 29,
+                swipeThreshold: false,
+                breakpoints: {
+                  700: {
+                    gap: 30
+                  }
+                }
+              }}
+            />
+          </SliderWrapper>
+        </Section.Body>
+        <hr />
         <ButtonCTA.Wrapper>
           <ButtonCTA
             href={presentationSection.ctaButton.url}
@@ -170,140 +172,147 @@ export const IndexPageTemplate = data => {
           />
         </ButtonCTA.Wrapper>
       </Section>
+
       <Section
         theme="dark"
         title={whyCareSection.title}
         subtitle={whyCareSection.subtitle}
       >
-        <Markdown>{whyCareSection.body}</Markdown>
-        <HomeStatisticItem
-          title="The percentage of Americans living on poverty wage-that is, under self-sufficiency"
-          src="https://new-site.gsoldateli.now.sh/src/imgs/55%25.png"
-        />
-        <HomeStatisticItem
-          title="The percentage of Appalachians and African Americans who are poor-dependent on the government or under self-sufficient"
-          src="https://new-site.gsoldateli.now.sh/src/imgs/75%25.png"
-        />
-        <HomeStatisticItem
-          title="The media household wealth of Black Americans projected for 2053 (20 yrs later for Latino), if current trends hold "
-          content="(If is projected to be $137,000 for White Americans)"
-          src="https://new-site.gsoldateli.now.sh/src/imgs/zero.png"
-        />
-        <HomeStatisticItem
-          title="The percentage of African American communities with high poverty, high crime, and inadequate K-12 schools"
-          src="https://new-site.gsoldateli.now.sh/src/imgs/99%25.png"
-        />
+        <Section.Body>
+          <Markdown>{whyCareSection.body}</Markdown>
+          <HomeStatisticItem
+            title="The percentage of Americans living on poverty wage-that is, under self-sufficiency"
+            src="https://new-site.gsoldateli.now.sh/src/imgs/55%25.png"
+          />
+          <HomeStatisticItem
+            title="The percentage of Appalachians and African Americans who are poor-dependent on the government or under self-sufficient"
+            src="https://new-site.gsoldateli.now.sh/src/imgs/75%25.png"
+          />
+          <HomeStatisticItem
+            title="The media household wealth of Black Americans projected for 2053 (20 yrs later for Latino), if current trends hold "
+            content="(If is projected to be $137,000 for White Americans)"
+            src="https://new-site.gsoldateli.now.sh/src/imgs/zero.png"
+          />
+          <HomeStatisticItem
+            title="The percentage of African American communities with high poverty, high crime, and inadequate K-12 schools"
+            src="https://new-site.gsoldateli.now.sh/src/imgs/99%25.png"
+          />
 
-        <HomeStatisticItem
-          fluid
-          title="The massive, enduring Black-White achievement gap in education"
-          src="https://new-site.gsoldateli.now.sh/src/imgs/achievement_gap_image.png"
-          content={
-            <span>
-              (Graph shows the reading scores; the gap is worse for math.
-              Source: NAEP Report Card{" "}
-              <a href="https://www.nationsreportcard.gov/reading/nation/groups/?grade=8">
-                https://www.nationsreportcard.gov/reading/nation/groups/?grade=8)
-              </a>
-            </span>
-          }
-        />
-        <HomeStatisticItem
-          fluid
-          title="The median household income by race in the United States"
-          src="https://new-site.gsoldateli.now.sh/src/imgs/median_household_income.png"
-          content={
-            <span>
-              ( Source:{" "}
-              <a href="https://www.pgpf.org/blog/2019/10/income-and-wealth -in-the-united-states-an-overview-of-data">
-                https://www.pgpf.org/blog/2019/10/income-and-wealth
-                -in-the-united-states-an-overview-of-data)
-              </a>
-            </span>
-          }
-        />
-        <HomeStatisticItem
-          fluid
-          title="The median wealth disparity between White and Black Americans"
-          src="https://new-site.gsoldateli.now.sh/src/imgs/median_wealth_gap.png"
-          content={
-            <span>
-              ( Source:{" "}
-              <a href="https://inequality.org/facts/racial-inequality">
-                https://inequality.org/facts/racial-inequality
-              </a>
-              )
-            </span>
-          }
-        />
-        <HomeStatisticItem.Divider />
-        <div className="why-care-content-center">
-          <br />
-          <br />
+          <HomeStatisticItem
+            fluid
+            title="The massive, enduring Black-White achievement gap in education"
+            src="https://new-site.gsoldateli.now.sh/src/imgs/achievement_gap_image.png"
+            content={
+              <span>
+                (Graph shows the reading scores; the gap is worse for math.
+                Source: NAEP Report Card{" "}
+                <a href="https://www.nationsreportcard.gov/reading/nation/groups/?grade=8">
+                  https://www.nationsreportcard.gov/reading/nation/groups/?grade=8)
+                </a>
+              </span>
+            }
+          />
+          <HomeStatisticItem
+            fluid
+            title="The median household income by race in the United States"
+            src="https://new-site.gsoldateli.now.sh/src/imgs/median_household_income.png"
+            content={
+              <span>
+                ( Source:{" "}
+                <a href="https://www.pgpf.org/blog/2019/10/income-and-wealth -in-the-united-states-an-overview-of-data">
+                  https://www.pgpf.org/blog/2019/10/income-and-wealth
+                  -in-the-united-states-an-overview-of-data)
+                </a>
+              </span>
+            }
+          />
+          <HomeStatisticItem
+            fluid
+            title="The median wealth disparity between White and Black Americans"
+            src="https://new-site.gsoldateli.now.sh/src/imgs/median_wealth_gap.png"
+            content={
+              <span>
+                ( Source:{" "}
+                <a href="https://inequality.org/facts/racial-inequality">
+                  https://inequality.org/facts/racial-inequality
+                </a>
+                )
+              </span>
+            }
+          />
+          <HomeStatisticItem.Divider />
+          <div className="why-care-content-center">
+            <br />
+            <br />
 
-          <h4>
-            <big>
+            <h4>
               <big>
                 <big>
-                  <big>Globally</big>
+                  <big>
+                    <big>Globally</big>
+                  </big>
                 </big>
               </big>
-            </big>
-          </h4>
-          <br />
-        </div>
-        <HomeStatisticItem
-          title="The percentage of poor countries that are still poor after 50 years of invtervention by the West"
-          src="http://i.imgur.com/JHBxrt1.png"
-          content="(Over 90 countries still poor - from Haiti and Bangladesh, to Honduras and Congo)"
-        />
-        <HomeStatisticItem
-          title="The percentage of college educated and high-skilled workforce who leave their poor countries to live and work in rich (or richer) countries - a crucial reason economic development in poor countries elusive"
-          src="http://i.imgur.com/YLgTtBR.png"
-          content="(For example, 83% Guyanaese, 60% Jamaicans)"
-        />
-        <HomeStatisticItem.Divider />
-
-        <ButtonCTA.Wrapper>
-          <ButtonCTA
-            href={whyCareSection.ctaButton.url}
-            mainText={whyCareSection.ctaButton.label}
-            secondaryText={whyCareSection.ctaButton.sublabel}
+            </h4>
+            <br />
+          </div>
+          <HomeStatisticItem
+            title="The percentage of poor countries that are still poor after 50 years of invtervention by the West"
+            src="http://i.imgur.com/JHBxrt1.png"
+            content="(Over 90 countries still poor - from Haiti and Bangladesh, to Honduras and Congo)"
           />
-        </ButtonCTA.Wrapper>
+          <HomeStatisticItem
+            title="The percentage of college educated and high-skilled workforce who leave their poor countries to live and work in rich (or richer) countries - a crucial reason economic development in poor countries elusive"
+            src="http://i.imgur.com/YLgTtBR.png"
+            content="(For example, 83% Guyanaese, 60% Jamaicans)"
+          />
+          <HomeStatisticItem.Divider />
+
+          <ButtonCTA.Wrapper>
+            <ButtonCTA
+              href={whyCareSection.ctaButton.url}
+              mainText={whyCareSection.ctaButton.label}
+              secondaryText={whyCareSection.ctaButton.sublabel}
+            />
+          </ButtonCTA.Wrapper>
+        </Section.Body>
       </Section>
       <Section
         title={whyYouCrucialSection.title}
         subtitle={whyYouCrucialSection.subtitle}
       >
-        {<Markdown>{whyYouCrucialSection.body}</Markdown>}
+        <Section.Body>
+          {<Markdown>{whyYouCrucialSection.body}</Markdown>}
+        </Section.Body>
       </Section>
       <Section
         theme="dark"
         title={solutionsSection.title}
         subtitle={solutionsSection.subtitle}
       >
-        {solutionsSection.programs.map((program, index) => {
-          return (
-            <SolutionItem key={index}>
-              <CircleIconSolution>{index + 1}</CircleIconSolution>
-              <div className="content">
-                <h4 className="title">{program.name}</h4>
-                <div className="description">{program.description}</div>
-              </div>
-            </SolutionItem>
-          );
-        })}
-        {<Markdown>{solutionsSection.body}</Markdown>}
-        <HomeStatisticItem.Divider
-          style={{
-            position: "absolute",
-            bottom: 0,
-            maxWidth: "1062px",
-            left: "50%",
-            transform: "translate3d(-50%,-50%,0)"
-          }}
-        />
+        <Section.Body>
+          {solutionsSection.programs.map((program, index) => {
+            return (
+              <SolutionItem key={index}>
+                <CircleIconSolution>{index + 1}</CircleIconSolution>
+                <div className="content">
+                  <h4 className="title">{program.name}</h4>
+                  <div className="description">{program.description}</div>
+                </div>
+              </SolutionItem>
+            );
+          })}
+          {<Markdown>{solutionsSection.body}</Markdown>}
+          <HomeStatisticItem.Divider
+            style={{
+              position: "absolute",
+              bottom: 0,
+              maxWidth: "1062px",
+              left: "50%",
+              transform: "translate3d(-50%,-50%,0)"
+            }}
+          />
+        </Section.Body>
       </Section>
       <GetStartedSection />
     </>

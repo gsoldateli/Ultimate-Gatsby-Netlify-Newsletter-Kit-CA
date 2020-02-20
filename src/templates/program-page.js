@@ -20,19 +20,14 @@ export const ProgramTemplate = ({
   customStyle,
   helmet
 }) => {
-  console.log({ importantFaqSection });
   return (
     <>
       {helmet || ""}
       {customStyle && <Markdown>{customStyle}</Markdown>}
       <HeroSection backgroundImage={backgroundImage} title={name} />
-      {/* <HeroWrapper backgroundImage={backgroundImage}>
-        <HeroContent>
-          <ProgramTitle className="program-title-inner">{name}</ProgramTitle>
-        </HeroContent>
-      </HeroWrapper> */}
+
       <Section>
-        <>
+        <Section.Body>
           {importantFaqSection.description && (
             <>
               <Markdown>{importantFaqSection.description}</Markdown>
@@ -54,7 +49,7 @@ export const ProgramTemplate = ({
               )}
             />
           )}
-        </>
+        </Section.Body>
       </Section>
 
       <GetStartedSection />
@@ -63,7 +58,7 @@ export const ProgramTemplate = ({
         subtitle={faqSection.subtitle || "— Get all of your questions answered"}
         style={{ wrapper: { paddingBottom: "0" } }}
       >
-        <>
+        <Section.Body>
           {faqSection.body && (
             <>
               <Markdown>{faqSection.body}</Markdown>
@@ -85,7 +80,7 @@ export const ProgramTemplate = ({
               )}
             />
           )}
-        </>
+        </Section.Body>
       </Section>
       <Section
         title={learnMoreSection.title}
@@ -93,7 +88,7 @@ export const ProgramTemplate = ({
           learnMoreSection.subtitle || "— Get all of your questions answered"
         }
       >
-        <>
+        <Section.Body>
           {learnMoreSection.body && (
             <>
               <Markdown>{learnMoreSection.body}</Markdown>
@@ -115,7 +110,7 @@ export const ProgramTemplate = ({
               )}
             />
           )}
-        </>
+        </Section.Body>
       </Section>
       <Section
         theme="dark"
@@ -124,7 +119,11 @@ export const ProgramTemplate = ({
           contactUsSection.subtitle || "— Do you have additional questions?"
         }
       >
-        {contactUsSection.body && <Markdown>{contactUsSection.body}</Markdown>}
+        <Section.Body>
+          {contactUsSection.body && (
+            <Markdown>{contactUsSection.body}</Markdown>
+          )}
+        </Section.Body>
       </Section>
     </>
   );

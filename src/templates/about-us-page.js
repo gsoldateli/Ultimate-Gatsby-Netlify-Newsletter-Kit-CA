@@ -10,15 +10,17 @@ import ButtonCTA from "../components/Section/ButtonCTA";
 import Helmet from "react-helmet";
 import Markdown from "markdown-to-jsx";
 
-export const AboutUsPageTemplate = ({
-  title,
-  description,
-  backgroundImage,
-  overviewSection,
-  contactUsSection,
-  supportUsSection,
-  helmet
-}) => {
+export const AboutUsPageTemplate = props => {
+  const {
+    title,
+    description,
+    backgroundImage,
+    overviewSection,
+    contactUsSection,
+    supportUsSection,
+    helmet
+  } = props;
+  console.log({ props });
   return (
     <>
       {helmet || ""}
@@ -31,23 +33,25 @@ export const AboutUsPageTemplate = ({
         subtitle={overviewSection.subtitle}
         style={{ wrapper: { paddingBottom: 0 } }}
       >
-        <Markdown>{overviewSection.body}</Markdown>
-        <br />
-        <br />
-        {overviewSection.things && (
-          <Accordion
-            items={overviewSection.things.map(
-              ({ title, description }, index) => ({
-                head: (
-                  <strong>
-                    <big style={{ fontSize: "110%" }}>{title}</big>
-                  </strong>
-                ),
-                body: <Markdown>{description}</Markdown>
-              })
-            )}
-          />
-        )}
+        <Section.Body>
+          <Markdown>{overviewSection.body}</Markdown>
+          <br />
+          <br />
+          {overviewSection.things && (
+            <Accordion
+              items={overviewSection.things.map(
+                ({ title, description }, index) => ({
+                  head: (
+                    <strong>
+                      <big style={{ fontSize: "110%" }}>{title}</big>
+                    </strong>
+                  ),
+                  body: <Markdown>{description}</Markdown>
+                })
+              )}
+            />
+          )}
+        </Section.Body>
       </Section>
       <Section
         title={contactUsSection.title || "Contact Us"}
@@ -55,21 +59,25 @@ export const AboutUsPageTemplate = ({
           contactUsSection.subtitle || "— Do you have additional questions?"
         }
       >
-        <Markdown>{contactUsSection.body}</Markdown>
+        <Section.Body>
+          <Markdown>{contactUsSection.body}</Markdown>
+        </Section.Body>
       </Section>
       <Section
         theme="dark"
         title={supportUsSection.title}
         subtitle={supportUsSection.subtitle}
       >
-        <Markdown>{supportUsSection.body}</Markdown>
-        <br />
-        <br />
-        <ButtonCTA
-          href={supportUsSection.ctaButton.url}
-          mainText={supportUsSection.ctaButton.label}
-          secondaryText={supportUsSection.ctaButton.sublabel}
-        />
+        <Section.Body>
+          <Markdown>{supportUsSection.body}</Markdown>
+          <br />
+          <br />
+          <ButtonCTA
+            href={supportUsSection.ctaButton.url}
+            mainText={supportUsSection.ctaButton.label}
+            secondaryText={supportUsSection.ctaButton.sublabel}
+          />
+        </Section.Body>
       </Section>
     </>
   );

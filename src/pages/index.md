@@ -11,8 +11,9 @@ presentationSection:
     With just a bit of effor (less than beefing with someone on Twitter) you
     will help to:
   title: >-
-    Join our movement to democratize prosperity - <strong>only you can make this
-    a reality</strong> <hr/>
+    <span className="homepage-intro-title" ><strong>Join our movement to
+    democratize prosperity</strong>— only you can make this a reality</span> <hr
+    className="homepage-header" />
   transformation:
     - afterImage: /img/chemex.jpg
       beforeImage: /img/blog-index.jpg
@@ -39,7 +40,28 @@ whyCareSection:
        font-weight: 300;
     }
 
-    hr {
+
+    .homepage-intro-title {
+       font-weight: 400;
+    }
+
+
+    .homepage-intro-title > * {
+
+    display: inline;
+
+    }
+
+    .homepage-intro-title > strong {
+      font-weight: 900;
+    }
+
+
+    h2 hr.homepage-header {
+
+    margin-top: 5rem;
+
+    margin-bottom: 2rem;
 
     }
 

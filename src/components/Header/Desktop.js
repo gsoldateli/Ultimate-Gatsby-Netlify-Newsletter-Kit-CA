@@ -11,7 +11,7 @@ const Logo = styled.img`
 `;
 
 const Slogan = styled.h2`
-  font-size: 16px;
+  font-size: 18px;
   color: #8c8a8e;
   font-weight: 400;
   margin-top: 15px;

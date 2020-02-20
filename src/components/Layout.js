@@ -5,6 +5,7 @@ import Navbar, { NavbarContext } from "../components/Navbar";
 import Header, { Mobile } from "../components/Header";
 import { Reset } from "../components/Reset";
 import "typeface-roboto";
+import "typeface-cabin";
 
 import useSiteMetadata from "./SiteMetadata";
 

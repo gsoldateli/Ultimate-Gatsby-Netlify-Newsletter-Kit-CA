@@ -39,6 +39,7 @@
     "sharp": "0.24.0",
     "styled-components": "5.0.0",
     "typeface-amiko": "0.0.72",
+    "typeface-cabin": "0.0.72",
     "typeface-merriweather": "^0.0.72",
     "typeface-roboto": "0.0.75",
     "uuid": "^3.2.1"

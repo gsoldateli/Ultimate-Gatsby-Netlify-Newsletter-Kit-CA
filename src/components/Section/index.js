@@ -74,6 +74,13 @@ const SectionWrapper = styled.section`
   big {
     font-size: 110%;
   }
+  hr {
+    margin-top: 3rem;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+  }
 `;
 const Body = styled.div`
   color: ${({ theme }) => theme.fontColor};
@@ -146,11 +153,13 @@ const Section = ({
               </h3>
             </Header>
           )}
-          <Body>{children}</Body>
+          {children}
         </Container>
       </SectionWrapper>
     </ThemeProvider>
   );
 };
+
+Section.Body = Body;
 
 export default Section;

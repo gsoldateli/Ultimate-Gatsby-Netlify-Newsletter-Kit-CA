@@ -80,7 +80,9 @@ const GetStartedSection = ({
 }) => {
   return (
     <Section title={title} subtitle={subtitle} theme={theme}>
-      <Form />
+      <Section.Body>
+        <Form />
+      </Section.Body>
     </Section>
   );
 };
