@@ -36,13 +36,18 @@ export const RadioItemWrapper = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 15px;
   width: 100%;
+  ${RadioBall} {
+    transform: ${({ inline }) => (inline ? "none" : "translateY(2px)")};
+  }
 
   ${({ inline }) =>
+    inline &&
     `${css`
       display: inline-flex;
+      align-items: center;
       margin-right: 2rem;
       width: auto;
     `}`};

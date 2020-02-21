@@ -96,6 +96,11 @@ const SolutionItem = styled.article`
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 0;
+    @media (max-width: 759px) {
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: 2rem;
+    }
   }
 
   .description {

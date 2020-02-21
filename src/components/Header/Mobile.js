@@ -18,8 +18,13 @@ const Slogan = styled.h2`
   font-size: 14px;
   font-weight: 300;
   margin-top: 6px;
-  @media (max-width: 520px) {
-    font-size: 10px;
+  @media (max-width: 759px) {
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 15px;
+  }
+  @media (max-width: 420px) {
+    font-size: 12px;
   }
 `;
 

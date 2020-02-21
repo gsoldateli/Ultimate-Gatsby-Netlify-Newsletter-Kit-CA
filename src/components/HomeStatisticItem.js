@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   flex-flow: row wrap;
   justify-content: center;
   /* align-items: center; */
-  margin: 0 auto 3rem;
+  margin: 0 auto;
   max-width: ${({ fluid }) => (fluid ? "100%" : "730px")};
 
   @media (max-width: 760px) {
@@ -39,9 +39,15 @@ const Divider = styled.span`
   background-color: #4c4754;
   width: 1px;
   margin: 0 2rem;
+`;
 
-  @media (max-width: 760px) {
-    display: none;
+const DividerMobile = styled(Divider)`
+  display: none;
+  @media (max-width: 759px) {
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin: 2rem 0 3rem;
   }
 `;
 
@@ -55,6 +61,9 @@ const ContentWrapper = styled.div`
   .title {
     font-size: 22px;
     font-weight: 600;
+    @media (max-width: 759px) {
+      line-height: 28px;
+    }
   }
 
   .content {
@@ -80,16 +89,25 @@ const ContentWrapper = styled.div`
   }
 `;
 
-const HomeStatisticItem = ({ fluid, title, content, src }) => {
+const HomeStatisticItem = ({
+  fluid,
+  title,
+  content,
+  src,
+  disableMobileDivider = false
+}) => {
   return (
-    <Wrapper fluid={fluid}>
-      <GraphImage src={src} fluid={fluid} />
-      <Divider />
-      <ContentWrapper fluid={fluid}>
-        <h5 className="title">{title}</h5>
-        <div className="content">{content}</div>
-      </ContentWrapper>
-    </Wrapper>
+    <>
+      {!disableMobileDivider && <DividerMobile />}
+      <Wrapper fluid={fluid}>
+        <GraphImage src={src} fluid={fluid} />
+        <Divider />
+        <ContentWrapper fluid={fluid}>
+          <h5 className="title">{title}</h5>
+          <div className="content">{content}</div>
+        </ContentWrapper>
+      </Wrapper>
+    </>
   );
 };
 

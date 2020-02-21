@@ -25,6 +25,7 @@ const WhyWeCareSection = ({ whyCareSection }) => {
       <Section.Body>
         <Markdown>{whyCareSection.body}</Markdown>
         <HomeStatisticItem
+          disableMobileDivider
           title="The percentage of Americans living on poverty wage-that is, under self-sufficiency"
           src={Img55Percent}
         />
@@ -100,6 +101,7 @@ const WhyWeCareSection = ({ whyCareSection }) => {
           <br />
         </div>
         <HomeStatisticItem
+          disableMobileDivider
           title="The percentage of the global population that is poor or devastatingly poor"
           src={Img68PercentImage}
         />

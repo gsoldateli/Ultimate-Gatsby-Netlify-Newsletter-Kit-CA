@@ -54,6 +54,8 @@ whyCareSection:
     }
 
 
+
+
     .homepage-intro-title > * {
 
     display: inline;
@@ -76,6 +78,49 @@ whyCareSection:
     margin-top: 5rem;
 
     margin-bottom: 2rem;
+
+    }
+
+
+    @media(max-width: 759px) {
+       .homepage-intro-title {
+          font-size: 8vw;  
+          line-height: 10vw;
+        }
+
+        .homepage-intro-subtitle {
+          font-size: 30px;
+        }
+     .why-care-content-center > h4 {
+      font-size: 34px; 
+      font-weight: 500;
+     }
+
+     .why-care-content-subtitle {
+      font-size: 1.2rem; 
+      font-weight: 300;  
+      line-height: 1.4rem;
+     }
+    }
+
+
+    @media(max-width: 680px) {
+
+    .homepage-intro-title {
+
+    line-height: 7vw;
+
+    }
+        .homepage-intro-subtitle {
+           font-size: 6vw;
+           line-height: 8vw;
+        }  
+
+    h2 hr.homepage-header {
+      margin-top: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
 
     }
 

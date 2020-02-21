@@ -41,6 +41,12 @@ const SectionWrapper = styled.section`
     font-size: 1.9rem;
     line-height: 2.3rem;
     margin-bottom: 1.6rem;
+
+    @media (max-width: 759px) {
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: 2rem;
+    }
   }
 
   h5 {
@@ -105,7 +111,7 @@ const Header = styled.div`
     @media (max-width: 600px) {
       text-align: center;
       font-size: 12vw;
-      line-height: 12vw;
+      line-height: 14vw;
       margin-bottom: 2rem;
     }
     strong {
@@ -124,6 +130,7 @@ const Header = styled.div`
     @media (max-width: 759px) {
       font-size: 24px;
       line-height: 1.8rem;
+      text-align: center;
     }
   }
 `;
