@@ -15,12 +15,13 @@ const Wrapper = styled.div`
   flex-flow: row wrap;
   justify-content: center;
   /* align-items: center; */
-  margin: 0 auto;
+  margin: 0 auto 3rem;
   max-width: ${({ fluid }) => (fluid ? "100%" : "730px")};
 
-  @media (max-width: 760px) {
+  @media (max-width: 759px) {
     flex-flow: column wrap;
     align-items: center;
+    margin: 0 auto;
   }
 `;
 
