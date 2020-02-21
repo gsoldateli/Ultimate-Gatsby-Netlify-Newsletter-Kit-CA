@@ -15,16 +15,14 @@ presentationSection:
     democratize prosperity</strong>— only you can make this a reality</span> <hr
     className="homepage-header" />
   transformation:
-    - afterImage: /img/chemex.jpg
-      beforeImage: /img/blog-index.jpg
-      body: >-
-        Nunc vitae nulla vitae urna blandit mattis quis id velit. Vestibulum non
-        massa at leo dictum gravida.
-    - afterImage: /img/flavor_wheel.jpg
-      beforeImage: /img/blog-index.jpg
-      body: >-
-        222Nunc vitae nulla vitae urna blandit mattis quis id velit. Vestibulum
-        non massa at leo dictum gravida.
+    - body: From Coffee
+      image: /img/blog-index.jpg
+    - body: To Coffee
+      image: /img/chemex.jpg
+    - body: From Black dog looking to horizon
+      image: /img/dog-4118585_1280.jpg
+    - body: To master PUG staring to you
+      image: /img/pug-690566_1280.jpg
 whyCareSection:
   body: >-
     <style>

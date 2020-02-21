@@ -236,16 +236,7 @@ collections:
                 name: "transformation"
                 widget: "list"
                 fields:
-                  - {
-                      label: "Before Image",
-                      name: "beforeImage",
-                      widget: "image",
-                    }
-                  - {
-                      label: "After Image",
-                      name: "afterImage",
-                      widget: "image",
-                    }
+                  - { label: "Image", name: "image", widget: "image" }
                   - { label: "Body", name: body, widget: markdown }
               - label: "CTA Button"
                 name: "ctaButton"

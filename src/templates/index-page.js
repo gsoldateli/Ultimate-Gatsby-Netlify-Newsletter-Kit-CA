@@ -31,6 +31,44 @@ const SliderWrapper = styled.div`
       display: flex;
     }
   }
+
+  /* .label-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+  } */
+
+  .glide__slide {
+    padding-left: 0;
+    opacity: 0.3;
+    transition: opacity 0.3s, transform 0.4s;
+    transform: scale(0.8);
+    .label-wrapper {
+      width: 100%;
+      margin-left: -22px;
+    }
+    &--active {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+`;
+
+const SlideItem = styled.article`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    display: block;
+    margin-right: 1rem;
+  }
+
+  .arrow {
+    display: block;
+    font-size: 3rem;
+    color: gray;
+  }
 `;
 
 const CircleIcon = styled.span`
@@ -125,49 +163,48 @@ export const IndexPageTemplate = data => {
         subtitle={presentationSection.subtitle}
         // theme="blueDark"
       >
-        <Section.Body>
-          <SliderWrapper>
-            <Slider
-              slides={presentationSection.transformation.map(
-                (transform, index) => {
-                  let { beforeImage, afterImage } = transform;
-                  if (beforeImage.childImageSharp) {
-                    beforeImage = beforeImage.childImageSharp.fluid.src;
-                  }
-
-                  if (afterImage.childImageSharp) {
-                    afterImage = afterImage.childImageSharp.fluid.src;
-                  }
-
-                  return (
-                    <div key={index}>
-                      <SlideLabelWrapper>
-                        <CircleIcon>{index + 1}</CircleIcon>
-                        <div className="content">
-                          {<Markdown>{transform.body}</Markdown>}
-                        </div>
-                      </SlideLabelWrapper>
-                      <BeforeAfterSlide
-                        beforeImageSrc={beforeImage}
-                        afterImageSrc={afterImage}
-                      />
-                    </div>
-                  );
+        {/* <Section.Body>
+          
+        </Section.Body> */}
+        <SliderWrapper>
+          <Slider
+            slides={presentationSection.transformation.map(
+              (transform, index) => {
+                let { image } = transform;
+                if (image.childImageSharp) {
+                  image = image.childImageSharp.fluid.src;
                 }
-              )}
-              options={{
-                perView: 1,
-                gap: 29,
-                swipeThreshold: false,
-                breakpoints: {
-                  700: {
-                    gap: 30
-                  }
+
+                return (
+                  <div key={index}>
+                    <SlideLabelWrapper className="label-wrapper">
+                      <CircleIcon>{index + 1}</CircleIcon>
+                      <div className="content">
+                        {<Markdown>{transform.body}</Markdown>}
+                      </div>
+                    </SlideLabelWrapper>
+                    <SlideItem>
+                      <img src={image} />
+                      <span className="arrow">→</span>
+                      {/* {index % 2 === 0 && <span className="arrow">→</span>} */}
+                    </SlideItem>
+                  </div>
+                );
+              }
+            )}
+            options={{
+              perView: 2,
+              gap: 40,
+              focusAt: "center",
+              breakpoints: {
+                700: {
+                  perView: 1,
+                  gap: 100
                 }
-              }}
-            />
-          </SliderWrapper>
-        </Section.Body>
+              }
+            }}
+          />
+        </SliderWrapper>
         <hr />
         <ButtonCTA.Wrapper>
           <ButtonCTA
@@ -255,20 +292,20 @@ export const pageQuery = graphql`
           transformation {
             body
 
-            beforeImage {
+            image {
               childImageSharp {
-                fluid(maxWidth: 400, quality: 100) {
+                fluid(maxWidth: 600, quality: 100) {
                   ...GatsbyImageSharpFluid
                 }
               }
             }
-            afterImage {
-              childImageSharp {
-                fluid(maxWidth: 400, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
+            # afterImage {
+            #   childImageSharp {
+            #     fluid(maxWidth: 400, quality: 100) {
+            #       ...GatsbyImageSharpFluid
+            #     }
+            #   }
+            # }
           }
           ctaButton {
             label
