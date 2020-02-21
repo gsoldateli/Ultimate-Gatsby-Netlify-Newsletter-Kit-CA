@@ -42,14 +42,19 @@ const SliderWrapper = styled.div`
     padding-left: 0;
     opacity: 0.3;
     transition: opacity 0.3s, transform 0.4s;
-    transform: scale(0.8);
+    @media (min-width: 700px) {
+      transform: scale(0.8);
+    }
+
     .label-wrapper {
       width: 100%;
       margin-left: -22px;
     }
     &--active {
       opacity: 1;
-      transform: scale(1);
+      @media (min-width: 700px) {
+        transform: scale(1);
+      }
     }
   }
 `;
