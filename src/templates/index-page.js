@@ -164,13 +164,69 @@ export const IndexPageTemplate = data => {
   return (
     <>
       <Section
-        title={presentationSection.title}
-        subtitle={presentationSection.subtitle}
-        // theme="blueDark"
+        title={
+          "JOIN OUR MOVEMENT <span>democratize prosperity now</span>" ||
+          presentationSection.title
+        }
+        theme="darkPresentation"
+        style={{ wrapper: { height: "574px" } }}
+        styl={{
+          h: `
+            h2 {
+              margin-top: 120px;
+              text-align: center;
+              font-size: 60px !important;
+              font-weight: bolder !important;
+            }
+
+            h2 span span {
+              display: block;
+              font-size: 50px !important;
+              font-weight: 100;
+            }
+          `
+        }}
       >
         {/* <Section.Body>
           
         </Section.Body> */}
+      </Section>
+
+      <Section
+        title={`<span>No Politics!</span>-Just Innovation and Collective Effort`}
+        subtitle={
+          "With less effort than beefing with someone on social media, <span>you will help to transform:</span>"
+        }
+        styl={{
+          h: `h2 {
+              border-top: 1px solid #D5D5D5; 
+              border-bottom: 1px solid #D5D5D5; 
+              color: #272233 !important; 
+              font-size: 34px !important;
+              text-align: center;
+              font-weight: 100 !important;
+              width: 85%;
+              margin: 20px auto 70px !important;
+              padding: 30px 0;
+            }
+            h2 span {
+              font-weight: bolder;
+            }
+
+            h3 {
+              color: #6E21E4;
+              width: 85%;
+              font-size: 44px !important;
+              margin-left: 80px;
+              line-height: 64px !important;
+            }
+
+            h3 span span {
+              font-weight: bolder;
+            }
+            `
+        }}
+      >
         <SliderWrapper>
           <Slider
             slides={presentationSection.transformation.map(
