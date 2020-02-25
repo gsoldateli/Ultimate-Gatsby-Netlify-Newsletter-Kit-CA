@@ -13,6 +13,8 @@ import BeforeAfterSlide from "../components/BeforeAfterSlide";
 import GetStartedSection from "../components/GetStartedSection";
 import WhyYouCareSection from "../components/WhyYouCareSection";
 
+import { Stickyroll } from "@stickyroll/stickyroll";
+
 const SliderWrapper = styled.div`
   @media (min-width: 700px) {
     margin-left: -70px;
@@ -101,14 +103,15 @@ const CircleIconSolution = styled(CircleIcon)`
 const SlideLabelWrapper = styled.div`
   display: flex;
   flex-flow: row wrap;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   margin-bottom: 2rem;
+  margin-left: 1rem;
 
   .content {
     width: calc(100% - 70px);
     font-size: 1.3rem;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 1.7rem;
     color: ${({ theme }) => theme.fontColor || "#333"};
   }
@@ -122,6 +125,21 @@ const SlideLabelWrapper = styled.div`
     .circle {
       font-size: 1rem;
     }
+  }
+`;
+
+const TransformationCardWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    height: 560px;
+    width: 480px;
+  }
+  span {
+    font-size: 30px;
+    font-weight: bolder;
+    margin: auto 14px;
   }
 `;
 
@@ -227,6 +245,31 @@ export const IndexPageTemplate = data => {
             `
         }}
       >
+        <Stickyroll pages={presentationSection.transformation}>
+          {({ page, pageIndex, pages, progress }) => {
+            return (
+              <div class="transformation-card">
+                <SlideLabelWrapper className="label-wrapper">
+                  <CircleIcon>{pageIndex + 1}</CircleIcon>
+                  <div className="content">
+                    {
+                      <Markdown>
+                        {presentationSection.transformation[pageIndex].body}
+                      </Markdown>
+                    }
+                  </div>
+                </SlideLabelWrapper>
+                <TransformationCardWrapper>
+                  <img src="https://via.placeholder.com/480" alt="" />
+                  <span>&#8594;</span>
+                  <img src="https://via.placeholder.com/480" alt="" />
+                </TransformationCardWrapper>
+                <hr />
+              </div>
+            );
+          }}
+        </Stickyroll>
+        {/* 
         <SliderWrapper>
           <Slider
             slides={presentationSection.transformation.map(
@@ -247,7 +290,6 @@ export const IndexPageTemplate = data => {
                     <SlideItem>
                       <img src={image} />
                       <span className="arrow">→</span>
-                      {/* {index % 2 === 0 && <span className="arrow">→</span>} */}
                     </SlideItem>
                   </div>
                 );
@@ -267,6 +309,7 @@ export const IndexPageTemplate = data => {
           />
         </SliderWrapper>
         <hr />
+      */}
         <ButtonCTA.Wrapper>
           <ButtonCTA
             href={presentationSection.ctaButton.url}
