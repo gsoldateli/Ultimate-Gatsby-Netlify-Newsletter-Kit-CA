@@ -8,12 +8,11 @@ presentationSection:
     sublabel: via our Collective Intelligence program
     url: 'https://google.com'
   subtitle: >-
-    <span className="homepage-intro-subtitle">With just a bit of effor (less
-    than beefing with someone on Twitter) you will help to:</span>
+    <span className="homepage-intro-subtitle">With less effort than beefing with
+    someone on social media, **you will help to:**</span>
   title: >-
-    <span className="homepage-intro-title" ><strong>Join our movement to
-    democratize prosperity</strong>— only you can make this a reality</span> <hr
-    className="homepage-header" />
+    <span className="homepage-intro-title" ><strong>Join Our
+    Movement</strong></span> <hr className="homepage-header" />
   transformation:
     - body: From Coffee
       image: /img/blog-index.jpg
@@ -124,13 +123,15 @@ whyCareSection:
 
     </style>
 
+
     <div className="why-care-content-center">
 
-    #### The Status Quo Has Not Helped
+    #### The Unprosperous Are Still Unprosperous
 
 
-    <span className="why-care-content-subtitle">After 70 years and over $5
-    Trillion, the main problems remain:</span>
+    <span className="why-care-content-subtitle">After 70 years of policies and
+    political promises, the main problems remain:</span>
+
 
     </div>
   ctaButton:
@@ -138,82 +139,123 @@ whyCareSection:
     sublabel: via our Collective Intelligence program
     url: 'https://dontknow.com'
   subtitle: >-
-    Nunc vitae nulla vitae urna blandit mattis quis id velit. Vestibulum non
-    massa at leo dictum gravida. Suspendisse faucibus justo at placerat
-    pulvinar.
+    — Because poverty and economic hardship devastate our brain (impair
+    cognitive capacity and mental health), genes, body, families, and
+    communities, and the suffering endures for generations
   title: Why should you care?
 whyYouCrucialSection:
   body: >-
-    #### Nunc vitae nulla vitae urna blandit mattis quis id velit. Vestibulum
-    non massa at leo dictum gravida. 
+    #### The definitive solution depends on a revolutionary movement—your active
+    participation
 
 
-
-
-    Nunc vitae nulla vitae urna blandit mattis quis id velit. Vestibulum non
-    massa at leo dictum gravida. Suspendisse faucibus justo at placerat
-    pulvinar. Proin aliquet eros maximus, tempor ipsum at, cursus ipsum.
-    Suspendisse tristique, nisl sit amet egestas maximus, eros risus volutpat
-    lectus, sit amet ultricies tellus purus non arcu. Pellentesque sed turpis eu
-    velit rutrum pulvinar sit amet vel justo. Donec imperdiet ultricies finibus.
-    Donec in urna augue. Phasellus commodo libero ligula, [learn more about
-    information theory.](https://google.com)
+    Our entire movement and all of our technologies are based on our innovation
+    called **Information-Knowledge Theory,** which is a comprehensive,
+    multidisciplinary solution that empowers the unprosperous themselves with
+    the necessary knowledge, resources, and advantages for realizing
+    prosperity—self-actualization and well-being. See the section below for
+    more.
   ctaButton:
     label: this wont be shown
     sublabel: not shown
     url: notshown.com
   subtitle: >-
-    Nunc vitae nulla vitae urna blandit mattis quis id velit. Vestibulum non
-    massa at leo dictum gravida. Suspendisse faucibus justo at placerat
-    pulvinar. Proin aliquet eros maximus, tempor ipsum at, cursus ipsum.
-    Suspendisse tristique.
-  title: Why are you crucial to the success of the unprosperous?
+    — Because politicians have proven they cannot solve the massive income and
+    wealth inequality and the academic achievement gap; nor can they help the
+    unprosperous realize their potential and well-being
+  title: Why are *you* crucial to the success of the unprosperous?
 solutionsSection:
   body: >-
-    For detailed information on each of these programs, see the
-    [Programs](https://google.com) menu
+    Information-Knowledge Theory, created by AI Humanity's founder Richard
+    Bovell, is a comprehensive philosophy that specifies two overarching
+    principles to solve complex, elusive problems such as global poverty,
+    generational underachievement, and the realization of widespread prosperity:
+
+
+    1. Use an interdisciplinary (economics, psychology, philosophy, history,
+    *and* anthropology, for example) investigation to thoroughly understand the
+    problem under consideration.
+
+
+    2. Use omniscient knowledge (derived from the interdisciplinary
+    investigation noted above) to devise effective, requisite solutions that
+    endure. For a detailed explanation of these principles, see our
+    [Information-Knowledge Theory page]().
+
+
+    The list of integrated programs below, which make up AI Humanity's core
+    solution, is the embodiment of Information-Knowledge Theory to solve some of
+    the major problems we described earlier on this page, including poverty,
+    academic underachievement, and unprosperousness. These integrated
+    programs—the core of our solution—follow:
   ctaButton:
     label: Get Involved Now
     sublabel: via our Collective Intelligence program
     url: 'https://tobedefined.com'
   programs:
     - description: >-
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim
-        lectus eu eros tincidunt, a consequat dolor mattis. Sed lobortis et
-        libero molestie posuere. Mauris quis lorem dictum justo tincidunt
-        sagittis.
+        To properly resolve generational poverty, enduring academic
+        underachievement, widespread economic hardship, and a lack of well-being
+        and life satisfaction (all highly complex endeavors that politicians and
+        lawmakers can't resolve), we need a collective effort—a transformative
+        movement that exploits our best technological resources and capitalizes
+        on the omniscient knowledge available to us. Our Collective Intelligence
+        program does exactly those things.
+
+
+
+
+        This program allows you, along with others, to make small but notable
+        individual contributions (for example, by adding resources to the
+        Rewarding Careers and All Aid programs described below, in a manner
+        similar to contributing to Wikipedia's content) so that, together, we
+        can help the unprosperous (including you, if necessary) with *all* the
+        resources, tools, and advantages necessary to overcome the seemingly
+        insurmountable barriers to prosperity. [Learn more](<>) about Collective
+        Intelligence.
+      name: Collective Intelligence
+    - description: >-
+        This program provides a comprehensive assessment of the well-being,
+        social and civic status and liberties, economic standing, personal
+        edification, and much more of the unprosperous, and it monitors all of
+        these things to ensure the unprosperous get on the path to prosperity
+        and successfully realize that prosperity. The program also provides a
+        similar comprehensive assessment and monitoring for communities.
+
+
+        In short, Prosperity Score tells us everything each individual person
+        (and their community) need to become prosperous and allows us to provide
+        them those needs and keep them on track to prosperity. [Learn more]()
+        about the Prosperity Score.
       name: Prosperity Score
     - description: >-
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim
-        lectus eu eros tincidunt, a consequat dolor mattis. Sed lobortis et
-        libero molestie posuere. Mauris quis lorem dictum justo tincidunt
-        sagittis.
+        Whatever the pressing need of the unprosperous (tuition for
+        self-advancement, drug-addiction or mental health treatment, food,
+        childcare, housing, etc.), we help the unprosperous get all the
+        resources in a coordinated manner to ensure the individual is on the
+        path to self-sufficiency and won't need recurring aid. Summarily, we
+        provide aid where it is needed (by collaborating will all aid
+        organizations and local and state governments around the world), and,
+        crucially, we use that aid to ensure the unprosperous become
+        self-sufficient and get on the path to prosperity. Learn more]() about
+        Collective Intelligence. [Learn more]().
       name: All Aid
     - description: >-
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim
-        lectus eu eros tincidunt, a consequat dolor mattis. Sed lobortis et
-        libero molestie posuere. Mauris quis lorem dictum justo tincidunt
-        sagittis.
-
-
-        Lorem ipsum dolr sit amet, consectetur adipiscing elit. In dignissim
-        lectus eu eros tincidunt, a consequat dolor mattis. Sed lobortis et
-        libero molestie posuere. Mauris quis lorem dictum justo tincidunt
-        sagittis.
+        This program helps the unprosperous (and indeed, anymore) fine the most
+        ideal career that aligns with their passions, interest, and capacity.
+        "Rewarding," in this context, refers to careers that have a bright
+        future, provide excellent benefits, allow for self-actualization, and
+        pay at least a middle-income salary. [Learn more]().
       name: Rewarding Careers
     - description: >-
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim
-        lectus eu eros tincidunt, a consequat dolor mattis. Sed lobortis et
-        libero molestie posuere. Mauris quis lorem dictum justo tincidunt
-        sagittis.
-
-
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim
-        lectus eu eros tincidunt, a consequat dolor mattis. Sed lobortis et
-        libero molestie posuere. Mauris quis lorem dictum justo tincidunt
-        sagittis.
+        Economics, financial, and language literacy; a thirst for knowledge and
+        personal advancement; a strong sense of purpose and agency; and a
+        yearning for self-actualization and well-being remain the preeminent
+        virtues for flourishing as an individual. Through our Personal
+        Cultivation program, we help the unprosperous with all the resources to
+        cultivate and advance themselves.
       name: Personal Cultivation and Advancement
-  subtitle: — Information-Knowledge Theory comprises the following programs
+  subtitle: — Information-Knowledge Theory
   title: How our solution works
 ---
 
