@@ -27,6 +27,11 @@ const themes = {
       fontColor: "#fff6fb",
       activeHeaderColor: "#fff6fb"
     }
+  },
+  darkPresentation: {
+    backgroundColor: "#272233",
+    titleColor: "#f1ecf8",
+    subtitleColor: "#f1ecf8"
   }
 };
 
@@ -96,6 +101,7 @@ const Body = styled.div`
 `;
 
 const Header = styled.div`
+  ${props => (props.styl ? props.styl.h : "background: red !important")}
   h2 {
     color: ${({ theme }) => theme.titleColor || "#333"};
     font-family: cabin, sans-serif;
@@ -140,16 +146,18 @@ const Section = ({
   title,
   subtitle,
   theme = "default",
-  style = {}
+  style = {},
+  styl = {}
 }) => {
   const currentTheme = themes[theme];
   const showHeader = !!title || !!subtitle;
+  console.log(styl.h);
   return (
     <ThemeProvider theme={currentTheme}>
       <SectionWrapper style={style.wrapper}>
         <Container>
           {showHeader && (
-            <Header>
+            <Header style={style.header} styl={styl}>
               {title && (
                 <h2>
                   <Markdown>{title}</Markdown>

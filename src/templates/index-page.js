@@ -13,6 +13,9 @@ import BeforeAfterSlide from "../components/BeforeAfterSlide";
 import GetStartedSection from "../components/GetStartedSection";
 import WhyYouCareSection from "../components/WhyYouCareSection";
 
+import { Stickyroll } from "@stickyroll/stickyroll";
+import Skip from "../components/Skip";
+
 const SliderWrapper = styled.div`
   @media (min-width: 700px) {
     margin-left: -70px;
@@ -101,14 +104,15 @@ const CircleIconSolution = styled(CircleIcon)`
 const SlideLabelWrapper = styled.div`
   display: flex;
   flex-flow: row wrap;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   margin-bottom: 2rem;
+  margin-left: 1rem;
 
   .content {
     width: calc(100% - 70px);
     font-size: 1.3rem;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 1.7rem;
     color: ${({ theme }) => theme.fontColor || "#333"};
   }
@@ -121,6 +125,70 @@ const SlideLabelWrapper = styled.div`
 
     .circle {
       font-size: 1rem;
+    }
+  }
+`;
+
+const Transformation = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: center;
+
+  @media (max-width: 759px) {
+  }
+
+  ul {
+    list-style: none;
+    text-align: center;
+    margin-left: -2rem;
+    padding: 0;
+  }
+
+  ul li {
+    margin: 1.7rem;
+  }
+
+  ul li a {
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  ul li a span {
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    background: gray;
+  }
+
+  ul li a:hover span {
+    background: red;
+  }
+`;
+
+const TransformationCardWrapper = styled.div``;
+
+const TransformationCards = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    height: 560px;
+    width: 480px;
+  }
+  span {
+    font-size: 30px;
+    font-weight: bolder;
+    margin: auto 14px;
+  }
+
+  @media (max-width: 759px) {
+    flex-direction: column;
+
+    span {
+      transform: rotate(90deg);
     }
   }
 `;
@@ -164,13 +232,97 @@ export const IndexPageTemplate = data => {
   return (
     <>
       <Section
-        title={presentationSection.title}
-        subtitle={presentationSection.subtitle}
-        // theme="blueDark"
+        title={
+          "JOIN OUR MOVEMENT <span>democratize prosperity now</span>" ||
+          presentationSection.title
+        }
+        theme="darkPresentation"
+        style={{ wrapper: { height: "574px" } }}
+        styl={{
+          h: `
+            h2 {
+              margin-top: 120px;
+              text-align: center;
+              font-size: 60px !important;
+              font-weight: bolder !important;
+            }
+
+            h2 span span {
+              display: block;
+              font-size: 50px !important;
+              font-weight: 100;
+            }
+          `
+        }}
       >
         {/* <Section.Body>
           
         </Section.Body> */}
+      </Section>
+
+      <Section
+        title={`<span>No Politics!</span>-Just Innovation and Collective Effort`}
+        subtitle={
+          "With less effort than beefing with someone on social media, <span>you will help to transform:</span>"
+        }
+        styl={{
+          h: `h2 {
+              border-top: 1px solid #D5D5D5; 
+              border-bottom: 1px solid #D5D5D5; 
+              color: #272233 !important; 
+              font-size: 34px !important;
+              text-align: center;
+              font-weight: 100 !important;
+              width: 85%;
+              margin: 20px auto 70px !important;
+              padding: 30px 0;
+            }
+            h2 span {
+              font-weight: bolder;
+            }
+
+            h3 {
+              color: #6E21E4;
+              width: 85%;
+              font-size: 44px !important;
+              margin-left: 80px;
+              line-height: 64px !important;
+            }
+
+            h3 span span {
+              font-weight: bolder;
+            }
+            `
+        }}
+      >
+        {/* <Stickyroll pages={presentationSection.transformation} anchors="">
+          {({ page, pageIndex, pages, progress }) => {
+            return (
+              <Transformation>
+                <TransformationCardWrapper>
+                  <SlideLabelWrapper className="label-wrapper">
+                    <CircleIcon>{pageIndex + 1}</CircleIcon>
+                    <div className="content">
+                      {
+                        <Markdown>
+                          {presentationSection.transformation[pageIndex].body}
+                        </Markdown>
+                      }
+                    </div>
+                  </SlideLabelWrapper>
+                  <TransformationCards>
+                    <img src="https://via.placeholder.com/480" alt="" />
+                    <span>&#8594;</span>
+                    <img src="https://via.placeholder.com/480" alt="" />
+                  </TransformationCards>
+                  <hr />
+                </TransformationCardWrapper>
+                <Skip useContext={true} itms={pages} />
+              </Transformation>
+            );
+          }}
+        </Stickyroll> */}
+        {/* 
         <SliderWrapper>
           <Slider
             slides={presentationSection.transformation.map(
@@ -191,7 +343,6 @@ export const IndexPageTemplate = data => {
                     <SlideItem>
                       <img src={image} />
                       <span className="arrow">→</span>
-                      {/* {index % 2 === 0 && <span className="arrow">→</span>} */}
                     </SlideItem>
                   </div>
                 );
@@ -211,6 +362,7 @@ export const IndexPageTemplate = data => {
           />
         </SliderWrapper>
         <hr />
+      */}
         <ButtonCTA.Wrapper>
           <ButtonCTA
             href={presentationSection.ctaButton.url}

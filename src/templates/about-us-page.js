@@ -20,7 +20,7 @@ export const AboutUsPageTemplate = props => {
     supportUsSection,
     helmet
   } = props;
-  console.log({ props });
+
   return (
     <>
       {helmet || ""}
@@ -54,7 +54,7 @@ export const AboutUsPageTemplate = props => {
         </Section.Body>
       </Section>
       <Section
-        title={contactUsSection.title || "Contact Us"}
+        title={contactUsSection.title || "Contact Usx"}
         subtitle={
           contactUsSection.subtitle || "— Do you have additional questions?"
         }
