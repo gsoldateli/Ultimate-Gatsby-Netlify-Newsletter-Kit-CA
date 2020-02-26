@@ -295,7 +295,7 @@ export const IndexPageTemplate = data => {
             `
         }}
       >
-        <Stickyroll pages={presentationSection.transformation} anchors="">
+        {/* <Stickyroll pages={presentationSection.transformation} anchors="">
           {({ page, pageIndex, pages, progress }) => {
             return (
               <Transformation>
@@ -321,7 +321,7 @@ export const IndexPageTemplate = data => {
               </Transformation>
             );
           }}
-        </Stickyroll>
+        </Stickyroll> */}
         {/* 
         <SliderWrapper>
           <Slider
