@@ -1,6 +1,6 @@
 ---
 templateKey: program-page
-name: All Aid
+name: All AidX
 backgroundImage: /img/AllAid_big_img.jpg
 importantFaqSection:
   description: >-
