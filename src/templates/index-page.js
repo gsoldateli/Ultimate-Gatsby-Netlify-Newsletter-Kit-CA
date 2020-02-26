@@ -14,6 +14,7 @@ import GetStartedSection from "../components/GetStartedSection";
 import WhyYouCareSection from "../components/WhyYouCareSection";
 
 import { Stickyroll } from "@stickyroll/stickyroll";
+import Skip from "../components/Skip";
 
 const SliderWrapper = styled.div`
   @media (min-width: 700px) {
@@ -128,10 +129,51 @@ const SlideLabelWrapper = styled.div`
   }
 `;
 
-const TransformationCardWrapper = styled.div`
+const Transformation = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: center;
+
+  @media (max-width: 759px) {
+  }
+
+  ul {
+    list-style: none;
+    text-align: center;
+    margin-left: -2rem;
+    padding: 0;
+  }
+
+  ul li {
+    margin: 1.7rem;
+  }
+
+  ul li a {
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  ul li a span {
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    background: gray;
+  }
+
+  ul li a:hover span {
+    background: red;
+  }
+`;
+
+const TransformationCardWrapper = styled.div``;
+
+const TransformationCards = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
   img {
     height: 560px;
     width: 480px;
@@ -140,6 +182,14 @@ const TransformationCardWrapper = styled.div`
     font-size: 30px;
     font-weight: bolder;
     margin: auto 14px;
+  }
+
+  @media (max-width: 759px) {
+    flex-direction: column;
+
+    span {
+      transform: rotate(90deg);
+    }
   }
 `;
 
@@ -245,27 +295,30 @@ export const IndexPageTemplate = data => {
             `
         }}
       >
-        <Stickyroll pages={presentationSection.transformation}>
+        <Stickyroll pages={presentationSection.transformation} anchors="">
           {({ page, pageIndex, pages, progress }) => {
             return (
-              <div class="transformation-card">
-                <SlideLabelWrapper className="label-wrapper">
-                  <CircleIcon>{pageIndex + 1}</CircleIcon>
-                  <div className="content">
-                    {
-                      <Markdown>
-                        {presentationSection.transformation[pageIndex].body}
-                      </Markdown>
-                    }
-                  </div>
-                </SlideLabelWrapper>
+              <Transformation>
                 <TransformationCardWrapper>
-                  <img src="https://via.placeholder.com/480" alt="" />
-                  <span>&#8594;</span>
-                  <img src="https://via.placeholder.com/480" alt="" />
+                  <SlideLabelWrapper className="label-wrapper">
+                    <CircleIcon>{pageIndex + 1}</CircleIcon>
+                    <div className="content">
+                      {
+                        <Markdown>
+                          {presentationSection.transformation[pageIndex].body}
+                        </Markdown>
+                      }
+                    </div>
+                  </SlideLabelWrapper>
+                  <TransformationCards>
+                    <img src="https://via.placeholder.com/480" alt="" />
+                    <span>&#8594;</span>
+                    <img src="https://via.placeholder.com/480" alt="" />
+                  </TransformationCards>
+                  <hr />
                 </TransformationCardWrapper>
-                <hr />
-              </div>
+                <Skip useContext={true} itms={pages} />
+              </Transformation>
             );
           }}
         </Stickyroll>
